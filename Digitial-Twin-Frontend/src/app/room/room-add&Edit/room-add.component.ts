@@ -3,7 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { RoomService } from '../room.service';
 import { Room, RoomType } from '../room.model';
-import { Device, DeviceType } from '../../device/device.model.component';
+import { Device, DeviceType } from '../../device/device.model';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -110,7 +110,7 @@ export class RoomAddComponent implements OnInit, OnDestroy{
 
       if (deviceDifference > 0) {
         for (let i = 0; i < deviceDifference; i++) {
-          devices.push(new Device(0, type, '', false));
+          devices.push(new Device(0,0, type, '', false));
         }
       } else if (deviceDifference < 0) {
         const devicesToRemove = beforeDevices.filter(device => device.type === type).slice(0, Math.abs(deviceDifference));

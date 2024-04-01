@@ -2,9 +2,10 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Device, DeviceType } from '../device.model.component';
+import { Device, DeviceType } from '../device.model';
 import { DeviceService } from '../device.service';
 import { Room } from '../../room/room.model';
+import { RoomService } from '../../room/room.service';
 
 @Component({
   selector: 'app-device-edit',
@@ -18,7 +19,8 @@ export class DeviceEditComponent implements OnInit, OnDestroy{
   editMode = false;
   roomIndex : number;
 
-  constructor(private route: ActivatedRoute,private deviceService: DeviceService,private router: Router) {   
+  constructor(private route: ActivatedRoute,private router: Router, private roomService: RoomService,private deviceService: DeviceService) { 
+    this.editMode = this.deviceService.getEditMode();  
   }
 
   ngOnInit() {
@@ -30,150 +32,52 @@ export class DeviceEditComponent implements OnInit, OnDestroy{
     this.route.params.subscribe(
         (params: Params) => {
           this.roomIndex = +params['roomIndex'];
-          console.log(this.roomIndex);
           this.index = +params['index'];
-          console.log(this.index);
-          //this.initForm();
+          this.initForm();
         }
     );
   }
   
-/*
+
   private initForm() {
+    console.log(this.editMode);
     let deviceName = '';
     let deviceType = '';
     let deviceStatus = false;
 
     //get data of the device (prepopulate the form)
     if (this.editMode) {
-      const device = this.deviceService.getDevice(this.index);
+      console.log(this.editMode);
+      const device = this.roomService.getDeviceWithIndex(this.roomIndex, this.index);
+      console.log(device);
       deviceType = device.type;
       deviceName = device.name;
-      deviceSize = device.size;
-      const deviceDevices = device.devices;
-      for (let device of deviceDevices) {
-        if (device.type === 'Light') {
-          deviceLight++;
-        } else if (device.type === 'Fan') {
-          deviceFans++;
-        } else if (device.type === 'Door') {
-          deviceDoors++;
-        } else if (device.type === 'Window') {
-          deviceWindows++;
-        }
-      }
-
-      // get each device and prepopulate the form
-
-      // if (device['devices']) {
-      //   for (let ingredient of device.ingredients) {
-      //     deviceIngredients.push(
-      //       new FormGroup({
-      //         'name': new FormControl(ingredient.name, Validators.required),
-      //         'amount': new FormControl(ingredient.amount, [
-      //           Validators.required,
-      //           Validators.pattern(/^[1-9]+[0-9]*$/)
-      //         ])
-      //       })
-      //     );
-      //   }
-      //}
+      deviceStatus = device.status;
     }
 
     this.deviceForm = new FormGroup({
       'name': new FormControl(deviceName, Validators.required),
       'type': new FormControl(deviceType, Validators.required),
-      'size': new FormControl(deviceSize, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'light': new FormControl(deviceLight, [Validators.required, Validators.pattern(/^[0-9]+[0-9]*$/)]),
-      'fans': new FormControl(deviceFans, [Validators.required, Validators.pattern(/^[0-9]+[0-9]*$/)]),
-      'doors': new FormControl(deviceDoors, [Validators.required, Validators.pattern(/^[0-9]+[0-9]*$/)]),
-      'windows': new FormControl(deviceWindows, [Validators.required, Validators.pattern(/^[0-9]+[0-9]*$/)])
+      'status': new FormControl(deviceStatus, Validators.required)
     });
   }
 
   onSubmit() {
-    const newdevice = this.convertFormTodevice(this.deviceForm.value);
     if (this.editMode) {
-      this.deviceService.updatedevice(this.index, newdevice);
+      console.log(this.deviceForm.value);
+      this.roomService.updateDevice(this.roomIndex,this.index, this.deviceForm.value);
     } else {
-      this.deviceService.adddevice(newdevice);
+      console.log(this.deviceForm.value);
+      this.roomService.addDevice(this.roomIndex, this.deviceForm.value);
       
     }
     this.onCancel();
   }
   
   onCancel() {
-    this.router.navigate(['../'], {relativeTo: this.route});
+    this.router.navigate(['/', this.roomIndex]);
   }
 
-  private convertFormTodevice(formValue: any): device {
-    const id = this.deviceBefore.id;
-    const name = formValue.name;
-    const size = formValue.size;
-    const temperature = this.deviceBefore.temperature;
-    const humidity = this.deviceBefore.humidity;
-    const co2 = this.deviceBefore.co2;
-    const people = this.deviceBefore.people;
-    const devices = this.updateDevices(formValue);
-    const type = formValue.type;
-
-    return new device(id, name, size, temperature, humidity, co2, people, devices, type);
-  }
-
-  private updateDevices(formValue: any): Device[] {
-    const devices: Device[] = [];
-    const beforeDevices = this.deviceBefore.devices;
-
-    const deviceTypes = [DeviceType.Light, DeviceType.Fan, DeviceType.Window, DeviceType.Door];
-
-    deviceTypes.forEach(type => {
-      const beforeDeviceCount = this.getDeviceCount(beforeDevices, type);
-      const currentDeviceCount = formValue[type.toLowerCase()];
-      const deviceDifference = currentDeviceCount - beforeDeviceCount;
-
-      if (deviceDifference > 0) {
-        for (let i = 0; i < deviceDifference; i++) {
-          devices.push(new Device(0, type, '', false));
-        }
-      } else if (deviceDifference < 0) {
-        const devicesToRemove = beforeDevices.filter(device => device.type === type).slice(0, Math.abs(deviceDifference));
-        devices.push(...devicesToRemove);
-      } else {
-        devices.push(...beforeDevices.filter(device => device.type !== type));
-      }
-    });
-
-    return devices;
-  }
-
-  private getDeviceCount(devices: Device[], type: DeviceType): number {
-    return devices.filter(device => device.type === type).length;
-  }
-
-  private getDeviceIndex(devices: Device[], type: DeviceType): number {
-    return devices.findIndex(device => device.type === type);
-  }
-
-   // get deviceControls() {
-  //   return (this.deviceForm.get('ingredients') as FormArray).controls
-  // }
-
-  // onAddIngredient() {
-  //   (<FormArray>this.deviceForm.get('ingredients')).push(
-  //     new FormGroup({
-  //       'name': new FormControl(null, Validators.required),
-  //       'amount': new FormControl(null, [
-  //         Validators.required,
-  //         Validators.pattern(/^[1-9]+[0-9]*$/)
-  //       ])
-  //     })
-  //   );
-  // }
-
-  // onDeleteIngredient(index: number) {
-  //   (<FormArray>this.deviceForm.get('ingredients')).removeAt(index);
-  // }
-*/
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

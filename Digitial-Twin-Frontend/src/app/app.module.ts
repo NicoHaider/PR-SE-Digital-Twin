@@ -12,6 +12,7 @@ import { RoomDetailsComponent } from './room/room-details/room-details.component
 import { DeviceItemComponent } from './device/device-item/device-item.component';
 import { DeviceService } from './device/device.service';
 import { DeviceEditComponent } from './device/device-Add&Edit/device-edit.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DeviceEditComponent } from './device/device-Add&Edit/device-edit.compon
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [RoomService, DeviceService],
   bootstrap: [AppComponent]

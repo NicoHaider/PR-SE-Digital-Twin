@@ -3,6 +3,7 @@ import { Room, RoomType } from '../room.model';
 import { RoomService } from '../room.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DeviceService } from '../../device/device.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-room-details',
@@ -15,6 +16,10 @@ export class RoomDetailsComponent implements OnInit{
   editMode : boolean = false;
 
   constructor(private roomService: RoomService, private deviceService: DeviceService, private route: ActivatedRoute, private router: Router) {
+    // this.roomService.fetchDataFromBackend(this.room.id);
+    // setInterval(() => {
+    //   this.roomService.fetchDataFromBackend(this.room.id);
+    // }, 2000);
   }
 
   ngOnInit(): void {

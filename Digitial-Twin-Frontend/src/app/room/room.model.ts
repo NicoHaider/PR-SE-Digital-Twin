@@ -1,4 +1,4 @@
-import { Device } from '../device/device.model.component';
+import { Device } from '../device/device.model';
 
 export enum RoomType {
   LivingRoom = 'Living Room',
@@ -19,7 +19,7 @@ export const RoomTypeImagePath = {
 };
 
 export class Room {
-  id: number;
+  id: number = 0;
   name: string;
   size: number;
   temperature: number;

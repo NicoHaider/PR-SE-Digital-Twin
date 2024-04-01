@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Device, DeviceType } from '../device.model.component';
+import { Device, DeviceType } from '../device.model';
 import { DeviceService} from '../device.service';
 import { Router } from '@angular/router';
 import { Room } from '../../room/room.model';
@@ -27,7 +27,6 @@ export class DeviceItemComponent {
   }
 
   onEdit() {
-    console.log('edit');
     this.deviceService.editModeChanged(true);
     this.router.navigate(['/deviceEdit/'+ this.roomIndex + '/' + this.index]);
   }

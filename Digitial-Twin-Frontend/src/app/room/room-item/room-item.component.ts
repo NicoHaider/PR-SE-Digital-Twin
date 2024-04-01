@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Room, RoomType, RoomTypeImagePath } from '../room.model';
-import { Device } from '../../device/device.model.component';
+import { Device } from '../../device/device.model';
 import { RoomService } from '../room.service';
 
 @Component({
