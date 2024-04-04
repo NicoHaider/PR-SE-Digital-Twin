@@ -10,6 +10,7 @@ public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String name; // Hinzugefügte 'name' Variable
     private double size;
     private int doors;
     private int windows;
@@ -17,10 +18,10 @@ public class Room {
     private int fans;
 
     // Konstruktoren
-    public Room() {
-    }
 
-    public Room(double size, int doors, int windows, int lights, int fans) {
+
+    public Room(String name, double size, int doors, int windows, int lights, int fans) {
+        this.name = name;
         this.size = size;
         this.doors = doors;
         this.windows = windows;
@@ -36,6 +37,14 @@ public class Room {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getSize() {

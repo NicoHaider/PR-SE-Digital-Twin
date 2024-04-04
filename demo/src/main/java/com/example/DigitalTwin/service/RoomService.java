@@ -17,6 +17,12 @@ public class RoomService {
         this.roomRepository = roomRepository;
     }
 
+    public Room saveOrUpdateRoom(Room room) {
+        return roomRepository.save(room);
+    }
+
+
+
     public Room createOrUpdateRoom(Room room) {
         // Hier könnten weitere Geschäftslogiken implementiert werden.
         return roomRepository.save(room);
