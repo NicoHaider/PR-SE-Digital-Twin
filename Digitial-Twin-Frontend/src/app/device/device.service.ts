@@ -38,7 +38,7 @@ export class DeviceService {
   }
 
   changeDeviceStatus(device: Device) {
-    // this.http.post(this.basePath + 'updateDevice',Device);
+    this.http.post(this.basePath + 'updateDevice',Device);
     device.status = !device.status;
   }
 
