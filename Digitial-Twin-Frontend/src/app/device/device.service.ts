@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { Device, DeviceImagePath, DeviceType } from './device.model';
 import { RoomService } from '../room/room.service';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable()
 export class DeviceService {
 
   basePath = "https://digital-twin-backend/api/";
 
-  //constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   
   editModeChange = new BehaviorSubject<boolean>(false);
@@ -38,6 +40,10 @@ export class DeviceService {
   changeDeviceStatus(device: Device) {
     // this.http.post(this.basePath + 'updateDevice',Device);
     device.status = !device.status;
+  }
+
+  getDevice(){
+    return this.http.get('http://localhost:8080/device');
   }
 }
 
