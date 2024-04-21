@@ -10,7 +10,7 @@ export class RoomService {
   editModeChange = new Subject<Boolean>();
   basePath = "https://digital-twin-backend/api/";
 
-  // constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
 
   private rooms: Room[] = [
@@ -30,10 +30,10 @@ export class RoomService {
   }
 
   getRooms():Room[]{
-    // this.http.get(this.basePath + 'getAllRooms').subscribe((rooms: Room[]) => {
-    //   this.rooms = rooms;
-    //   this.roomsChanged.next(this.rooms.slice());
-    // });
+    this.http.get(this.basePath + 'getAllRooms').subscribe((rooms: Room[]) => {
+       this.rooms = rooms;
+       this.roomsChanged.next(this.rooms.slice());
+     });
     return this.rooms.slice();
   }
 
@@ -46,22 +46,22 @@ export class RoomService {
   } 
 
   addRoom(room: Room){
-    // this.http.post(this.basePath + 'addRoom',room).subscribe((room: Room) => {
-    //   this.rooms.push(room);
-    //   this.roomsChanged.next(this.rooms.slice());
-    // });
+     this.http.post(this.basePath + 'addRoom',room).subscribe((room: Room) => {
+       this.rooms.push(room);
+       this.roomsChanged.next(this.rooms.slice());
+     });
     this.rooms.push(room);
     return this.roomsChanged.next(this.rooms.slice());
   }
 
   updateRoom(index: number, newRoom: Room) {
-    // this.http.post(this.basePath + 'updateRoom',newRoom);
+    this.http.post(this.basePath + 'updateRoom',newRoom);
     this.rooms[index] = newRoom;
     this.roomsChanged.next(this.rooms.slice());
   }
 
   deleteRoom(index: number) {
-    // this.http.post(this.basePath + 'deleteRoom',this.rooms[index].id);
+    this.http.post(this.basePath + 'deleteRoom',this.rooms[index].id);
     this.rooms.splice(index, 1);
     this.roomsChanged.next(this.rooms.slice());
   }
@@ -73,7 +73,7 @@ export class RoomService {
   /*Device Methods*/
 
   deleteDevice(roomIndex: number, deviceIndex : number) {
-    // this.http.post(this.basePath + 'deleteDevice',this.devices[deviceIndex]);
+    this.http.post(this.basePath + 'deleteDevice',this.devices[deviceIndex]);
     this.rooms[roomIndex].devices.splice(deviceIndex, 1);
     this.roomsChanged.next(this.rooms.slice());
   }
@@ -84,28 +84,28 @@ export class RoomService {
 
   addDevice(roomIndex: number, device: Device) {
     device.roomId = this.rooms[roomIndex].id;
-    // this.http.post(this.basePath + 'addDevice',device).subscribe((newDevice: Device) => {
-    //   this.rooms[roomIndex].devices.push(newDevice);
-    //   this.roomsChanged.next(this.rooms.slice());
-    // });
+    this.http.post(this.basePath + 'addDevice',device).subscribe((newDevice: Device) => {
+      this.rooms[roomIndex].devices.push(newDevice);
+      this.roomsChanged.next(this.rooms.slice());
+     });
     this.rooms[roomIndex].devices.push(device);
     this.roomsChanged.next(this.rooms.slice());
   }
   
   updateDevice(roomIndex: number, deviceIndex: number, newDevice: Device) {
-    // this.http.post(this.basePath + 'updateDevice',newDevice);
+    this.http.post(this.basePath + 'updateDevice',newDevice);
     this.rooms[roomIndex].devices[deviceIndex] = newDevice;
     this.roomsChanged.next(this.rooms.slice());
   }
 
   fetchDataFromBackend(roomId: number) {
-    // this.http.post(this.basePath + 'getData', roomId).subscribe((data: RoomData) => {
-    //   let room = this.rooms.find(room => room.id === roomId);
-    //     room.co2 = data.co2;
-    //     room.temperature = data.temperature;
-    //     room.people = data.people;
-    //   });
-    //   this.roomsChanged.next(this.rooms.slice());
+    this.http.post(this.basePath + 'getData', roomId).subscribe((data: RoomData) => {
+      let room = this.rooms.find(room => room.id === roomId);
+        room.co2 = data.co2;
+        room.temperature = data.temperature;
+        room.people = data.people;
+      });
+      this.roomsChanged.next(this.rooms.slice());
   }
   
 
