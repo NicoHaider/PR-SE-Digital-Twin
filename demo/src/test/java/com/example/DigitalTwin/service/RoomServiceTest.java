@@ -23,6 +23,16 @@ public class RoomServiceTest {
     private RoomService roomService;
 
 
+    @Test
+    public void testGetRoomById() {
+        Optional<Room> room = Optional.of(new Room("Conference Room", 100.0, 1, 2, 5, 2));
+        when(roomRepository.findById(1L)).thenReturn(room);
 
+        Optional<Room> foundRoom = Optional.ofNullable(roomService.getRoomById(1L));
+
+        assertTrue(foundRoom.isPresent());
+        assertEquals("Conference Room", foundRoom.get().getName());
+        verify(roomRepository).findById(1L);
+    }
 
 }
