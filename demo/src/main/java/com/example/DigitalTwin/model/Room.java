@@ -1,115 +1,90 @@
 package com.example.DigitalTwin.model;
 
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.SequenceGenerator;
 
 @Entity
 public class Room {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@SequenceGenerator(name = "room_seq_generator", sequenceName = "room_seq", allocationSize = 1)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String name; // Hinzugefügte 'name' Variable
+    private double size;
+    private int doors;
+    private int windows;
+    private int lights;
+    private int fans;
 
-	private String name;
+    // Konstruktoren
 
-	private double size;
 
-	private int doors;
+    public Room(String name, double size, int doors, int windows, int lights, int fans) {
+        this.name = name;
+        this.size = size;
+        this.doors = doors;
+        this.windows = windows;
+        this.lights = lights;
+        this.fans = fans;
+    }
 
-	private int windows;
 
-	private int lights;
-	private int fans;
+    // Getter und Setter
+    public Long getId() {
+        return id;
+    }
 
-	@OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
-	@JsonProperty(value = "climate_data")
-	private List<RoomData> roomDataList;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Room() {
-		super();
-	}
+    public String getName() {
+        return name;
+    }
 
-	public Room(String name, double size, int doors, int windows, int lights, int fans) {
-		super();
-		this.name = name;
-		this.size = size;
-		this.doors = doors;
-		this.windows = windows;
-		this.lights = lights;
-		this.fans = fans;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public double getSize() {
+        return size;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setSize(double size) {
+        this.size = size;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public int getDoors() {
+        return doors;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setDoors(int doors) {
+        this.doors = doors;
+    }
 
-	public double getSize() {
-		return size;
-	}
+    public int getWindows() {
+        return windows;
+    }
 
-	public void setSize(double size) {
-		this.size = size;
-	}
+    public void setWindows(int windows) {
+        this.windows = windows;
+    }
 
-	public int getDoors() {
-		return doors;
-	}
+    public int getLights() {
+        return lights;
+    }
 
-	public void setDoors(int doors) {
-		this.doors = doors;
-	}
+    public void setLights(int lights) {
+        this.lights = lights;
+    }
 
-	public int getWindows() {
-		return windows;
-	}
+    public int getFans() {
+        return fans;
+    }
 
-	public void setWindows(int windows) {
-		this.windows = windows;
-	}
-
-	public int getLights() {
-		return lights;
-	}
-
-	public void setLights(int lights) {
-		this.lights = lights;
-	}
-
-	public int getFans() {
-		return fans;
-	}
-
-	public void setFans(int fans) {
-		this.fans = fans;
-	}
-
-	public List<RoomData> getRoomDataList() {
-		return roomDataList;
-	}
-
-	public void setRoomDataList(List<RoomData> roomDataList) {
-		this.roomDataList = roomDataList;
-	}
-
+    public void setFans(int fans) {
+        this.fans = fans;
+    }
 }
+

@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class RoomService {
+
+  devices: Device[];
   roomsChanged = new Subject<Room[]>();
   editModeChange = new Subject<Boolean>();
   basePath = "https://digital-twin-backend/api/";
@@ -43,7 +45,7 @@ export class RoomService {
 
   getRoomImagePath(roomType: RoomType): string {
     return RoomTypeImagePath[roomType];
-  } 
+  }
 
   addRoom(room: Room){
      this.http.post(this.basePath + 'addRoom',room).subscribe((room: Room) => {
@@ -91,7 +93,7 @@ export class RoomService {
     this.rooms[roomIndex].devices.push(device);
     this.roomsChanged.next(this.rooms.slice());
   }
-  
+
   updateDevice(roomIndex: number, deviceIndex: number, newDevice: Device) {
     this.http.post(this.basePath + 'updateDevice',newDevice);
     this.rooms[roomIndex].devices[deviceIndex] = newDevice;
@@ -107,9 +109,9 @@ export class RoomService {
       });
       this.roomsChanged.next(this.rooms.slice());
   }
-  
 
-  
+
+
 }
 
 interface RoomData {

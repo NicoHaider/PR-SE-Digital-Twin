@@ -10,12 +10,15 @@ export class DeviceService {
 
   basePath = "https://digital-twin-backend/api/";
 
-  constructor(private http: HttpClient) { }
+  constructor(
+      private http: HttpClient,
+      private roomService: RoomService
+  ) {}
 
-  
+
   editModeChange = new BehaviorSubject<boolean>(false);
-  
-  constructor(private roomService : RoomService) { }
+
+
 
   createEmptyDevice(): Device {
     return new Device(0, 0, '', '', false);
