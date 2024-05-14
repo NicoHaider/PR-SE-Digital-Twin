@@ -16,7 +16,7 @@ export class RoomService {
 
 
    rooms: Room[] = [
-    new Room(1, "bedroom 1", 10, 20, 60, 420, 2, [new Device(1,0, "Light","light 1",false), new Device(2,0, "Fan","fan 1",true),new Device(2,0, "Window","window 1",false),new Device(1,0, "Door","door 2",false),
+    /*new Room(1, "bedroom 1", 10, 20, 60, 420, 2, [new Device(1,0, "Light","light 1",false), new Device(2,0, "Fan","fan 1",true),new Device(2,0, "Window","window 1",false),new Device(1,0, "Door","door 2",false),
     new Device(1,0, "Light","light 1",false), new Device(2,0, "Fan","fan 1",true),new Device(2,0, "Window","window 1",false),new Device(1,0, "Door","door 2",false),
     new Device(1,0, "Light","light 1",false), new Device(2,0, "Fan","fan 1",true),new Device(2,0, "Window","window 1",false),new Device(1,0, "Door","door 2",false)], "Bedroom"),
     new Room(2, "living room", 15, 25, 69, 420, 3, [new Device(2,0, "Fan","fan 1",true)], "LivingRoom"),
@@ -24,7 +24,7 @@ export class RoomService {
     new Room(4, "gaming room", 15, 25, 69, 420, 3, [new Device(2,0, "Door","door 1",true)],  "Gaming"),
     new Room(5, "kitchen", 15, 25, 69, 420, 3, [new Device(2,0, "Fan","fan 2",false)],  "Kitchen"),
     new Room(6, "office", 15, 25, 69, 420, 3, [new Device(2,0, "Window"," window 2",true)],  "Office"),
-    new Room(7, "bedroom 2", 10, 20, 60, 420, 2, [new Device(1,0, "Door","door 2",false)], "Bedroom")
+    new Room(7, "bedroom 2", 10, 20, 60, 420, 2, [new Device(1,0, "Door","door 2",false)], "Bedroom")*/
   ];
 
   createEmptyRoom(): Room {
@@ -63,9 +63,10 @@ export class RoomService {
   }
 
   deleteRoom(index: number) {
-    this.http.post(this.basePath + 'deleteRoom',this.rooms[index].id);
+    this.http.post(this.basePath + 'deleteRoom',this.rooms[index].id).subscribe((room: Room) => {
     this.rooms.splice(index, 1);
     this.roomsChanged.next(this.rooms.slice());
+    });
   }
 
   editModeChanged(editMode: boolean){
@@ -75,9 +76,10 @@ export class RoomService {
   /*Device Methods*/
 
   deleteDevice(roomIndex: number, deviceIndex : number) {
-    this.http.post(this.basePath + 'deleteDevice',this.devices[deviceIndex]);
+    this.http.post(this.basePath + 'deleteDevice',this.rooms[roomIndex].devices[deviceIndex]).subscribe((newDevice: Device) => {
     this.rooms[roomIndex].devices.splice(deviceIndex, 1);
     this.roomsChanged.next(this.rooms.slice());
+  });
   }
 
   getDeviceWithIndex(roomIndex: number, deviceIndex: number): Device{
@@ -90,8 +92,6 @@ export class RoomService {
       this.rooms[roomIndex].devices.push(newDevice);
       this.roomsChanged.next(this.rooms.slice());
      });
-    this.rooms[roomIndex].devices.push(device);
-    this.roomsChanged.next(this.rooms.slice());
   }
 
   updateDevice(roomIndex: number, deviceIndex: number, newDevice: Device) {
