@@ -3,9 +3,7 @@ import { Subscription } from 'rxjs';
 import { RoomService } from '../room.service';
 import { Room } from '../room.model';
 import {Router } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from '../../app.routing.module';
+import { HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-room-list',
@@ -27,11 +25,35 @@ export class RoomListComponent implements OnInit{
         this.rooms = rooms;
       }
     );
-   this.rooms = this.roomService.getRooms();
+    this.roomService.getRooms().subscribe({
+      next: (rooms: Room[]) => {
+        console.log("Rooms = ", rooms);
+        this.rooms = rooms;
+      },
+      error: (error) => {
+        console.error('Error fetching rooms', error);
+      }
+    });
   }
 
   addRoom() {
     this.router.navigate(['addRoom']);
+  }
+
+  onDownloadRoom(){
+    this.roomService.getRoomStructure().subscribe({
+      next: (blob: Blob) => {
+        const a = document.createElement('a');
+        const objectUrl = URL.createObjectURL(blob);
+        a.href = objectUrl;
+        a.download = 'room_report.csv';
+        a.click();
+        URL.revokeObjectURL(objectUrl);
+      },
+      error: (error) => {
+        console.error('Error getting room file', error);
+      }
+    });
   }
 
 }

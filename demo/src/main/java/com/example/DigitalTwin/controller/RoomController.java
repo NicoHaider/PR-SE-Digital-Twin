@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.DigitalTwin.RoomMapper;
 import com.example.DigitalTwin.dto.RoomDto;
 import com.example.DigitalTwin.model.Room;
 import com.example.DigitalTwin.service.RoomService;
@@ -31,9 +32,9 @@ public class RoomController {
 	@Autowired
 	private RoomService roomService;
 
-	@PostMapping
+	@PostMapping("/addRoom")
 	public ResponseEntity<Room> createRoom(@Valid @RequestBody RoomDto roomDetails) {
-		Room createdRoom = roomService.createRoom(roomDetails);
+		Room createdRoom = roomService.createOrUpdateRoom(RoomMapper.toEntity(roomDetails));
 		return ResponseEntity.status(HttpStatus.CREATED).body(createdRoom);
 	}
 
@@ -51,7 +52,7 @@ public class RoomController {
 
 	@GetMapping("/{roomId}")
 	public ResponseEntity<Room> getRoomById(@PathVariable("roomId") Long id) {
-		Room room = roomService.getRoomById(id);
+		Room room = roomService.getRoomById(id).get();
 		return ResponseEntity.ok(room);
 	}
 
@@ -64,7 +65,8 @@ public class RoomController {
 	@GetMapping("/report")
 	public ResponseEntity<Resource> getFile() {
 		String filename = "room_report.csv";
-		InputStreamResource file = new InputStreamResource(roomService.generateRoomReport());
+		//InputStreamResource file = new InputStreamResource(roomService.generateRoomReport());
+		InputStreamResource file = roomService.generateRoomReport();
 		return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename)
 				.contentType(MediaType.parseMediaType("text/csv")).body(file);
 	}
