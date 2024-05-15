@@ -154,6 +154,7 @@ it('should delete a device from a room correctly', () => {
   const roomIndex = 0;
   const deviceIndex = 1;
   service.deleteDevice(roomIndex, deviceIndex);
+  //test
   const req = httpMock.expectOne(`${basePath}deleteDevice`);
   expect(req.request.method).toBe('POST');
   req.flush({});
