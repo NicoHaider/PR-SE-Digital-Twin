@@ -18,12 +18,12 @@ export class RoomListComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.subscription = this.roomService.roomsChanged.subscribe(
-      (rooms: Room[]) => {
-        this.rooms = rooms;
-      }
-    );
-   this.rooms = this.roomService.getRooms();
+   this.roomService.getRooms().subscribe(res=>{
+    this.rooms = res;
+    console.log(res);
+   }, error=>{
+    console.log("error", error)
+   });
   }
 
   addRoom() {

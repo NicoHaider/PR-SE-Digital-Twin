@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Room, RoomType, RoomTypeImagePath } from './room.model';
 import { Device} from '../device/device.model';
 import { HttpClient } from '@angular/common/http';
@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class RoomService {
   roomsChanged = new Subject<Room[]>();
   editModeChange = new Subject<Boolean>();
-  basePath = "https://digital-twin-backend/api/";
+  // basePath = "https://digital-twin-backend/api/";  
+  basePath = "http://localhost:8080/";
 
   constructor(private http: HttpClient) { }
 
@@ -29,41 +30,34 @@ export class RoomService {
     return new Room(0, '', 0, 0, 0, 0, 0, [new Device(0,0, '', '', false)], '');
   }
 
-  getRooms():Room[]{
-    this.http.get(this.basePath + 'getAllRooms').subscribe((rooms: Room[]) => {
-       this.rooms = rooms;
-       this.roomsChanged.next(this.rooms.slice());
-     });
-    return this.rooms.slice();
+  getRooms():Observable<any>{
+    return this.http.get(this.basePath + 'room');
+    
+    // .subscribe((rooms: Room[]) => {
+    //    this.rooms = rooms;
+    //    this.roomsChanged.next(this.rooms.slice());
+    //  });
+    // return this.rooms.slice();
   }
 
-  getRoom(index: number): Room{
-    return this.rooms[index];
+  getRoomById(id: number): Observable<any>{
+    return this.http.get(this.basePath + `room/${id}`);
   }
 
   getRoomImagePath(roomType: RoomType): string {
     return RoomTypeImagePath[roomType];
   } 
 
-  addRoom(room: Room){
-     this.http.post(this.basePath + 'addRoom',room).subscribe((room: Room) => {
-       this.rooms.push(room);
-       this.roomsChanged.next(this.rooms.slice());
-     });
-    this.rooms.push(room);
-    return this.roomsChanged.next(this.rooms.slice());
+  addRoom(room: any):Observable<any>{
+    return this.http.post(this.basePath + "room", room);
   }
 
-  updateRoom(index: number, newRoom: Room) {
-    this.http.post(this.basePath + 'updateRoom',newRoom);
-    this.rooms[index] = newRoom;
-    this.roomsChanged.next(this.rooms.slice());
+  updateRoom( room: Room) {
+    return this.http.put(this.basePath + "room", room);
   }
 
-  deleteRoom(index: number) {
-    this.http.post(this.basePath + 'deleteRoom',this.rooms[index].id);
-    this.rooms.splice(index, 1);
-    this.roomsChanged.next(this.rooms.slice());
+  deleteRoom(id: number) {
+    return this.http.delete(this.basePath + `room/${id}`, {responseType: 'text'});
   }
 
   editModeChanged(editMode: boolean){
@@ -73,30 +67,30 @@ export class RoomService {
   /*Device Methods*/
 
   deleteDevice(roomIndex: number, deviceIndex : number) {
-    this.http.post(this.basePath + 'deleteDevice',this.devices[deviceIndex]);
-    this.rooms[roomIndex].devices.splice(deviceIndex, 1);
-    this.roomsChanged.next(this.rooms.slice());
+    // this.http.post(this.basePath + 'deleteDevice',this.devices[deviceIndex]);
+    // this.rooms[roomIndex].devices.splice(deviceIndex, 1);
+    // this.roomsChanged.next(this.rooms.slice());
   }
 
-  getDeviceWithIndex(roomIndex: number, deviceIndex: number): Device{
-    return this.rooms[roomIndex].devices[deviceIndex];
-  }
+  // getDeviceWithIndex(roomIndex: number, deviceIndex: number): Device{
+  //   return this.rooms[roomIndex].devices[deviceIndex];
+  // }
 
-  addDevice(roomIndex: number, device: Device) {
-    device.roomId = this.rooms[roomIndex].id;
-    this.http.post(this.basePath + 'addDevice',device).subscribe((newDevice: Device) => {
-      this.rooms[roomIndex].devices.push(newDevice);
-      this.roomsChanged.next(this.rooms.slice());
-     });
-    this.rooms[roomIndex].devices.push(device);
-    this.roomsChanged.next(this.rooms.slice());
-  }
+  // addDevice(roomIndex: number, device: Device) {
+  //   device.roomId = this.rooms[roomIndex].id;
+  //   this.http.post(this.basePath + 'addDevice',device).subscribe((newDevice: Device) => {
+  //     this.rooms[roomIndex].devices.push(newDevice);
+  //     this.roomsChanged.next(this.rooms.slice());
+  //    });
+  //   this.rooms[roomIndex].devices.push(device);
+  //   this.roomsChanged.next(this.rooms.slice());
+  // }
   
-  updateDevice(roomIndex: number, deviceIndex: number, newDevice: Device) {
-    this.http.post(this.basePath + 'updateDevice',newDevice);
-    this.rooms[roomIndex].devices[deviceIndex] = newDevice;
-    this.roomsChanged.next(this.rooms.slice());
-  }
+  // updateDevice(roomIndex: number, deviceIndex: number, newDevice: Device) {
+  //   this.http.post(this.basePath + 'updateDevice',newDevice);
+  //   this.rooms[roomIndex].devices[deviceIndex] = newDevice;
+  //   this.roomsChanged.next(this.rooms.slice());
+  // }
 
   fetchDataFromBackend(roomId: number) {
     this.http.post(this.basePath + 'getData', roomId).subscribe((data: RoomData) => {

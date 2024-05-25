@@ -48,11 +48,11 @@ export class DeviceEditComponent implements OnInit, OnDestroy{
     //get data of the device (prepopulate the form)
     if (this.editMode) {
       console.log(this.editMode);
-      const device = this.roomService.getDeviceWithIndex(this.roomIndex, this.index);
-      console.log(device);
-      deviceType = device.type;
-      deviceName = device.name;
-      deviceStatus = device.status;
+      // const device = this.roomService.getDeviceWithIndex(this.roomIndex, this.index);
+      // console.log(device);
+      // deviceType = device.type;
+      // deviceName = device.name;
+      // deviceStatus = device.status;
     }
 
     this.deviceForm = new FormGroup({
@@ -63,14 +63,14 @@ export class DeviceEditComponent implements OnInit, OnDestroy{
   }
 
   onSubmit() {
-    if (this.editMode) {
-      console.log(this.deviceForm.value);
-      this.roomService.updateDevice(this.roomIndex,this.index, this.deviceForm.value);
-    } else {
-      console.log(this.deviceForm.value);
-      this.roomService.addDevice(this.roomIndex, this.deviceForm.value);
+    // if (this.editMode) {
+    //   console.log(this.deviceForm.value);
+    //   this.roomService.updateDevice(this.roomIndex,this.index, this.deviceForm.value);
+    // } else {
+    //   console.log(this.deviceForm.value);
+    //   this.roomService.addDevice(this.roomIndex, this.deviceForm.value);
       
-    }
+    // }
     this.onCancel();
   }
   

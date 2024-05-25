@@ -1,4 +1,4 @@
-<a [routerLink]="['/', index]" routerLinkActive="active" class="custom-link">
+<a [routerLink]="['/', room.id]" routerLinkActive="active" class="custom-link">
     <h4>{{ room.name }}</h4>
     <img
       [src] = "getRoomImagePath(room.type)"

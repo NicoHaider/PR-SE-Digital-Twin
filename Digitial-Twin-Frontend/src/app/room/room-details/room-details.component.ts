@@ -30,7 +30,12 @@ export class RoomDetailsComponent implements OnInit{
        (editMode: boolean) => {
       this.editMode = editMode;
     });
-    this.room = this.roomService.getRoom(this.index);
+    // this.room = this.roomService.getRoom(this.index);
+    this.roomService.getRoomById(this.index).subscribe(res=>{
+      this.room = res;
+    }, error=>{
+      console.log(error);
+    })
   }
 
   getRoomImagePath(roomType:RoomType): string {
@@ -42,8 +47,7 @@ export class RoomDetailsComponent implements OnInit{
   }
 
   onEdit() {
-    this.router.navigate(['edit'], {relativeTo: this.route});
-    this.roomService.editModeChange.next(true);
+    this.router.navigateByUrl(`/update-room/${this.index}`);
   }
 
   callStatusChanged(device) {
@@ -52,15 +56,19 @@ export class RoomDetailsComponent implements OnInit{
 
   onDelete() {
     //TODO: add a confirmation dialog
-    this.roomService.deleteRoom(this.index);
-    this.router.navigate(['/home']);
+    this.roomService.deleteRoom(this.index).subscribe(res=>{
+      this.router.navigate(['/home']);
+    }, error=>{
+      console.log(error);
+    });
   }
 
   onAddDevice() {
     this.deviceService.editModeChanged(false);
     this.roomService.editModeChange.next(true);
-    const nextIndex = this.room.devices.length;
-    this.router.navigate(['/deviceEdit/'+ this.index + '/' + nextIndex]);
+    // const nextIndex = this.room.devices.length;
+   // this.router.navigate(['/deviceEdit/'+ this.index + '/' + nextIndex]);
+    this.router.navigateByUrl('/add-device/'+ this.room.id);
   }
   
 

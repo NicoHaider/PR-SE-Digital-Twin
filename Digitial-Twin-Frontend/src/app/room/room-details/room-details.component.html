@@ -31,7 +31,7 @@
 <main>      
     <app-device-item
         article class="device"
-        *ngFor="let device of room.devices; let i = index"
+        *ngFor="let device of room.deviceDtoList; let i = index"
         [device]="device"
         [index]="i"
         [roomIndex]= index >

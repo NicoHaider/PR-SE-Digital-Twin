@@ -40,7 +40,7 @@
           </div>
         </div>
         <div *ngIf="!editMode">
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-xs-12">
               <div class="form-group">
                 <label for="light">Light : </label>
@@ -63,8 +63,8 @@
                   class="form-control">
               </div>
             </div>
-          </div>
-          <div class="row">
+          </div> -->
+          <!-- <div class="row">
             <div class="col-xs-12">
               <div class="form-group">
                 <label for="doors">Doors : </label>
@@ -87,12 +87,64 @@
                   class="form-control">
               </div>
             </div>
+          </div> -->
+          <div class="row">
+            <div formArrayName="deviceDtoList">
+                <div *ngFor="let device of roomForm.get('deviceDtoList').controls; let i = index" [formGroupName]="i" class="device-box">
+                  
+                  <div class="col-xs-12">
+                                <div class="form-group">
+                                  <label for="name">Name : </label>
+                                  <input
+                                    type="text" 
+                                    id="name"
+                                    formControlName="name"
+                                    class="form-control">
+                                </div>
+                              </div>
+
+                              <div class="col-xs-12">
+                                          <div class="form-group">
+                                            <label for="size">Type : </label>
+                                            <select class="form-control" formControlName="deviceType">
+                                              <option value="Light">Light</option>
+                                              <option value="Window">Window</option>
+                                              <option value="Door">Door</option>
+                                              <option value="Fan">Fan</option>
+                                            </select>
+                                          </div>
+                                        </div>
+
+                                         <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                      <label for="status">Status : </label>
+                                                        <select class="form-control" formControlName="status">
+                                                            <option value="true">On</option>
+                                                            <option value="false">Off</option>
+                                                          </select>
+                                                    </div>
+                                                  </div>
+            
+                  <!-- <label for="device-status">Device Status:</label>
+                  <input id="device-status" formControlName="status"> -->
+          
+            
+                  <!-- <label for="device-type">Device Type:</label>
+                  <input id="device-type" formControlName="deviceType"> -->
+                </div>
+              </div>
+            
+               <div class="row">
+                      <div class="col-xs-12">
+              <button type="button" (click)="addDevice()" class="save-button">Add Device</button>
+              </div>
+              </div>
           </div>
       </div>
       <br>
       <div class="row">
         <div class="col-xs-12">
-          <button type="submit"class="save-button" [disabled]="!roomForm.valid">
+          <button type="submit" class="save-button" >
             Save
           </button>
           <span>&nbsp;</span>

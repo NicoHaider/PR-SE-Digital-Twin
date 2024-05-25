@@ -23,7 +23,11 @@ export class DeviceItemComponent {
   } 
 
   changeStatus(){
-    this.device.status = !this.device.status;
+     this.deviceService.updateDeviceStatus(this.device.id).subscribe(res=>{
+                this.device = res;
+              }, error=>{
+                console.log(error)
+              });
   }
 
   onEdit() {

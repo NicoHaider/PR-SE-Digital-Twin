@@ -8,21 +8,30 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class DeviceService {
 
-  basePath = "https://digital-twin-backend/api/";
-
-  constructor(private http: HttpClient) { }
+  // basePath = "https://digital-twin-backend/api/";
+  basePath = "http://localhost:8080/";
 
   
   editModeChange = new BehaviorSubject<boolean>(false);
   
-  constructor(private roomService : RoomService) { }
+  constructor(private roomService : RoomService,
+    private http: HttpClient) { }
 
   createEmptyDevice(): Device {
     return new Device(0, 0, '', '', false);
   }
 
+    addDevice(device: any):Observable<any>{
+      return this.http.post(this.basePath + "device", device);
+    }
+  
+      updateDeviceStatus(id: number): Observable<any>{
+        return this.http.get(this.basePath + `device/${id}`);
+      }
+
   getDevices(index: number) : Device[] {
-    return this.roomService.getRoom(index).devices;
+    // return this.roomService.getRoom(index).devices;
+    return [];
   }
 
   getEditMode(): boolean {

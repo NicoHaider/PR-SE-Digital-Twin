@@ -26,7 +26,7 @@ export class Room {
   humidity: number;
   co2: number;
   people: number;
-  devices: Device[];
+  deviceDtoList: Device[];
   type: RoomType;
 
   constructor(id: number, name: string, size: number, temperature: number, humidity: number, co2: number, people: number, devices: Device[], type: string) {
@@ -37,7 +37,7 @@ export class Room {
     this.humidity = humidity;
     this.co2 = co2;
     this.people = people;
-    this.devices = devices;
+    this.deviceDtoList = devices;
     this.type = RoomType[type as keyof typeof RoomType];
   }
 
