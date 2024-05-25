@@ -1,7 +1,10 @@
 package com.example.DigitalTwin.model;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+import com.example.DigitalTwin.dto.DoorDto;
+import com.example.DigitalTwin.dto.RoomDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
@@ -20,15 +23,19 @@ public class Room {
 	private Long id;
 
 	private String name;
+	private String type;
 
 	private double size;
 
-	private int doors;
+//	private int doors;
 
-	private int windows;
+//	private int windows;
+//
+//	private int lights;
+//	private int fans;
 
-	private int lights;
-	private int fans;
+	@OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
+	private List<Device> devices;
 
 	@OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
 	@JsonProperty(value = "climate_data")
@@ -42,10 +49,10 @@ public class Room {
 		super();
 		this.name = name;
 		this.size = size;
-		this.doors = doors;
-		this.windows = windows;
-		this.lights = lights;
-		this.fans = fans;
+//		this.doors = doors;
+//		this.windows = windows;
+//		this.lights = lights;
+//		this.fans = fans;
 	}
 
 	public Long getId() {
@@ -72,37 +79,24 @@ public class Room {
 		this.size = size;
 	}
 
-	public int getDoors() {
-		return doors;
-	}
 
-	public void setDoors(int doors) {
-		this.doors = doors;
-	}
 
-	public int getWindows() {
-		return windows;
-	}
+//	public int getWindows() {
+//		return windows;
+//	}
+//
+//	public void setWindows(int windows) {
+//		this.windows = windows;
+//	}
+//
+//	public int getLights() {
+//		return lights;
+//	}
+//
+//	public void setLights(int lights) {
+//		this.lights = lights;
+//	}
 
-	public void setWindows(int windows) {
-		this.windows = windows;
-	}
-
-	public int getLights() {
-		return lights;
-	}
-
-	public void setLights(int lights) {
-		this.lights = lights;
-	}
-
-	public int getFans() {
-		return fans;
-	}
-
-	public void setFans(int fans) {
-		this.fans = fans;
-	}
 
 	public List<RoomData> getRoomDataList() {
 		return roomDataList;
@@ -110,6 +104,33 @@ public class Room {
 
 	public void setRoomDataList(List<RoomData> roomDataList) {
 		this.roomDataList = roomDataList;
+	}
+
+	public List<Device> getDevices() {
+		return devices;
+	}
+
+	public void setDevices(List<Device> devices) {
+		this.devices = devices;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public RoomDto getDto(){
+		RoomDto roomDto = new RoomDto();
+
+		roomDto.setId(id);
+		roomDto.setName(name);
+		roomDto.setSize(size);
+		roomDto.setType(type);
+
+		return roomDto;
 	}
 
 }

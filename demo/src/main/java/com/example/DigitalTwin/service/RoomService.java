@@ -1,22 +1,26 @@
 package com.example.DigitalTwin.service;
 
+import com.example.DigitalTwin.dto.DeviceDto;
+import com.example.DigitalTwin.dto.DoorDto;
 import com.example.DigitalTwin.dto.RoomDto;
 import com.example.DigitalTwin.exception.AppException;
 import com.example.DigitalTwin.exception.NotFoundException;
+import com.example.DigitalTwin.model.Device;
 import com.example.DigitalTwin.model.Room;
 import com.example.DigitalTwin.model.RoomData;
+import com.example.DigitalTwin.repository.DeviceRepository;
 import com.example.DigitalTwin.repository.RoomDataRepository;
 import com.example.DigitalTwin.repository.RoomRepository;
 import com.example.DigitalTwin.utils.CSVUtil;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.ByteArrayInputStream;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class RoomService {
@@ -27,20 +31,52 @@ public class RoomService {
 	@Autowired
 	RoomDataRepository roomDataRepo;
 
+	@Autowired
+	DeviceRepository deviceRepository;
+
 	@Transactional
 	public Room createRoom(RoomDto roomDetails) {
 		try {
 			Room room = new Room();
 			room.setName(roomDetails.getName());
 			room.setSize(roomDetails.getSize());
-			room.setDoors(roomDetails.getDoors());
-			room.setWindows(roomDetails.getWindows());
-			room.setLights(roomDetails.getLights());
-			room.setFans(roomDetails.getFans());
-			return roomRepo.save(room);
+			room.setType(roomDetails.getType());
+			room =  roomRepo.save(room);
+
+			List<DeviceDto> deviceDtoList = roomDetails.getDeviceDtoList();
+			if (!deviceDtoList.isEmpty()) {
+				List<Device> deviceList = new ArrayList<>();
+				for (DeviceDto deviceDto : deviceDtoList) {
+					Device device = new Device();
+					device.setName(deviceDto.getName());
+					device.setRoom(room);
+					device.setStatus(deviceDto.getStatus());
+					device.setDeviceType(deviceDto.getDeviceType());
+					device.setTime(new Date());
+
+					deviceList.add(device);
+				}
+				deviceRepository.saveAll(deviceList);
+			}
+
+
+			return room;
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new AppException(e.getMessage());
+		}
+	}
+
+	public RoomDto updateRoom(RoomDto roomDetails) {
+		Optional<Room> optionalRoom = roomRepo.findById(roomDetails.getId());
+		if (optionalRoom.isPresent()) {
+			Room room = optionalRoom.get();
+			room.setName(roomDetails.getName());
+			room.setSize(roomDetails.getSize());
+			room.setType(roomDetails.getType());
+			return roomRepo.save(room).getDto();
+		} else {
+			throw new EntityNotFoundException("Room not found");
 		}
 	}
 
@@ -57,21 +93,21 @@ public class RoomService {
 				room.setSize(roomDetails.getSize());
 			}
 
-			if (roomDetails.getDoors() >= 0) {
-				room.setDoors(roomDetails.getDoors());
-			}
+//			if (roomDetails.getDoors() >= 0) {
+//				room.setDoors(roomDetails.getDoors());
+//			}
 
-			if (roomDetails.getWindows() >= 0) {
-				room.setWindows(roomDetails.getWindows());
-			}
+//			if (roomDetails.getWindows() >= 0) {
+//				room.setWindows(roomDetails.getWindows());
+//			}
+//
+//			if (roomDetails.getLights() >= 0) {
+//				room.setLights(roomDetails.getLights());
+//			}
 
-			if (roomDetails.getLights() >= 0) {
-				room.setLights(roomDetails.getLights());
-			}
-
-			if (roomDetails.getFans() >= 0) {
-				room.setFans(roomDetails.getFans());
-			}
+//			if (roomDetails.getFans() >= 0) {
+//				room.setFans(roomDetails.getFans());
+//			}
 			return roomRepo.save(room);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -83,6 +119,7 @@ public class RoomService {
 	public String deleteRoom(Long id) {
 		try {
 			Room room = roomRepo.findById(id).orElseThrow(() -> new NotFoundException("Room id not found"));
+			deviceRepository.deleteAllByRoomId(id);
 			roomRepo.delete(room);
 			return "Room deleted successfully";
 		} catch (Exception e) {
@@ -92,9 +129,13 @@ public class RoomService {
 	}
 
 	@Transactional(readOnly = true)
-	public Room getRoomById(Long id) {
+	public RoomDto getRoomById(Long id) {
 		try {
-			return roomRepo.findById(id).orElseThrow(() -> new NotFoundException("Room id not found"));
+			Room room = roomRepo.findById(id).orElseThrow(() -> new NotFoundException("Room id not found"));
+			RoomDto roomDto = room.getDto();
+			roomDto.setDeviceDtoList(room.getDevices().stream().map(Device::getDto).collect(Collectors.toList()));
+
+			return roomDto;
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new AppException(e.getMessage());
@@ -102,9 +143,9 @@ public class RoomService {
 	}
 
 	@Transactional(readOnly = true)
-	public List<Room> getAllRooms() {
+	public List<RoomDto> getAllRooms() {
 		try {
-			return roomRepo.findAll();
+			return roomRepo.findAll().stream().map(Room::getDto).collect(Collectors.toList());
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new AppException(e.getMessage());
@@ -145,17 +186,17 @@ public class RoomService {
 		Random random = new Random();
 		return random.nextInt(max - min + 1) + min;
 	}
-	
+
 	public ByteArrayInputStream generateRoomReport() {
 		try {
 			List<Room> rooms = roomRepo.findAll();
-		    ByteArrayInputStream in = CSVUtil.roomsToCSV(rooms);
-		    return in;
+			ByteArrayInputStream in = CSVUtil.roomsToCSV(rooms);
+			return in;
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new AppException(e.getMessage());
 		}
-	  }
+	}
 
 	public Room saveOrUpdateRoom(Room room) {
 		return room;
