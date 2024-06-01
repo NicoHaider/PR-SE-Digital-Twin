@@ -23,6 +23,7 @@ public class DeviceController {
 
     @PostMapping
     public ResponseEntity<?> createDevice(@Valid @RequestBody DeviceDto deviceDto) {
+        System.out.println("in create device controller ");
         try{
             return ResponseEntity.status(HttpStatus.CREATED).body(deviceService.createDevice(deviceDto));
         } catch (EntityNotFoundException e){
@@ -42,5 +43,36 @@ public class DeviceController {
         } catch (Exception e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Something Went Wrong.");
         }
+    }
+
+    @GetMapping("/delete/{id}")
+    public ResponseEntity<?> deleteDevice (@PathVariable("id") Long id) {
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(deviceService.deleteDevice(id));
+        } catch (EntityNotFoundException e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/get/{id}")
+    public ResponseEntity<?> getDevice (@PathVariable("id") Long id) {
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(deviceService.getDevice(id));
+        } catch (EntityNotFoundException e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
+    @PostMapping("/update")
+    public ResponseEntity<?> updateDevice(@Valid @RequestBody DeviceDto deviceDto) {
+        System.out.println("in create device controller ");
+        try{
+            return ResponseEntity.status(HttpStatus.CREATED).body(deviceService.updateDevice(deviceDto));
+        } catch (EntityNotFoundException e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Something Went Wrong.");
+        }
+
     }
 }

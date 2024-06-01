@@ -187,7 +187,7 @@ public class RoomService {
 		return random.nextInt(max - min + 1) + min;
 	}
 
-	public ByteArrayInputStream generateRoomReport() {
+	public ByteArrayInputStream  generateRoomReport() {
 		try {
 			List<Room> rooms = roomRepo.findAll();
 			ByteArrayInputStream in = CSVUtil.roomsToCSV(rooms);
