@@ -13,6 +13,8 @@ import { DeviceItemComponent } from './device/device-item/device-item.component'
 import { DeviceService } from './device/device.service';
 import { DeviceEditComponent } from './device/device-Add&Edit/device-edit.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddDeviceComponent } from './device/add-device/add-device.component';
+import { UpdateRoomComponent } from './room/update-room/update-room.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     RoomAddComponent,
     RoomDetailsComponent,
     DeviceItemComponent,
-    DeviceEditComponent
+    DeviceEditComponent,
+    AddDeviceComponent,
+    UpdateRoomComponent
   ],
   imports: [
     BrowserModule,
