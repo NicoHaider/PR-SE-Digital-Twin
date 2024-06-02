@@ -20,7 +20,7 @@ jobs:
       - checkout
       # Use mvn clean and package as the standard maven build phase
       - run: 
-        name: set up Maven Wrapper
+        name: Set up Maven Wrapper
         command: ./mvnw -version
       - run:
           name: Build
