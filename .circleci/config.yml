@@ -19,13 +19,16 @@ jobs:
       # Checkout the code as the first step.
       - checkout
       # Use mvn clean and package as the standard maven build phase
+      - run: 
+        name: set up Maven Wrapper
+        command: ./mvnw -version
       - run:
           name: Build
-          command: mvn -B -DskipTests clean package
+          command: ./mvnw -B -DskipTests clean package
       # Then run your tests!
       - run:
           name: Test
-          command: mvn test
+          command: ./mvnw test
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
