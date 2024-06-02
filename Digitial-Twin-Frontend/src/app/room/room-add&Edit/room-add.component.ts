@@ -89,7 +89,9 @@ export class RoomAddComponent implements OnInit, OnDestroy{
       // this.roomService.updateRoom(this.index, newRoom);
     } else {
       this.roomService.addRoom(this.roomForm.value).subscribe(res=>{
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home']).then(() => {
+          location.reload();
+        });
       }, error=>{
         console.log("error", error)
       });

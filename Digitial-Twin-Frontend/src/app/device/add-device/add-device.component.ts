@@ -23,10 +23,10 @@ export class AddDeviceComponent {
 
       onSubmit() {
         if(this.deviceForm.valid){
-          console.log(this.deviceForm.value);
           const data = this.deviceForm.value;
           data.roomId = this.roomId;
           this.deviceService.addDevice(data).subscribe(res=>{
+            console.log("data", data);
             this.onCancel();
           }, error=>{
             console.log(error)

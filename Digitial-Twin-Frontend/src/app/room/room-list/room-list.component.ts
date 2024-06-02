@@ -12,22 +12,40 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RoomListComponent implements OnInit{
 
   rooms : Room[] = [];
-  subscription : Subscription;
 
   constructor(private roomService: RoomService,private router: Router) {
   }
 
   ngOnInit() {
-   this.roomService.getRooms().subscribe(res=>{
-    this.rooms = res;
-    console.log(res);
-   }, error=>{
-    console.log("error", error)
-   });
+    this.getRooms();
   }
 
   addRoom() {
     this.router.navigate(['addRoom']);
   }
 
+  getRooms(){
+    this.roomService.getRooms().subscribe(res=>{
+      this.rooms = res;
+      console.log(res);
+     }, error=>{
+      console.log("error", error)
+     });
+  }
+
+  onDownloadRoom(){
+    this.roomService.getRoomStructure().subscribe({
+      next: (blob: Blob) => {
+        const a = document.createElement('a');
+        const objectUrl = URL.createObjectURL(blob);
+        a.href = objectUrl;
+        a.download = 'room_report.csv';
+        a.click();
+        URL.revokeObjectURL(objectUrl);
+      },
+      error: (error) => {
+        console.error('Error getting room file', error);
+      }
+    });
+}
 }

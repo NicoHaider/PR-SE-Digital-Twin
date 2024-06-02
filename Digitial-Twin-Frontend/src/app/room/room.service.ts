@@ -64,17 +64,10 @@ export class RoomService {
     this.editModeChange.next(editMode);
   }
 
-  /*Device Methods*/
-
-  deleteDevice(roomIndex: number, deviceIndex : number) {
-    // this.http.post(this.basePath + 'deleteDevice',this.devices[deviceIndex]);
-    // this.rooms[roomIndex].devices.splice(deviceIndex, 1);
-    // this.roomsChanged.next(this.rooms.slice());
+  getRoomStructure(){
+    return this.http.get(this.basePath + "room/report", { responseType: 'blob' });
   }
 
-  // getDeviceWithIndex(roomIndex: number, deviceIndex: number): Device{
-  //   return this.rooms[roomIndex].devices[deviceIndex];
-  // }
 
   // addDevice(roomIndex: number, device: Device) {
   //   device.roomId = this.rooms[roomIndex].id;

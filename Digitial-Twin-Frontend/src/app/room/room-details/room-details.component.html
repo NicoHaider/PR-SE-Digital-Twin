@@ -34,7 +34,7 @@
         *ngFor="let device of room.deviceDtoList; let i = index"
         [device]="device"
         [index]="i"
-        [roomIndex]= index >
+        [roomId]= room.id >
         <!-- [ngStyle]="{'background-color': device.status ? 'lightgreen' : 'white'}"
         (click)="editMode === false ? callStatusChanged(device) : routerLink='/deviceEdit/' + index" routerLinkActive="active" -->
     </app-device-item>

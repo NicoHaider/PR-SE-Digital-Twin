@@ -8,8 +8,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class DeviceService {
 
-  // basePath = "https://digital-twin-backend/api/";
-  basePath = "http://localhost:8080/";
+  basePath = "http://localhost:8080/device";
 
   
   editModeChange = new BehaviorSubject<boolean>(false);
@@ -21,13 +20,25 @@ export class DeviceService {
     return new Device(0, 0, '', '', false);
   }
 
-    addDevice(device: any):Observable<any>{
-      return this.http.post(this.basePath + "device", device);
-    }
-  
-      updateDeviceStatus(id: number): Observable<any>{
-        return this.http.get(this.basePath + `device/${id}`);
-      }
+  deleteDevice(deviceId : number) {
+    return this.http.get(this.basePath + `/delete/${deviceId}` );
+  }
+
+  getDeviceWithId(deviceId: number): Observable<any>{
+    return this.http.get(this.basePath + `/get/${deviceId}` );
+  }
+
+  addDevice(device: any):Observable<any>{
+    return this.http.post(this.basePath, device);
+  }
+
+  updateDeviceStatus(id: number): Observable<any>{
+    return this.http.get(this.basePath + `/${id}`);
+  }
+
+  updateDevice(device: any): Observable<any>{
+    return this.http.post(this.basePath + "/update", device );
+  }
 
   getDevices(index: number) : Device[] {
     // return this.roomService.getRoom(index).devices;
@@ -54,5 +65,7 @@ export class DeviceService {
   getDevice(){
     return this.http.get('http://localhost:8080/device');
   }
+
+  
 }
 
