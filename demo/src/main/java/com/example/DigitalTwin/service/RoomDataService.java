@@ -34,4 +34,8 @@ public class RoomDataService {
             roomDataRepository.save(data);
         }
     }
+
+    public List<RoomData> getRoomDataByRoom(Long roomId) {
+        return roomDataRepository.findByRoomId(roomId);
+    }
 }
