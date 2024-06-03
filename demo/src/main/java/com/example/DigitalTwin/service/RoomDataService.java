@@ -1,9 +1,9 @@
 package com.example.DigitalTwin.service;
 
 import com.example.DigitalTwin.model.Room;
-import com.example.DigitalTwin.model.SensorData;
+import com.example.DigitalTwin.model.RoomData;
 import com.example.DigitalTwin.repository.RoomRepository;
-import com.example.DigitalTwin.repository.SensorDataRepository;
+import com.example.DigitalTwin.repository.RoomDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,9 +29,9 @@ public class RoomDataService {
             data.setRoom(room);
             data.setCo2Level(random.nextDouble() * (5000 - 300) + 300);
             data.setTemperature(random.nextDouble() * (30 - 18) + 18);
-            data.setNumberOfPeople(random.nextInt(21));
-            data.setTimestamp(LocalDateTime.now());
-            sensorDataRepository.save(data);
+            data.setNumOfPeople(random.nextInt(21));
+            data.setDateTime(LocalDateTime.now());
+            roomDataRepository.save(data);
         }
     }
 }
