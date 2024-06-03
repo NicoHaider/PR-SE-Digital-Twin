@@ -18,7 +18,7 @@ jobs:
   build-node:
     # Build node projectt
     executor: node/default
-    working_directory: ~/project/Digitial-Twin-Frontend/PR-SE-Digital-Twin-master/Digitial-Twin-Frontend
+    working_directory: ~/project/Digitial-Twin-Frontend/PR-SE-Digital-Twin-Release-2/Digitial-Twin-Frontend
     steps:
       - checkout:
           path: ~/project
