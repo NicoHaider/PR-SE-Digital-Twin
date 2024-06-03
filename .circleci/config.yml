@@ -19,12 +19,8 @@ jobs:
       # Checkout the code as the first step.
       - checkout
       # Use mvn clean and package as the standard maven build phase
-      - run:
-        name: Set JAVA_HOME
-        command: echo 'export JAVA_HOME=/usr/local/openjdk-11' >> $BASH_ENV
-      - run:
-        name: Set permissions for mvnw
-        command: chmod +x mvnw
+      - run: echo 'export JAVA_HOME=/usr/local/openjdk-11' >> $BASH_ENV
+      - run: chmod +x mvnw
       - run: ./mvnw -version
       - run: ./mvnw -B -DskipTests clean package
       # Then run your tests!
