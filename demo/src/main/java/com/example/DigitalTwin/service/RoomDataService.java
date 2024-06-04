@@ -27,8 +27,8 @@ public class RoomDataService {
         for (Room room : rooms) {
             RoomData data = new RoomData();
             data.setRoom(room);
-            data.setCo2Level(random.nextDouble() * (5000 - 300) + 300);
-            data.setTemperature(random.nextDouble() * (30 - 18) + 18);
+            data.setCo2Level((int) (random.nextDouble() * (5000 - 300) + 300));
+            data.setTemperature((int) (random.nextDouble() * (30 - 18) + 18));
             data.setNumOfPeople(random.nextInt(21));
             data.setDateTime(LocalDateTime.now());
             roomDataRepository.save(data);

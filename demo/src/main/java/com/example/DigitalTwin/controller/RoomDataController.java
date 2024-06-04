@@ -18,8 +18,18 @@ public class RoomDataController {
     @Autowired
     private RoomDataService roomDataService;
 
-    @GetMapping("getBy/{id}")
+    @GetMapping("getAllBy/{id}")
     public List<RoomData> getRoomDataByRoom(@PathVariable long id) {
         return roomDataService.getRoomDataByRoom(id);
+    }
+
+    @GetMapping("getBy/{id}")
+    public RoomData getLastRoomDataByRoom(@PathVariable long id) {
+        List<RoomData> roomDataList = roomDataService.getRoomDataByRoom(id);
+        RoomData lastRoomData = null;
+        if (!roomDataList.isEmpty()) {
+            lastRoomData = roomDataList.get(roomDataList.size() - 1);
+        }
+        return lastRoomData;
     }
 }

@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { RoomService } from '../room.service';
 import { Room } from '../room.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RoomData } from '../roomData.model';
+
 
 @Component({
   selector: 'app-room-list',
@@ -10,14 +12,33 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './room-list.component.css'
 })
 export class RoomListComponent implements OnInit{
+  [x: string]: any;
 
   rooms : Room[] = [];
 
   constructor(private roomService: RoomService,private router: Router) {
   }
 
+
   ngOnInit() {
     this.getRooms();
+    this.fetchData();
+    setInterval(() => {
+    this.fetchData();
+  }, 10000);
+  }
+
+  fetchData() {
+      this.rooms.forEach(room => {
+        this.roomService.fetchDataFromBackend(room).subscribe((data: RoomData) => {
+          console.log(data);
+            room.co2 = data.co2Level;
+            room.temperature = data.temperature;
+            room.people = data.numOfPeople;
+            room.dateTime = data.dateTime;
+            console.log("room after fetching data "+ room.co2);
+          });
+      });
   }
 
   addRoom() {

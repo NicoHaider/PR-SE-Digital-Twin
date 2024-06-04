@@ -18,17 +18,14 @@
     <p> Co2: {{ room.co2 }}</p>
 </a> -->
 <div class="room-item-container">
-    <app-room-item
-        article class="room"
-        [room]= room
-        [index]= index>
-    </app-room-item>
-    <img
-        src = "assets/images/stats.png"
-        alt="stats"
-        class="stats">  
+  
 </div> 
 <main>      
+    <app-room-item
+    article class="room"
+    [room]= room
+    [index]= index>
+</app-room-item>
     <app-device-item
         article class="device"
         *ngFor="let device of room.deviceDtoList; let i = index"
@@ -39,4 +36,7 @@
         (click)="editMode === false ? callStatusChanged(device) : routerLink='/deviceEdit/' + index" routerLinkActive="active" -->
     </app-device-item>
 </main>
-   
+<app-linechart
+article class="linechart"
+[roomId]= room.id >
+</app-linechart>

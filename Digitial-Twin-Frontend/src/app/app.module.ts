@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { RoomItemComponent } from './room/room-item/room-item.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
@@ -15,6 +14,8 @@ import { DeviceEditComponent } from './device/device-edit/device-edit.component'
 import { HttpClientModule } from '@angular/common/http';
 import { AddDeviceComponent } from './device/add-device/add-device.component';
 import { UpdateRoomComponent } from './room/update-room/update-room.component';
+import { LinechartComponent } from './room/linechart/linechart.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -26,14 +27,16 @@ import { UpdateRoomComponent } from './room/update-room/update-room.component';
     DeviceItemComponent,
     DeviceEditComponent,
     AddDeviceComponent,
-    UpdateRoomComponent
+    UpdateRoomComponent,
+    LinechartComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgApexchartsModule
   ],
   providers: [RoomService, DeviceService],
   bootstrap: [AppComponent]
