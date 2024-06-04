@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Room, RoomType, RoomTypeImagePath } from '../room.model';
-import { Device } from '../../device/device.model';
+import { Room, RoomType, } from '../room.model';
 import { RoomService } from '../room.service';
 
 @Component({
@@ -13,7 +12,6 @@ export class RoomItemComponent {
   @Input() index: number = 0;
 
   constructor(private roomService: RoomService) { 
-    this.room = roomService.createEmptyRoom();
   }
 
   getRoomImagePath(roomType: RoomType): string {

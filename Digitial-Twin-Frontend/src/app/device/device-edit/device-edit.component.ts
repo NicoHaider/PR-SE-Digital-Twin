@@ -1,10 +1,8 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Device, DeviceType } from '../device.model';
 import { DeviceService } from '../device.service';
-import { Room } from '../../room/room.model';
 import { RoomService } from '../../room/room.service';
 
 @Component({
@@ -13,7 +11,7 @@ import { RoomService } from '../../room/room.service';
   styleUrl: './device-edit.component.css'
 })
 export class DeviceEditComponent implements OnInit, OnDestroy{
-  index: number;
+  deviceId: number;
   deviceForm: FormGroup;
   subscription: Subscription;
   editMode = false;
@@ -32,27 +30,30 @@ export class DeviceEditComponent implements OnInit, OnDestroy{
     this.route.params.subscribe(
         (params: Params) => {
           this.roomIndex = +params['roomIndex'];
-          this.index = +params['index'];
+          this.deviceId = +params['index'];
           this.initForm();
         }
     );
   }
   
-
   private initForm() {
-    console.log(this.editMode);
     let deviceName = '';
     let deviceType = '';
     let deviceStatus = false;
 
     //get data of the device (prepopulate the form)
     if (this.editMode) {
-      console.log(this.editMode);
-      // const device = this.roomService.getDeviceWithIndex(this.roomIndex, this.index);
-      // console.log(device);
-      // deviceType = device.type;
-      // deviceName = device.name;
-      // deviceStatus = device.status;
+      this.deviceService.getDeviceWithId(this.deviceId).subscribe(res=>{
+        console.log("device with id " + this.deviceId, res);
+        deviceType = res.deviceType;
+        deviceName = res.name;
+        deviceStatus = res.status;
+        console.log("deviceType", deviceType);
+        console.log("deviceName", deviceName);
+        console.log("deviceStatus", deviceStatus);
+      }, error=>{
+        console.log("error getting device with id " + this.deviceId, error)
+      });
     }
 
     this.deviceForm = new FormGroup({
@@ -63,15 +64,16 @@ export class DeviceEditComponent implements OnInit, OnDestroy{
   }
 
   onSubmit() {
-    // if (this.editMode) {
-    //   console.log(this.deviceForm.value);
-    //   this.roomService.updateDevice(this.roomIndex,this.index, this.deviceForm.value);
-    // } else {
-    //   console.log(this.deviceForm.value);
-    //   this.roomService.addDevice(this.roomIndex, this.deviceForm.value);
-      
-    // }
-    this.onCancel();
+    if (this.editMode) {
+      const data = this.deviceForm.value;
+      data.roomId = this.roomIndex;
+      console.log("data", data);
+      this.deviceService.updateDevice(data).subscribe(res=>{
+        this.router.navigate(['/', this.roomIndex]);
+      }, error=>{
+        console.log(error)
+      });
+    } 
   }
   
   onCancel() {

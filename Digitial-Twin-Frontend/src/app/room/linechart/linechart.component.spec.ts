@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeviceEditComponent } from './device-edit.component';
+import { LinechartComponent } from './linechart.component';
 
-describe('DeviceEditComponent', () => {
-  let component: DeviceEditComponent;
-  let fixture: ComponentFixture<DeviceEditComponent>;
+describe('LinechartComponent', () => {
+  let component: LinechartComponent;
+  let fixture: ComponentFixture<LinechartComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DeviceEditComponent]
+      declarations: [LinechartComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DeviceEditComponent);
+    fixture = TestBed.createComponent(LinechartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

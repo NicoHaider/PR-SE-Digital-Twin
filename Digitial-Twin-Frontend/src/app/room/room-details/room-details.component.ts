@@ -3,7 +3,7 @@ import { Room, RoomType } from '../room.model';
 import { RoomService } from '../room.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DeviceService } from '../../device/device.service';
-import { HttpClient } from '@angular/common/http';
+import { RoomData } from '../roomData.model';
 
 @Component({
   selector: 'app-room-details',
@@ -22,7 +22,9 @@ export class RoomDetailsComponent implements OnInit{
     // }, 2000);
   }
 
+  
   ngOnInit(): void {
+    
     this.route.paramMap.subscribe(params => {
       this.index = +params.get('index');
     });
@@ -33,10 +35,24 @@ export class RoomDetailsComponent implements OnInit{
     // this.room = this.roomService.getRoom(this.index);
     this.roomService.getRoomById(this.index).subscribe(res=>{
       this.room = res;
+      this.fetchData();
+      setInterval(() => {
+        this.fetchData();
+      }, 10000);
     }, error=>{
       console.log(error);
     })
   }
+
+  fetchData() {
+      this.roomService.fetchDataFromBackend(this.room).subscribe((data: RoomData) => {
+        console.log(data);
+          this.room.co2 = data.co2Level;
+          this.room.temperature = data.temperature;
+          this.room.people = data.numOfPeople;
+          this.room.dateTime = data.dateTime;
+        });
+}
 
   getRoomImagePath(roomType:RoomType): string {
     return this.roomService.getRoomImagePath(roomType);
@@ -70,7 +86,10 @@ export class RoomDetailsComponent implements OnInit{
    // this.router.navigate(['/deviceEdit/'+ this.index + '/' + nextIndex]);
     this.router.navigateByUrl('/add-device/'+ this.room.id);
   }
+
   
+  
+
 
 
 }

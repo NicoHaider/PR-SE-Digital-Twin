@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RoomAddComponent } from './room/room-add&Edit/room-add.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
 import { RoomDetailsComponent } from './room/room-details/room-details.component';
-import { DeviceEditComponent } from './device/device-Add&Edit/device-edit.component';
+import { DeviceEditComponent } from './device/device-edit/device-edit.component';
 import { AddDeviceComponent } from './device/add-device/add-device.component';
 import { UpdateRoomComponent } from './room/update-room/update-room.component';
 

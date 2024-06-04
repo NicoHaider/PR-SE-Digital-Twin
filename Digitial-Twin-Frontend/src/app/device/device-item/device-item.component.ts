@@ -11,7 +11,7 @@ import { RoomService } from '../../room/room.service';
   styleUrl: './device-item.component.css'
 })
 export class DeviceItemComponent {
-  @Input() roomIndex: number;
+  @Input() roomId: number;
   @Input() device: Device;
   @Input() index: number = 0;
 
@@ -32,12 +32,17 @@ export class DeviceItemComponent {
 
   onEdit() {
     this.deviceService.editModeChanged(true);
-    this.router.navigate(['/deviceEdit/'+ this.roomIndex + '/' + this.index]);
+    this.router.navigate(['/deviceEdit/'+ this.roomId + '/' + this.device.id]);
   }
 
   onDelete() {
     //TODO: add a confirmation dialog
-    console.warn('are you sure you want to delete this device?');
-    this.roomService.deleteDevice(this.roomIndex, this.index);
+    console.log(this.device);
+    this.deviceService.deleteDevice(this.device.id).subscribe(res=>{
+      location.reload();
+    }, error=>{
+      console.log("delete error");
+      console.log(error)
+    });
   }
 }
