@@ -1,30 +1,24 @@
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\model\Room.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\controller\LightController.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\service\FanService.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\model\components\Component.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\model\components\Light.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\model\components\Fan.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\model\components\Door.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\controller\RoomController.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\repository\FanRepository.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\controller\WindowController.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\exception\ErrorResponse.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\DtApplication.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\controller\DoorController.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\repository\RoomRepository.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\service\RoomService.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\repository\DoorRepository.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\exception\GlobalExceptionHandling.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\exception\NotFoundException.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\repository\WindowRepository.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\service\DoorService.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\utils\CSVUtil.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\service\WindowService.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\controller\FanController.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\service\LightService.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\dto\RoomDto.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\model\components\Window.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\model\RoomData.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\repository\LightRepository.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\repository\RoomDataRepository.java
-C:\Users\HaiderN\Downloads\UE05_Download\PR-SE-Digital-Twin\demo\src\main\java\com\example\DigitalTwin\exception\AppException.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\controller\DeviceController.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\exception\NotFoundException.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\repository\RoomDataRepository.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\dto\RoomDto.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\controller\RoomDataController.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\exception\GlobalExceptionHandling.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\controller\RoomController.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\model\Room.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\CorsConfig.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\model\Device.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\utils\CSVUtil.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\DtApplication.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\exception\ErrorResponse.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\repository\DeviceRepository.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\dto\DoorDto.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\model\RoomData.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\service\DeviceService.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\exception\AppException.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\service\RoomService.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\enums\DeviceType.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\repository\RoomRepository.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\dto\DeviceDto.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\utils\ScheduledTasks.java
+C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin-Release-2\demo\src\main\java\com\example\DigitalTwin\service\RoomDataService.java
