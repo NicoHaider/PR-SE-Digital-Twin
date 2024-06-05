@@ -9,9 +9,9 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ 
-       
-       RouterTestingModule    
+      imports: [
+
+       RouterTestingModule
       ],
       declarations: [AppComponent],
     });
@@ -40,3 +40,7 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('router-outlet')).not.toBeNull();
   });
 });
+function beforeEach(arg0: () => void) {
+    throw new Error('Function not implemented.');
+}
+
