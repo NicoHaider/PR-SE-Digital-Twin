@@ -1,7 +1,7 @@
 package com.example.DigitalTwin.dto;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+//import org.junit.jupiter.api.Test;
+//import static org.junit.jupiter.api.Assertions.*;
 public class DoorDto {
 
     private int doorID;
@@ -23,10 +23,8 @@ public class DoorDto {
     public void setName(String name) {
         this.name = name;
     }
-}
 
-public class DoorDtoTest {
-
+/*
     @Test
     public void testGettersAndSetters() {
         DoorDto doorDto = new DoorDto();
@@ -52,5 +50,5 @@ public class DoorDtoTest {
 
         doorDto.setName("Side Door");
         assertEquals("Side Door", doorDto.getName());
-    }
+    }*/
 }
