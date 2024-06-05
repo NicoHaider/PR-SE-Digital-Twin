@@ -1,0 +1,8 @@
+
+o
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(‚ú‡Î
+o
+java:S2293#"YReplace the type specification in this constructor call with the diamond operator ("<>").(‚ú‡Î
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÜÍï¸
+•
+java:S6204)"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(Ï¸©Ìÿÿÿÿÿ
