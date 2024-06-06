@@ -29,48 +29,48 @@ import java.util.Optional;
     DeviceRepository deviceRepository;
 
     public DeviceDto createDevice(DeviceDto deviceDto) {
-<span class="nc" id="L32">        Optional&lt;Room&gt; optionalRoom = roomRepo.findById(deviceDto.getRoomId());</span>
-<span class="nc bnc" id="L33" title="All 2 branches missed.">        if(optionalRoom.isPresent()){</span>
-<span class="nc" id="L34">            Device device = new Device();</span>
-<span class="nc" id="L35">            device.setName(deviceDto.getName());</span>
-<span class="nc" id="L36">            device.setRoom(optionalRoom.get());</span>
-<span class="nc" id="L37">            device.setStatus(deviceDto.getStatus());</span>
-<span class="nc" id="L38">            device.setDeviceType(deviceDto.getDeviceType());</span>
-<span class="nc" id="L39">            device.setTime(new Date());</span>
+<span class="fc" id="L32">        Optional&lt;Room&gt; optionalRoom = roomRepo.findById(deviceDto.getRoomId());</span>
+<span class="pc bpc" id="L33" title="1 of 2 branches missed.">        if(optionalRoom.isPresent()){</span>
+<span class="fc" id="L34">            Device device = new Device();</span>
+<span class="fc" id="L35">            device.setName(deviceDto.getName());</span>
+<span class="fc" id="L36">            device.setRoom(optionalRoom.get());</span>
+<span class="fc" id="L37">            device.setStatus(deviceDto.getStatus());</span>
+<span class="fc" id="L38">            device.setDeviceType(deviceDto.getDeviceType());</span>
+<span class="fc" id="L39">            device.setTime(new Date());</span>
 
-<span class="nc" id="L41">            return deviceRepository.save(device).getDto();</span>
+<span class="fc" id="L41">            return deviceRepository.save(device).getDto();</span>
         }else{
 <span class="nc" id="L43">            throw new EntityNotFoundException(&quot;Room Not present&quot;);</span>
         }
     }
 
     public DeviceDto updateDeviceStatus(Long deviceId) {
-<span class="nc" id="L48">        Optional&lt;Device&gt; optionalDevice = deviceRepository.findById(deviceId);</span>
-<span class="nc bnc" id="L49" title="All 2 branches missed.">        if(optionalDevice.isPresent()){</span>
-<span class="nc" id="L50">            Device device = optionalDevice.get();</span>
+<span class="fc" id="L48">        Optional&lt;Device&gt; optionalDevice = deviceRepository.findById(deviceId);</span>
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        if(optionalDevice.isPresent()){</span>
+<span class="fc" id="L50">            Device device = optionalDevice.get();</span>
 
-<span class="nc bnc" id="L52" title="All 2 branches missed.">            device.setStatus(!device.getStatus());</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">            device.setStatus(!device.getStatus());</span>
 
-<span class="nc" id="L54">            return deviceRepository.save(device).getDto();</span>
+<span class="fc" id="L54">            return deviceRepository.save(device).getDto();</span>
         }else{
 <span class="nc" id="L56">            throw new EntityNotFoundException(&quot;Device Not present&quot;);</span>
         }
     }
 
     public boolean deleteDevice(Long deviceId) {
-<span class="nc" id="L61">        Optional&lt;Device&gt; optionalDevice = deviceRepository.findById(deviceId);</span>
-<span class="nc bnc" id="L62" title="All 2 branches missed.">        if(optionalDevice.isPresent()){</span>
-<span class="nc" id="L63">            deviceRepository.delete(optionalDevice.get());</span>
-<span class="nc" id="L64">            return true;</span>
+<span class="fc" id="L61">        Optional&lt;Device&gt; optionalDevice = deviceRepository.findById(deviceId);</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if(optionalDevice.isPresent()){</span>
+<span class="fc" id="L63">            deviceRepository.delete(optionalDevice.get());</span>
+<span class="fc" id="L64">            return true;</span>
         }else{
 <span class="nc" id="L66">            throw new EntityNotFoundException(&quot;Device Not present&quot;);</span>
         }
     }
 
     public DeviceDto getDevice(Long deviceId) {
-<span class="nc" id="L71">        Optional&lt;Device&gt; optionalDevice = deviceRepository.findById(deviceId);</span>
-<span class="nc bnc" id="L72" title="All 2 branches missed.">        if(optionalDevice.isPresent()){</span>
-<span class="nc" id="L73">            return optionalDevice.get().getDto();</span>
+<span class="fc" id="L71">        Optional&lt;Device&gt; optionalDevice = deviceRepository.findById(deviceId);</span>
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">        if(optionalDevice.isPresent()){</span>
+<span class="fc" id="L73">            return optionalDevice.get().getDto();</span>
         }else{
 <span class="nc" id="L75">            throw new EntityNotFoundException(&quot;Device Not present&quot;);</span>
         }
@@ -91,14 +91,14 @@ import java.util.Optional;
             throw new EntityNotFoundException(&quot;Room Not present&quot;);
         }*/ 
 
-<span class="nc" id="L94">        Optional&lt;Device&gt; optionalDevice = deviceRepository.findById(deviceDto.getId());</span>
-<span class="nc bnc" id="L95" title="All 2 branches missed.">        if(optionalDevice.isPresent()){</span>
-<span class="nc" id="L96">            Device device = optionalDevice.get();</span>
+<span class="fc" id="L94">        Optional&lt;Device&gt; optionalDevice = deviceRepository.findById(deviceDto.getId());</span>
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">        if(optionalDevice.isPresent()){</span>
+<span class="fc" id="L96">            Device device = optionalDevice.get();</span>
 
-<span class="nc" id="L98">            device.setName(deviceDto.getName());</span>
-<span class="nc" id="L99">            device.setDeviceType(deviceDto.getDeviceType());</span>
+<span class="fc" id="L98">            device.setName(deviceDto.getName());</span>
+<span class="fc" id="L99">            device.setDeviceType(deviceDto.getDeviceType());</span>
 
-<span class="nc" id="L101">            return deviceRepository.save(device).getDto();</span>
+<span class="fc" id="L101">            return deviceRepository.save(device).getDto();</span>
         }else{
 <span class="nc" id="L103">            throw new EntityNotFoundException(&quot;Device Not present&quot;);</span>
         }

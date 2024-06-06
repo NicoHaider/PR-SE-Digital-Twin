@@ -1,8 +1,8 @@
 
-o
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(‚ú‡Î
-o
-java:S2293#"YReplace the type specification in this constructor call with the diamond operator ("<>").(‚ú‡Î
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÜÍï¸
 •
-java:S6204)"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(Ï¸©Ìÿÿÿÿÿ
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(‚ú‡ÎJ$1e5d9020-63af-4063-ac30-1432aee9e2a3
+•
+java:S2293#"YReplace the type specification in this constructor call with the diamond operator ("<>").(‚ú‡ÎJ$737c8a5b-4b2f-40cb-91ae-02281ff8ac45
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÜÍï¸J$ac88b62b-316e-4f7e-bf01-f9071f3c2114
+œ
+java:S6204)"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(Ï¸©Ìÿÿÿÿÿ8µš¢Øþ1

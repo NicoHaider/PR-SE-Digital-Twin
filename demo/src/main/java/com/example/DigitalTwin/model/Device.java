@@ -81,6 +81,12 @@ public class Device {
         deviceDto.setTime(time);
         deviceDto.setStatus(status);
         deviceDto.setRoomId(room.getId());
+        if (room != null) {
+            deviceDto.setRoomId(room.getId());
+        } else {
+            System.out.println("Room is null");
+            deviceDto.setRoomId(null);
+        }
 
         return deviceDto;
     }

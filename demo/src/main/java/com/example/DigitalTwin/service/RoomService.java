@@ -122,6 +122,8 @@ public class RoomService {
 			deviceRepository.deleteAllByRoomId(id);
 			roomRepo.delete(room);
 			return "Room deleted successfully";
+		} catch (NotFoundException e) {
+			throw e; // Re-throw NotFoundException to be caught by the test
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new AppException(e.getMessage());
@@ -136,6 +138,8 @@ public class RoomService {
 			roomDto.setDeviceDtoList(room.getDevices().stream().map(Device::getDto).collect(Collectors.toList()));
 
 			return roomDto;
+		} catch (NotFoundException e) {
+			throw e; // Re-throw NotFoundException to be caught by the test
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new AppException(e.getMessage());

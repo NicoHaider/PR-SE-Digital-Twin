@@ -1,25 +1,25 @@
 
 Ž
-java:S1192V"RDefine a constant instead of duplicating this literal "Room id not found" 3 times.(ç±žŠJ$076d6a8b-4036-4b53-aeb4-060609b778dc
+java:S1192V"RDefine a constant instead of duplicating this literal "Room id not found" 3 times.(ç±žŠJ$64dec833-cfa8-4844-af4b-d4f29c5f0f5a
 —
-java:S1488Á"ZImmediately return this expression instead of assigning it to the temporary variable "in".(£ü ÞJ$59f6471d-895f-4bd0-af94-b8304c079ad1
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÔûªçJ$9eb92dee-d672-4308-8e3d-841d1ffbbaec
+java:S1488Å"ZImmediately return this expression instead of assigning it to the temporary variable "in".(£ü ÞJ$d3c5556e-a317-4925-9df5-fcd524e0cdbb
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÔûªçJ$b2e6db03-f073-409e-81e4-6eba6715e1e0
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$07e892e3-170d-4f12-a91d-9ffb1c3fc0a9
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$30129731-052e-427f-bf14-fae72fd9b2bb
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$b95ad9fd-1b02-4804-93cc-c0a29b332904
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$28624ae3-cbf9-483d-a19e-bb0b023595fb
 ~
-java:S6813""BRemove this field injection and use constructor injection instead.(êæÄÞJ$ca27c8b2-882c-4568-8f5a-924d21a3d3f9
-w	java:S125`"<This block of commented-out lines of code should be removed.(±Ïù J$ca86d336-2c14-411c-8482-3c934d1bbc19
-|	java:S125d"<This block of commented-out lines of code should be removed.(£“ïÛýÿÿÿÿJ$5d650f53-6225-4e6f-adef-9a1e580a2886
-|	java:S125l"<This block of commented-out lines of code should be removed.(º«ÞàÿÿÿÿÿJ$dd984fe6-6b18-484e-bf71-9aceab569693
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄÞJ$943e36f4-612f-49be-bdc0-e764b4711373
+w	java:S125`"<This block of commented-out lines of code should be removed.(±Ïù J$68241ba8-b9cf-41b8-bcb0-90491fcb0352
+|	java:S125d"<This block of commented-out lines of code should be removed.(£“ïÛýÿÿÿÿJ$497cc75f-5de3-49a4-bedc-97a612778bd8
+|	java:S125l"<This block of commented-out lines of code should be removed.(º«ÞàÿÿÿÿÿJ$0e0a0eb7-19ca-4e5d-b79c-937fa9e9f141
 ¼
-java:S6204ˆ"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(€ÍøûÿÿÿÿJ$7351874e-74aa-45cd-81a4-02ed92d4dfd0
+java:S6204Š"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(€ÍøûÿÿÿÿJ$4d3990d1-535d-45f7-9e36-7beb542d69f8
 ¼
-java:S6204”"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(’ÁšÁøÿÿÿÿJ$878bd561-625f-4abf-9fb5-da3e698fec9e
+java:S6204˜"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(’ÁšÁøÿÿÿÿJ$1cebca62-1d0b-44f0-8f9b-74053e2b4f46
 Z
-java:S2119¡"Save and re-use this "Random".(¼ÝÅfJ$02fde39a-e0e1-42ad-a7ce-f3b90567492c
+java:S2119¥"Save and re-use this "Random".(¼ÝÅfJ$279543d2-5dd0-492d-a7ae-f703f3e543d2
 Z
-java:S2119º"Save and re-use this "Random".(¼ÝÅfJ$1dc7e93e-713d-4e4d-903b-3a7910592137
+java:S2119¾"Save and re-use this "Random".(¼ÝÅfJ$b3ed421e-880c-4b5b-9d6d-ea31f6d0fea1
 
-java:S1128"@Remove this unused import 'com.example.DigitalTwin.dto.DoorDto'.(›£ÓØøÿÿÿÿJ$e90f1760-fd3a-4843-a693-1631337c6f35
+java:S1128"@Remove this unused import 'com.example.DigitalTwin.dto.DoorDto'.(›£ÓØøÿÿÿÿJ$1177f71c-0447-45d7-b908-20137b5ab2cc

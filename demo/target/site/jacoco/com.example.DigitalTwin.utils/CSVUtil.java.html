@@ -10,23 +10,23 @@ import com.example.DigitalTwin.model.Room;
 <span class="nc" id="L10">public class CSVUtil {</span>
 
     public static ByteArrayInputStream roomsToCSV(List&lt;Room&gt; rooms) {
-<span class="nc" id="L13">        StringBuilder csvContent = new StringBuilder();</span>
-<span class="nc" id="L14">        csvContent.append(&quot;Room_ID;Name;Type;Size;Device_Count;Climate_Data_Description\n&quot;);</span>
+<span class="fc" id="L13">        StringBuilder csvContent = new StringBuilder();</span>
+<span class="fc" id="L14">        csvContent.append(&quot;Room_ID;Name;Type;Size;Device_Count;Climate_Data_Description\n&quot;);</span>
 
-<span class="nc bnc" id="L16" title="All 2 branches missed.">        for (Room room : rooms) {</span>
-<span class="nc" id="L17">            String climateDataDescription = room.getRoomDataList().stream()</span>
-<span class="nc" id="L18">                    .map(data -&gt; data.toString())  // Assuming RoomData has a meaningful toString implementation</span>
-<span class="nc" id="L19">                    .collect(Collectors.joining(&quot;; &quot;));</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        for (Room room : rooms) {</span>
+<span class="fc" id="L17">            String climateDataDescription = room.getRoomDataList().stream()</span>
+<span class="fc" id="L18">                    .map(data -&gt; data.toString())  // Assuming RoomData has a meaningful toString implementation</span>
+<span class="fc" id="L19">                    .collect(Collectors.joining(&quot;; &quot;));</span>
 
-<span class="nc" id="L21">            csvContent.append(room.getId()).append(&quot;;&quot;)</span>
-<span class="nc" id="L22">                    .append(room.getName()).append(&quot;;&quot;)</span>
-<span class="nc" id="L23">                    .append(room.getType()).append(&quot;;&quot;)</span>
-<span class="nc" id="L24">                    .append(room.getSize()).append(&quot;;&quot;)</span>
-<span class="nc" id="L25">                    .append(room.getDevices().size()).append(&quot;;&quot;)</span>
-<span class="nc" id="L26">                    .append(climateDataDescription).append(&quot;\n&quot;);</span>
-<span class="nc" id="L27">        }</span>
+<span class="fc" id="L21">            csvContent.append(room.getId()).append(&quot;;&quot;)</span>
+<span class="fc" id="L22">                    .append(room.getName()).append(&quot;;&quot;)</span>
+<span class="fc" id="L23">                    .append(room.getType()).append(&quot;;&quot;)</span>
+<span class="fc" id="L24">                    .append(room.getSize()).append(&quot;;&quot;)</span>
+<span class="fc" id="L25">                    .append(room.getDevices().size()).append(&quot;;&quot;)</span>
+<span class="fc" id="L26">                    .append(climateDataDescription).append(&quot;\n&quot;);</span>
+<span class="fc" id="L27">        }</span>
 
-<span class="nc" id="L29">        return new ByteArrayInputStream(csvContent.toString().getBytes(StandardCharsets.UTF_8));</span>
+<span class="fc" id="L29">        return new ByteArrayInputStream(csvContent.toString().getBytes(StandardCharsets.UTF_8));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

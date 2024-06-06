@@ -24,19 +24,19 @@ import java.util.Random;
     public void generateRandomRoomData() {
 <span class="fc" id="L25">        List&lt;Room&gt; rooms = roomRepository.findAll();</span>
 
-<span class="pc bpc" id="L27" title="1 of 2 branches missed.">        for (Room room : rooms) {</span>
-<span class="nc" id="L28">            RoomData data = new RoomData();</span>
-<span class="nc" id="L29">            data.setRoom(room);</span>
-<span class="nc" id="L30">            data.setCo2Level(random.nextDouble() * (5000 - 300) + 300);</span>
-<span class="nc" id="L31">            data.setTemperature(random.nextDouble() * (30 - 18) + 18);</span>
-<span class="nc" id="L32">            data.setNumOfPeople(random.nextInt(21));</span>
-<span class="nc" id="L33">            data.setDateTime(LocalDateTime.now());</span>
-<span class="nc" id="L34">            roomDataRepository.save(data);</span>
-<span class="nc" id="L35">        }</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        for (Room room : rooms) {</span>
+<span class="fc" id="L28">            RoomData data = new RoomData();</span>
+<span class="fc" id="L29">            data.setRoom(room);</span>
+<span class="fc" id="L30">            data.setCo2Level(random.nextDouble() * (5000 - 300) + 300);</span>
+<span class="fc" id="L31">            data.setTemperature(random.nextDouble() * (30 - 18) + 18);</span>
+<span class="fc" id="L32">            data.setNumOfPeople(random.nextInt(21));</span>
+<span class="fc" id="L33">            data.setDateTime(LocalDateTime.now());</span>
+<span class="fc" id="L34">            roomDataRepository.save(data);</span>
+<span class="fc" id="L35">        }</span>
 <span class="fc" id="L36">    }</span>
 
     public List&lt;RoomData&gt; getRoomDataByRoom(Long roomId) {
-<span class="nc" id="L39">        return roomDataRepository.findByRoomId(roomId);</span>
+<span class="fc" id="L39">        return roomDataRepository.findByRoomId(roomId);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
