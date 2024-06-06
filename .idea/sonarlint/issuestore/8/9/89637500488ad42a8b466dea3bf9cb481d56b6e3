@@ -3,3 +3,5 @@ t	java:S120"ZRename this package name to match the regular expression '^[a-z_
 U
 java:S1118
 ":Add a private constructor to hide the implicit public one.(βάφάϋÿÿÿÿ
+_
+java:S1612"=Replace this lambda with method reference 'Object::toString'.(ƒέώόÿÿÿÿ8ÿ‡¥λώ1

@@ -1,2 +1,6 @@
 
 š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(§ÅòµøÿÿÿÿJ$90d594ef-f071-40e0-a2b4-69b5e7e1615e
+V
+java:S1128"9Remove this unused import 'jakarta.persistence.EnumType'.(…÷Íà8Ü‚¥ëş1
+]
+java:S1128";Remove this unused import 'jakarta.persistence.Enumerated'.(àèòùÿÿÿÿ8Ü‚¥ëş1

@@ -233,5 +233,3 @@ q
 Ademo/src/test/java/com/example/DigitalTwin/utils/CSVUtilTest.java,0\7\0712b1ed298c2a54a32ab412106524a45d1c83c2
 x
 Hdemo/src/test/java/com/example/DigitalTwin/utils/ScheduledTasksTest.java,9\5\95bb8cd47be9d60611ed1c39afd3834fe2040d51
-„
-Tdemo/src/test/java/com/example/DigitalTwin/exception/GlobalExceptionHandlerTest.java,6\f\6f28c594efb88708847ff5bc1eff1b6bec7832fa
