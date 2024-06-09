@@ -1,0 +1,12 @@
+<main>    
+    <header>
+        <h2>Rooms: </h2>  
+        <button class="btn btn-success" (click)="addRoom()"> + New Room</button> 
+    </header> 
+    <app-room-item
+    article class="room"
+    *ngFor="let room of rooms; let i = index"
+    [room]="room"
+    [index]="i"> </app-room-item>      
+</main>
+<button class="button-add" (click)="onDownloadRoom()"> Download Room structure</button>

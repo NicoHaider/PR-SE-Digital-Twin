@@ -1,0 +1,68 @@
+.room-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.room{
+    display: flex;
+    padding-right: 50px;
+}
+
+.stats {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.device {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 2px solid #777474;
+}
+
+.device:hover {
+    transform: translateY(-5px);
+    background : #94b7d4
+}
+
+.button-add, .button-back, .button-edit,.button-delete{
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-add{
+    float: right; 
+}
+
+.button-back{
+    float: left;
+}
+
+.button-edit.button-delete{
+    float: center; 
+}
+
+.button-add:hover, .button-back:hover, .button-edit:hover {
+    background :#608fd5;
+} 
+
+.button-delete:hover{
+    background :#e50000;
+}
+
