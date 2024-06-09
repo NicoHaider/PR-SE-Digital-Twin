@@ -5,18 +5,30 @@ orbs:
 jobs:
   test-node:
     executor: node/default
-    working_directory: ~/project/Digitial-Twin-Frontend
+    working_directory: ~/project/Digitial-Twin-Frontend/
     steps:
       - checkout:
           path: ~/project
       - node/install-packages:
           pkg-manager: npm
       - run:
+          name: Add Google Chrome repository and install Chrome
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y wget gnupg
+            wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+            sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+            sudo apt-get update
+            sudo apt-get install -y google-chrome-stable
+      - run:
+          name: Set CHROME_BIN environment variable
+          command: echo 'export CHROME_BIN=/usr/bin/google-chrome' >> $BASH_ENV
+      - run:
           name: Run tests with Jest
           command: npm test
 
   build-node:
-    # Build node projectt
+    # Build node project
     executor: node/default
     working_directory: ~/project/Digitial-Twin-Frontend/
     steps:
@@ -68,6 +80,3 @@ workflows:
             - test-node
             - test-java
       - test-java
-    # - deploy:
-    #     requires:
-    #       - build-node
