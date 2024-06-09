@@ -13,9 +13,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: Install Chrome
-          command: |
-            sudo apt-get update
-            sudo apt-get install -y google-chrome-stable
+          command: sudo apt-get update && sudo apt-get install -y google-chrome-stable
       - run:
           name: Set CHROME_BIN environment variable
           command: echo 'export CHROME_BIN=/usr/bin/google-chrome' >> $BASH_ENV
@@ -24,6 +22,7 @@ jobs:
           command: npm test
 
   build-node:
+    # Build node project
     executor: node/default
     working_directory: ~/project/Digitial-Twin-Frontend/
     steps:
