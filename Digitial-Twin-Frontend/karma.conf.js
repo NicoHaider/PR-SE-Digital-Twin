@@ -1,6 +1,3 @@
-// Karma configuration file, see link for more information
-// https://karma-runner.github.io/1.0/config/configuration-file.html
-
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -36,7 +33,7 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
+    autoWatch: false, // ensure Karma does not watch files
     browsers: ['ChromeHeadless'],
     customLaunchers: {
       ChromeHeadless: {
@@ -49,7 +46,7 @@ module.exports = function (config) {
         ]
       }
     },
-    singleRun: true,
-    restartOnFileChange: true
+    singleRun: true, // ensure Karma exits after running tests
+    restartOnFileChange: false
   });
 };
