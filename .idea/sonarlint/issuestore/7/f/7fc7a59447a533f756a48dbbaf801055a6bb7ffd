@@ -1,0 +1,12 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ê‰¨ÂJ$d6ce7d80-a1b3-4b96-b82a-30ebc323404b
+|	java:S125"<This block of commented-out lines of code should be removed.(×ÂíòþÿÿÿÿJ$69cf4fea-a5b3-455a-b82d-c4b19211d7ac
+|	java:S125 "<This block of commented-out lines of code should be removed.(ïõæÀüÿÿÿÿJ$79c2e094-8cba-4684-8da2-1f55c1a53109
+Œ
+java:S11720"KRemove these unused method parameters "doors", "windows", "lights", "fans".(´óÃÑüÿÿÿÿJ$1751aec4-0b3c-488c-ba76-1b8c2bfaae2b
+w	java:S1254"<This block of commented-out lines of code should be removed.(Í‡¹¶J$e76f4f79-1071-4633-aacb-83e4959768d3
+w	java:S125T"<This block of commented-out lines of code should be removed.(À„·šJ$082cb0a1-c1a9-47cc-9ca6-cb92342eee77
+y
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿJ$37dd53e2-a52a-4265-9934-7e8565f3aee4
+
+java:S1128"@Remove this unused import 'com.example.DigitalTwin.dto.DoorDto'.(›£ÓØøÿÿÿÿJ$937b8fa2-0c0e-4ddf-a223-18632bee4aaf
