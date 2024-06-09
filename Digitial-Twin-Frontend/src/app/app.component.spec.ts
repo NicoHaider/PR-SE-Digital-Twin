@@ -9,9 +9,9 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ 
-       
-       RouterTestingModule    
+      imports: [
+
+       RouterTestingModule
       ],
       declarations: [AppComponent],
     });
@@ -40,3 +40,6 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('router-outlet')).not.toBeNull();
   });
 });
+
+
+

@@ -1,0 +1,8 @@
+
+Jtypescript:S1128")Remove this unused import of 'FormArray'.(ù²èùıÿÿÿÿ
+Btypescript:S1128"&Remove this unused import of 'Params'.(›•‰
+Gtypescript:S1128"&Remove this unused import of 'Device'.(ÜùåÇùÿÿÿÿ
+Ktypescript:S1128"*Remove this unused import of 'DeviceType'.(ÜùåÇùÿÿÿÿ
+Wtypescript:S6353#";Use concise character class syntax '\d' instead of '[0-9]'.(ÚÕ…
+:typescript:S125."Remove this commented out code.(éÅ¿¹
+:typescript:S1252"Remove this commented out code.(Û‹ê‰
