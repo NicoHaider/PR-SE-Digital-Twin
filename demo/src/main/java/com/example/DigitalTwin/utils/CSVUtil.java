@@ -19,7 +19,7 @@ public class CSVUtil {
                     .append(room.getType()).append(";")
                     .append(room.getSize()).append(";")
                     .append(room.getDevices().size()).append(";");
-                }
+        }
 
         return new ByteArrayInputStream(csvContent.toString().getBytes(StandardCharsets.UTF_8));
     }

@@ -21,8 +21,8 @@ public class AutomationRuleController{
 
     @GetMapping
     public List<AutomationRule> getAllRules() {
-        return automationRuleService.getAllRules();
-    }
+        return automationRuleService.getAllAutomationRules();
+    } // getAllRules instead getAllAutomationRules
 
     @PostMapping
     public AutomationRule createAutomationRule(@RequestBody AutomationRule automationRule) {

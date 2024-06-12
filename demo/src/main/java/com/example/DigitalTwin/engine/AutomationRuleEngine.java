@@ -17,7 +17,7 @@ public class AutomationRuleEngine {
     private RoomRepository roomRepository;
 
     @Autowired
-    private RuleRepository ruleRepository;
+    private AutomationRuleRepository automationRuleRepository;
 
     @Scheduled(fixedRate = 5000)
     public void checkRules() {
