@@ -1,6 +1,7 @@
 package com.example.DigitalTwin.service;
 
 import com.example.DigitalTwin.dto.DeviceDto;
+import com.example.DigitalTwin.enums.DeviceType;
 import com.example.DigitalTwin.model.Device;
 import com.example.DigitalTwin.model.Room;
 import com.example.DigitalTwin.repository.DeviceRepository;
@@ -50,7 +51,7 @@ public class DeviceServiceTest {
         device.setName("Device1");
         device.setRoom(room);
         device.setStatus(true);
-        device.setDeviceType("Sensor");
+        device.setDeviceType(DeviceType.Light);
         device.setTime(new Date());
 
         deviceDto = new DeviceDto();
@@ -58,7 +59,7 @@ public class DeviceServiceTest {
         deviceDto.setName("Device1");
         deviceDto.setRoomId(1L);
         deviceDto.setStatus(true);
-        deviceDto.setDeviceType("Sensor");
+        deviceDto.setDeviceType(DeviceType.Light);
     }
 
     @Test

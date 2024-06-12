@@ -10,11 +10,11 @@ import java.util.List;
 
 public class RoomDto {
 	@NotEmpty(message = "Name is required")
-    private String name;
+	private String name;
 
-    @NotNull(message = "Size count is required")
-    @Positive(message = "Size must be positive")
-    private Double size;
+	@NotNull(message = "Size count is required")
+	@Positive(message = "Size must be positive")
+	private Double size;
 
 	@NotEmpty(message = "Name is required")
 	private String type;

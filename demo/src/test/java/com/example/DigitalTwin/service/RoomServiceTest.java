@@ -1,5 +1,6 @@
 package com.example.DigitalTwin.service;
 
+import com.example.DigitalTwin.dto.RoomDto;
 import com.example.DigitalTwin.model.Room;
 import com.example.DigitalTwin.repository.RoomRepository;
 import org.junit.jupiter.api.Test;
@@ -22,17 +23,22 @@ public class RoomServiceTest {
     @InjectMocks
     private RoomService roomService;
 
-
     @Test
     public void testGetRoomById() {
-        Optional<Room> room = Optional.of(new Room("Conference Room", 100.0, 1, 2, 5, 2));
-        when(roomRepository.findById(1L)).thenReturn(room);
+        Room room = new Room();
+        room.setName("Conference Room");
+        room.setSize(100.0);
+        room.setDoors(1);
+        room.setWindows(2);
+        room.setLights(5);
+        room.setFans(2);
 
-        Optional<Room> foundRoom = Optional.ofNullable(roomService.getRoomById(1L));
+        when(roomRepository.findById(1L)).thenReturn(Optional.of(room));
 
-        assertTrue(foundRoom.isPresent());
-        assertEquals("Conference Room", foundRoom.get().getName());
+        RoomDto foundRoom = roomService.getRoomById(1L);
+
+        assertNotNull(foundRoom);
+        assertEquals("Conference Room", foundRoom.getName());
         verify(roomRepository).findById(1L);
     }
-
 }
