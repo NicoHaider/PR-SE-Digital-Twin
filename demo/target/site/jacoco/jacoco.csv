@@ -20,7 +20,7 @@ dt,com.example.DigitalTwin.dto,RoomDto,0,40,0,0,0,16,0,11,0,11
 dt,com.example.DigitalTwin.utils,CSVUtil,58,0,2,0,11,0,3,0,2,0
 dt,com.example.DigitalTwin.utils,ScheduledTasks,0,7,0,0,0,3,0,2,0,2
 dt,com.example.DigitalTwin.enums,DeviceType,0,27,0,0,0,5,0,1,0,1
-dt,com.example.DigitalTwin.exception,GlobalExceptionHandling,71,3,0,0,16,1,4,1,4,1
-dt,com.example.DigitalTwin.exception,AppException,4,0,0,0,2,0,1,0,1,0
-dt,com.example.DigitalTwin.exception,ErrorResponse,24,0,0,0,10,0,7,0,7,0
+dt,com.example.DigitalTwin.exception,GlobalExceptionHandling,0,74,0,0,0,17,0,5,0,5
+dt,com.example.DigitalTwin.exception,AppException,0,4,0,0,0,2,0,1,0,1
+dt,com.example.DigitalTwin.exception,ErrorResponse,0,24,0,0,0,10,0,7,0,7
 dt,com.example.DigitalTwin.exception,NotFoundException,0,4,0,0,0,2,0,1,0,1

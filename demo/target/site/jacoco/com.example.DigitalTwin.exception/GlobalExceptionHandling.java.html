@@ -19,33 +19,33 @@ import org.springframework.web.context.request.WebRequest;
 
 	@ExceptionHandler(AppException.class)
 	public ResponseEntity&lt;ErrorResponse&gt; userHandlerException(AppException exception, WebRequest webRequest) {
-<span class="nc" id="L22">		ErrorResponse errorResponse = new ErrorResponse();</span>
-<span class="nc" id="L23">		errorResponse.setStatus(HttpStatus.BAD_REQUEST.toString());</span>
-<span class="nc" id="L24">		errorResponse.setMessage(exception.getMessage());</span>
-<span class="nc" id="L25">		errorResponse.setTimeStamp(System.currentTimeMillis());</span>
-<span class="nc" id="L26">		return new ResponseEntity&lt;ErrorResponse&gt;(errorResponse, HttpStatus.BAD_REQUEST);</span>
+<span class="fc" id="L22">		ErrorResponse errorResponse = new ErrorResponse();</span>
+<span class="fc" id="L23">		errorResponse.setStatus(HttpStatus.BAD_REQUEST.toString());</span>
+<span class="fc" id="L24">		errorResponse.setMessage(exception.getMessage());</span>
+<span class="fc" id="L25">		errorResponse.setTimeStamp(System.currentTimeMillis());</span>
+<span class="fc" id="L26">		return new ResponseEntity&lt;ErrorResponse&gt;(errorResponse, HttpStatus.BAD_REQUEST);</span>
 	}
 	
 	@ExceptionHandler(NotFoundException.class)
 	public ResponseEntity&lt;ErrorResponse&gt; userHandlerException(NotFoundException exception, WebRequest webRequest) {
-<span class="nc" id="L31">		ErrorResponse errorResponse = new ErrorResponse();</span>
-<span class="nc" id="L32">		errorResponse.setStatus(HttpStatus.BAD_REQUEST.toString());</span>
-<span class="nc" id="L33">		errorResponse.setMessage(exception.getMessage());</span>
-<span class="nc" id="L34">		errorResponse.setTimeStamp(System.currentTimeMillis());</span>
-<span class="nc" id="L35">		return new ResponseEntity&lt;ErrorResponse&gt;(errorResponse, HttpStatus.BAD_REQUEST);</span>
+<span class="fc" id="L31">		ErrorResponse errorResponse = new ErrorResponse();</span>
+<span class="fc" id="L32">		errorResponse.setStatus(HttpStatus.BAD_REQUEST.toString());</span>
+<span class="fc" id="L33">		errorResponse.setMessage(exception.getMessage());</span>
+<span class="fc" id="L34">		errorResponse.setTimeStamp(System.currentTimeMillis());</span>
+<span class="fc" id="L35">		return new ResponseEntity&lt;ErrorResponse&gt;(errorResponse, HttpStatus.BAD_REQUEST);</span>
 	}
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity&lt;Map&lt;String, List&lt;String&gt;&gt;&gt; handleValidationErrors(MethodArgumentNotValidException ex) {
-<span class="nc" id="L40">	    List&lt;String&gt; errors = ex.getBindingResult().getFieldErrors()</span>
-<span class="nc" id="L41">	            .stream().map(FieldError::getDefaultMessage).collect(Collectors.toList());</span>
-<span class="nc" id="L42">	    return new ResponseEntity&lt;&gt;(getErrorsMap (errors), HttpStatus.BAD_REQUEST);</span>
+<span class="fc" id="L40">	    List&lt;String&gt; errors = ex.getBindingResult().getFieldErrors()</span>
+<span class="fc" id="L41">	            .stream().map(FieldError::getDefaultMessage).collect(Collectors.toList());</span>
+<span class="fc" id="L42">	    return new ResponseEntity&lt;&gt;(getErrorsMap (errors), HttpStatus.BAD_REQUEST);</span>
 	}
 	
 	private Map&lt;String, List&lt;String&gt;&gt; getErrorsMap(List&lt;String&gt; errors) {
-<span class="nc" id="L46">	    Map&lt;String, List&lt;String&gt;&gt; errorResponse = new HashMap&lt;&gt;();</span>
-<span class="nc" id="L47">	    errorResponse.put(&quot;errors&quot;, errors);</span>
-<span class="nc" id="L48">	    return errorResponse;</span>
+<span class="fc" id="L46">	    Map&lt;String, List&lt;String&gt;&gt; errorResponse = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L47">	    errorResponse.put(&quot;errors&quot;, errors);</span>
+<span class="fc" id="L48">	    return errorResponse;</span>
 	}
 	
 }

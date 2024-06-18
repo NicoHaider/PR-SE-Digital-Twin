@@ -1,9 +1,14 @@
 com\example\DigitalTwin\controller\RoomControllerTest.class
 com\example\DigitalTwin\model\DeviceTest.class
 com\example\DigitalTwin\service\DeviceServiceTest.class
-com\example\DigitalTwin\DtApplicationTests.class
 com\example\DigitalTwin\service\RoomDataServiceTest.class
+com\example\DigitalTwin\exception\ErrorResponseTest.class
+com\example\DigitalTwin\service\RoomServiceTest.class
+com\example\DigitalTwin\DtApplicationTests.class
+com\example\DigitalTwin\exception\GlobalExceptionHandlingTest.class
+com\example\DigitalTwin\exception\AppExceptionTest.class
+com\example\DigitalTwin\utils\ScheduledTasksTest.class
+com\example\DigitalTwin\exception\NotFoundExceptionTest.class
 com\example\DigitalTwin\model\RoomTest.class
 com\example\DigitalTwin\model\RoomDataTest.class
-com\example\DigitalTwin\service\RoomServiceTest.class
 com\example\DigitalTwin\controller\DeviceControllerTest.class

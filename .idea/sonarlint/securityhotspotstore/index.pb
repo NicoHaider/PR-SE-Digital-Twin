@@ -221,3 +221,15 @@ m
 =src/test/java/com/example/DigitalTwin/model/RoomDataTest.java,2\e\2e36fa84c4dd85d5b65b87cfc0038ffdaa943755
 i
 9src/test/java/com/example/DigitalTwin/model/RoomTest.java,d\8\d8da5adac7a2c2007d1f82a0581f08f8aa9de91d
+l
+<src/test/java/com/example/DigitalTwin/utils/CSVUtilTest.java,a\4\a4f5939e4ce60aff0fd350b72e27a0085b71c0f9
+s
+Csrc/test/java/com/example/DigitalTwin/utils/ScheduledTasksTest.java,0\c\0cbe6279e49e73acf70385ab3066fe2ca6bf2afe
+u
+Esrc/test/java/com/example/DigitalTwin/exception/AppExceptionTest.java,8\4\84c39a8060464fbe25055b60076023776bfcd0c2
+v
+Fsrc/test/java/com/example/DigitalTwin/exception/ErrorResponseTest.java,c\c\cc67a3a705730d0519e85c0193cfc8070b9165a2
+€
+Psrc/test/java/com/example/DigitalTwin/exception/GlobalExceptionHandlingTest.java,e\a\ea00260fcb29fd6b3b9d723612120dc7c9943826
+z
+Jsrc/test/java/com/example/DigitalTwin/exception/NotFoundExceptionTest.java,7\1\71448538df17acb441971d78e4e6ba23694d4e29
