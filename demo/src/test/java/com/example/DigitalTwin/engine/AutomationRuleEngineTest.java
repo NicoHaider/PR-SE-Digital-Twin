@@ -111,9 +111,10 @@ public class AutomationRuleEngineTest {
         assertTrue((boolean) evaluateCondition.invoke(automationRuleEngine, "peopleCount = 0", room1));
         assertFalse((boolean) evaluateCondition.invoke(automationRuleEngine, "peopleCount > 0", room1));
 
-        // Test time condition
-        assertTrue((boolean) evaluateCondition.invoke(automationRuleEngine, "time < " + LocalTime.now().plusHours(1), room1));
-        assertFalse((boolean) evaluateCondition.invoke(automationRuleEngine, "time > " + LocalTime.now().plusHours(1), room1));
+        // Use a fixed time for testing time conditions
+        LocalTime fixedTime = LocalTime.of(12, 0);
+        assertTrue((boolean) evaluateCondition.invoke(automationRuleEngine, "time < 13:00", room1));
+        assertFalse((boolean) evaluateCondition.invoke(automationRuleEngine, "time > 13:00", room1));
     }
 
     @Test
