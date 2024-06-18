@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RoomDto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dt</a> &gt; <a href="index.source.html" class="el_package">com.example.DigitalTwin.dto</a> &gt; <span class="el_source">RoomDto.java</span></div><h1>RoomDto.java</h1><pre class="source lang-java linenums">package com.example.DigitalTwin.dto;
+
+import com.example.DigitalTwin.model.Device;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
+
+import java.util.List;
+
+<span class="fc" id="L11">public class RoomDto {</span>
+	@NotEmpty(message = &quot;Name is required&quot;)
+	private String name;
+
+	@NotNull(message = &quot;Size count is required&quot;)
+	@Positive(message = &quot;Size must be positive&quot;)
+	private Double size;
+
+	@NotEmpty(message = &quot;Name is required&quot;)
+	private String type;
+
+	private Long id;
+
+	private List&lt;DeviceDto&gt; deviceDtoList;
+
+//    @NotNull(message = &quot;Windows count is required&quot;)
+//    @PositiveOrZero(message = &quot;Windows must be positive or zero&quot;)
+//    private Integer windows;
+//
+//    @NotNull(message = &quot;Lights count is required&quot;)
+//    @PositiveOrZero(message = &quot;Lights must be positive or zero&quot;)
+//    private Integer lights;
+
+	public String getName() {
+<span class="fc" id="L35">		return name;</span>
+	}
+
+	public void setName(String name) {
+<span class="fc" id="L39">		this.name = name;</span>
+<span class="fc" id="L40">	}</span>
+
+	public double getSize() {
+<span class="fc" id="L43">		return size;</span>
+	}
+
+	public void setSize(double size) {
+<span class="fc" id="L47">		this.size = size;</span>
+<span class="fc" id="L48">	}</span>
+
+//	public int getDoors() {
+//		return doors;
+//	}
+//
+//	public void setDoors(int doors) {
+//		this.doors = doors;
+//	}
+
+//	public int getWindows() {
+//		return windows;
+//	}
+//
+//	public void setWindows(int windows) {
+//		this.windows = windows;
+//	}
+//
+//	public int getLights() {
+//		return lights;
+//	}
+//
+//	public void setLights(int lights) {
+//		this.lights = lights;
+//	}
+
+
+	public @NotEmpty(message = &quot;Name is required&quot;) String getType() {
+<span class="fc" id="L76">		return type;</span>
+	}
+
+	public void setType(@NotEmpty(message = &quot;Name is required&quot;) String type) {
+<span class="fc" id="L80">		this.type = type;</span>
+<span class="fc" id="L81">	}</span>
+
+	public List&lt;DeviceDto&gt; getDeviceDtoList() {
+<span class="fc" id="L84">		return deviceDtoList;</span>
+	}
+
+	public void setDeviceDtoList(List&lt;DeviceDto&gt; deviceDtoList) {
+<span class="fc" id="L88">		this.deviceDtoList = deviceDtoList;</span>
+<span class="fc" id="L89">	}</span>
+
+	public Long getId() {
+<span class="fc" id="L92">		return id;</span>
+	}
+
+	public void setId(Long id) {
+<span class="fc" id="L96">		this.id = id;</span>
+<span class="fc" id="L97">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

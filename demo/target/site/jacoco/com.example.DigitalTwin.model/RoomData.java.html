@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RoomData.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dt</a> &gt; <a href="index.source.html" class="el_package">com.example.DigitalTwin.model</a> &gt; <span class="el_source">RoomData.java</span></div><h1>RoomData.java</h1><pre class="source lang-java linenums">package com.example.DigitalTwin.model;
+import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+<span class="fc" id="L14">public class RoomData {</span>
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    
+    private double co2Level;
+    
+    private double temperature;
+    
+    private int numOfPeople;
+    
+    private LocalDateTime dateTime;
+    
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = &quot;room_id&quot;, referencedColumnName = &quot;id&quot;)
+    private Room room;
+
+	public Long getId() {
+<span class="fc" id="L33">		return id;</span>
+	}
+
+	public void setId(Long id) {
+<span class="fc" id="L37">		this.id = id;</span>
+<span class="fc" id="L38">	}</span>
+
+	public double getCo2Level() {
+<span class="fc" id="L41">		return co2Level;</span>
+	}
+
+	public void setCo2Level(double co2Level) {
+<span class="fc" id="L45">		this.co2Level = co2Level;</span>
+<span class="fc" id="L46">	}</span>
+
+	public double getTemperature() {
+<span class="fc" id="L49">		return temperature;</span>
+	}
+
+	public void setTemperature(double temperature) {
+<span class="fc" id="L53">		this.temperature = temperature;</span>
+<span class="fc" id="L54">	}</span>
+
+	public int getNumOfPeople() {
+<span class="fc" id="L57">		return numOfPeople;</span>
+	}
+
+	public void setNumOfPeople(int numOfPeople) {
+<span class="fc" id="L61">		this.numOfPeople = numOfPeople;</span>
+<span class="fc" id="L62">	}</span>
+
+	public Room getRoom() {
+<span class="fc" id="L65">		return room;</span>
+	}
+
+	public void setRoom(Room room) {
+<span class="fc" id="L69">		this.room = room;</span>
+<span class="fc" id="L70">	}</span>
+
+	public LocalDateTime getDateTime() {
+<span class="fc" id="L73">		return dateTime;</span>
+	}
+
+	public void setDateTime(LocalDateTime dateTime) {
+<span class="fc" id="L77">		this.dateTime = dateTime;</span>
+<span class="fc" id="L78">	}</span>
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

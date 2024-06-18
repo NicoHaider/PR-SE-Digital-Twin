@@ -43,7 +43,7 @@ public class RoomDataControllerTest {
     }
 
     @Test
-    public void testGetRoomDataByRoom() throws Exception {
+    public void testGetLastRoomDataByRoom() throws Exception {
         RoomData roomData1 = new RoomData();
         roomData1.setId(1L);
         roomData1.setCo2Level(400.0);
@@ -64,8 +64,7 @@ public class RoomDataControllerTest {
 
         mockMvc.perform(get("/roomData/getBy/1"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].co2Level").value(400.0))
-                .andExpect(jsonPath("$[1].co2Level").value(450.0));
+                .andExpect(jsonPath("$.co2Level").value(450.0));
     }
 
 }
