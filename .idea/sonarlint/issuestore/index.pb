@@ -185,3 +185,5 @@ y
 Idemo/src/test/java/com/example/DigitalTwin/service/DeviceServiceTest.java,b\7\b7ffee8f3359eb2ef763a97cbb6d625f13da29a3
 {
 Kdemo/src/test/java/com/example/DigitalTwin/service/RoomDataServiceTest.java,5\4\54608333f892c59f13972ffa0b4f8a2a6a038a0b
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec

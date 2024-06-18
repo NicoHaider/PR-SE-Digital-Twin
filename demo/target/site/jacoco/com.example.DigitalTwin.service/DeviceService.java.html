@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DeviceService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dt</a> &gt; <a href="index.source.html" class="el_package">com.example.DigitalTwin.service</a> &gt; <span class="el_source">DeviceService.java</span></div><h1>DeviceService.java</h1><pre class="source lang-java linenums">package com.example.DigitalTwin.service;
+
+
+import com.example.DigitalTwin.dto.DeviceDto;
+import com.example.DigitalTwin.dto.RoomDto;
+import com.example.DigitalTwin.model.Device;
+import com.example.DigitalTwin.model.Room;
+import com.example.DigitalTwin.repository.DeviceRepository;
+import com.example.DigitalTwin.repository.RoomDataRepository;
+import com.example.DigitalTwin.repository.RoomRepository;
+import io.swagger.v3.oas.annotations.servers.Server;
+import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Date;
+import java.util.Optional;
+
+@Service
+<span class="fc" id="L20">public class DeviceService {</span>
+
+    @Autowired
+    RoomRepository roomRepo;
+
+    @Autowired
+    RoomDataRepository roomDataRepo;
+
+    @Autowired
+    DeviceRepository deviceRepository;
+
+    public DeviceDto createDevice(DeviceDto deviceDto) {
+<span class="fc" id="L32">        Optional&lt;Room&gt; optionalRoom = roomRepo.findById(deviceDto.getRoomId());</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        if(optionalRoom.isPresent()){</span>
+<span class="fc" id="L34">            Device device = new Device();</span>
+<span class="fc" id="L35">            device.setName(deviceDto.getName());</span>
+<span class="fc" id="L36">            device.setRoom(optionalRoom.get());</span>
+<span class="fc" id="L37">            device.setStatus(deviceDto.getStatus());</span>
+<span class="fc" id="L38">            device.setDeviceType(deviceDto.getDeviceType());</span>
+<span class="fc" id="L39">            device.setTime(new Date());</span>
+
+<span class="fc" id="L41">            return deviceRepository.save(device).getDto();</span>
+        }else{
+<span class="fc" id="L43">            throw new EntityNotFoundException(&quot;Room Not present&quot;);</span>
+        }
+    }
+
+    public DeviceDto updateDeviceStatus(Long deviceId) {
+<span class="fc" id="L48">        Optional&lt;Device&gt; optionalDevice = deviceRepository.findById(deviceId);</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if(optionalDevice.isPresent()){</span>
+<span class="fc" id="L50">            Device device = optionalDevice.get();</span>
+
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">            device.setStatus(!device.getStatus());</span>
+
+<span class="fc" id="L54">            return deviceRepository.save(device).getDto();</span>
+        }else{
+<span class="fc" id="L56">            throw new EntityNotFoundException(&quot;Device Not present&quot;);</span>
+        }
+    }
+
+    public boolean deleteDevice(Long deviceId) {
+<span class="fc" id="L61">        Optional&lt;Device&gt; optionalDevice = deviceRepository.findById(deviceId);</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if(optionalDevice.isPresent()){</span>
+<span class="fc" id="L63">            deviceRepository.delete(optionalDevice.get());</span>
+<span class="fc" id="L64">            return true;</span>
+        }else{
+<span class="fc" id="L66">            throw new EntityNotFoundException(&quot;Device Not present&quot;);</span>
+        }
+    }
+
+    public DeviceDto getDevice(Long deviceId) {
+<span class="fc" id="L71">        Optional&lt;Device&gt; optionalDevice = deviceRepository.findById(deviceId);</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        if(optionalDevice.isPresent()){</span>
+<span class="fc" id="L73">            return optionalDevice.get().getDto();</span>
+        }else{
+<span class="fc" id="L75">            throw new EntityNotFoundException(&quot;Device Not present&quot;);</span>
+        }
+    }
+
+    public DeviceDto updateDevice(DeviceDto deviceDto) {
+       /* Optional&lt;Room&gt; optionalRoom = roomRepo.findById(deviceDto.getRoomId());
+        if(optionalRoom.isPresent()){
+            Device device = deviceRepository.findById().get();
+            System.out.println(device.getId());
+            device.setName(deviceDto.getName());
+            device.setRoom(optionalRoom.get());
+            device.setStatus(deviceDto.getStatus());
+            device.setDeviceType(deviceDto.getDeviceType());
+            System.out.println(device);
+            return deviceRepository.save(device).getDto();
+        }else{
+            throw new EntityNotFoundException(&quot;Room Not present&quot;);
+        }*/ 
+
+<span class="fc" id="L94">        Optional&lt;Device&gt; optionalDevice = deviceRepository.findById(deviceDto.getId());</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">        if(optionalDevice.isPresent()){</span>
+<span class="fc" id="L96">            Device device = optionalDevice.get();</span>
+
+<span class="fc" id="L98">            device.setName(deviceDto.getName());</span>
+<span class="fc" id="L99">            device.setDeviceType(deviceDto.getDeviceType());</span>
+
+<span class="fc" id="L101">            return deviceRepository.save(device).getDto();</span>
+        }else{
+<span class="fc" id="L103">            throw new EntityNotFoundException(&quot;Device Not present&quot;);</span>
+        }
+
+        
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
