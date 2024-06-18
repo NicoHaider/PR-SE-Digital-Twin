@@ -25,8 +25,9 @@ public class AutomationRuleController{
     } // getAllRules instead getAllAutomationRules
 
     @PostMapping
-    public AutomationRule createAutomationRule(@RequestBody AutomationRule automationRule) {
-        return automationRuleService.saveAutomationRule(automationRule);
+    public ResponseEntity<AutomationRule> createAutomationRule(@RequestBody AutomationRule automationRule) {
+        AutomationRule createdRule = automationRuleService.saveAutomationRule(automationRule);
+        return ResponseEntity.status(201).body(createdRule);
     }
 
     @DeleteMapping("/{id}")
