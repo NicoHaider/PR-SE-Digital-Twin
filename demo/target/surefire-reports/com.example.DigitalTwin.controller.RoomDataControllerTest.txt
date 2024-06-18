@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.example.DigitalTwin.controller.RoomDataControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.815 s <<< FAILURE! -- in com.example.DigitalTwin.controller.RoomDataControllerTest
+com.example.DigitalTwin.controller.RoomDataControllerTest.testGetRoomDataByRoom -- Time elapsed: 0.057 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$[0].co2Level"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:302)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:99)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.example.DigitalTwin.controller.RoomDataControllerTest.testGetRoomDataByRoom(RoomDataControllerTest.java:67)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: com.jayway.jsonpath.PathNotFoundException: Filter: [0]['co2Level'] can only be applied to arrays. Current context is: {id=2, co2Level=450.0, temperature=23.0, numOfPeople=6, dateTime=[2024,6,18,23,1,44,423970300]}
+

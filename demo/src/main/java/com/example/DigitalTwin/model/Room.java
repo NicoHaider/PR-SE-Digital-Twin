@@ -1,6 +1,7 @@
 package com.example.DigitalTwin.model;
 
 import com.example.DigitalTwin.dto.RoomDto;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -27,6 +28,10 @@ public class Room {
 
 	@OneToMany(mappedBy = "room")
 	private List<Device> devices = new ArrayList<>(); // Added
+
+	@OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
+	@JsonProperty(value = "climate_data")
+	private List<RoomData> roomDataList;
 
 	// Konstruktoren
 	public Room(String name, double size, int doors, int windows, int lights, int fans, double temperature, double co2, int peopleCount) {
@@ -131,6 +136,13 @@ public class Room {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public List<RoomData> getRoomDataList() {
+		return roomDataList;
+	}
+	public void setRoomDataList(List<RoomData> roomDataList) {
+		this.roomDataList = roomDataList;
 	}
 
 	public List<Device> getDevices() {

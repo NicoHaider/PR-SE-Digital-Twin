@@ -233,3 +233,7 @@ Fsrc/test/java/com/example/DigitalTwin/exception/ErrorResponseTest.java,c\c\cc6
 Psrc/test/java/com/example/DigitalTwin/exception/GlobalExceptionHandlingTest.java,e\a\ea00260fcb29fd6b3b9d723612120dc7c9943826
 z
 Jsrc/test/java/com/example/DigitalTwin/exception/NotFoundExceptionTest.java,7\1\71448538df17acb441971d78e4e6ba23694d4e29
+e
+5src/main/java/com/example/DigitalTwin/model/Room.java,b\4\b4e94184884aff0b3a23a2950d10bc7af74835da
+f
+6src/main/java/com/example/DigitalTwin/dto/RoomDto.java,7\3\7325b5536aac344e156fd460bbb7c75cc4e3e34f
