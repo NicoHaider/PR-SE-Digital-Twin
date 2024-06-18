@@ -122,84 +122,88 @@ import java.util.stream.Collectors;
 <span class="nc" id="L122">			deviceRepository.deleteAllByRoomId(id);</span>
 <span class="nc" id="L123">			roomRepo.delete(room);</span>
 <span class="nc" id="L124">			return &quot;Room deleted successfully&quot;;</span>
-<span class="nc" id="L125">		} catch (Exception e) {</span>
-<span class="nc" id="L126">			e.printStackTrace();</span>
-<span class="nc" id="L127">			throw new AppException(e.getMessage());</span>
+<span class="nc" id="L125">		} catch (NotFoundException e) {</span>
+<span class="nc" id="L126">			throw e; // Re-throw NotFoundException to be caught by the test</span>
+<span class="nc" id="L127">		} catch (Exception e) {</span>
+<span class="nc" id="L128">			e.printStackTrace();</span>
+<span class="nc" id="L129">			throw new AppException(e.getMessage());</span>
 		}
 	}
 
 	@Transactional(readOnly = true)
 	public RoomDto getRoomById(Long id) {
 		try {
-<span class="pc" id="L134">			Room room = roomRepo.findById(id).orElseThrow(() -&gt; new NotFoundException(&quot;Room id not found&quot;));</span>
-<span class="fc" id="L135">			RoomDto roomDto = room.getDto();</span>
-<span class="fc" id="L136">			roomDto.setDeviceDtoList(room.getDevices().stream().map(Device::getDto).collect(Collectors.toList()));</span>
+<span class="pc" id="L136">			Room room = roomRepo.findById(id).orElseThrow(() -&gt; new NotFoundException(&quot;Room id not found&quot;));</span>
+<span class="fc" id="L137">			RoomDto roomDto = room.getDto();</span>
+<span class="fc" id="L138">			roomDto.setDeviceDtoList(room.getDevices().stream().map(Device::getDto).collect(Collectors.toList()));</span>
 
-<span class="fc" id="L138">			return roomDto;</span>
-<span class="nc" id="L139">		} catch (Exception e) {</span>
-<span class="nc" id="L140">			e.printStackTrace();</span>
-<span class="nc" id="L141">			throw new AppException(e.getMessage());</span>
+<span class="fc" id="L140">			return roomDto;</span>
+<span class="nc" id="L141">		} catch (NotFoundException e) {</span>
+<span class="nc" id="L142">			throw e; // Re-throw NotFoundException to be caught by the test</span>
+<span class="nc" id="L143">		} catch (Exception e) {</span>
+<span class="nc" id="L144">			e.printStackTrace();</span>
+<span class="nc" id="L145">			throw new AppException(e.getMessage());</span>
 		}
 	}
 
 	@Transactional(readOnly = true)
 	public List&lt;RoomDto&gt; getAllRooms() {
 		try {
-<span class="nc" id="L148">			return roomRepo.findAll().stream().map(Room::getDto).collect(Collectors.toList());</span>
-<span class="nc" id="L149">		} catch (Exception e) {</span>
-<span class="nc" id="L150">			e.printStackTrace();</span>
-<span class="nc" id="L151">			throw new AppException(e.getMessage());</span>
+<span class="nc" id="L152">			return roomRepo.findAll().stream().map(Room::getDto).collect(Collectors.toList());</span>
+<span class="nc" id="L153">		} catch (Exception e) {</span>
+<span class="nc" id="L154">			e.printStackTrace();</span>
+<span class="nc" id="L155">			throw new AppException(e.getMessage());</span>
 		}
 	}
 
 	@Transactional
 	public Room addRandomDataToRoom(Long roomId) {
-<span class="nc" id="L157">		Room room = roomRepo.findById(roomId).orElseThrow(() -&gt; new NotFoundException(&quot;Room not found&quot;));</span>
+<span class="nc" id="L161">		Room room = roomRepo.findById(roomId).orElseThrow(() -&gt; new NotFoundException(&quot;Room not found&quot;));</span>
 
-<span class="nc" id="L159">		List&lt;RoomData&gt; roomDatas = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L163">		List&lt;RoomData&gt; roomDatas = new ArrayList&lt;&gt;();</span>
 
-<span class="nc" id="L161">		Random random = new Random();</span>
-<span class="nc" id="L162">		int co2Min = 300;</span>
-<span class="nc" id="L163">		int co2Max = 1000;</span>
-<span class="nc" id="L164">		double tempMin = 10.0;</span>
-<span class="nc" id="L165">		double tempMax = 40.0;</span>
-<span class="nc" id="L166">		LocalDateTime startTime = LocalDateTime.now().minusHours(24);</span>
-<span class="nc bnc" id="L167" title="All 2 branches missed.">		for (int hour = 0; hour &lt; 24; hour++) {</span>
-<span class="nc" id="L168">			RoomData roomData = new RoomData();</span>
-<span class="nc" id="L169">			int numOfPeople = generateRandomValue(0, 10);</span>
-<span class="nc" id="L170">			roomData.setNumOfPeople(numOfPeople);</span>
-<span class="nc" id="L171">			roomData.setRoom(room);</span>
-<span class="nc" id="L172">			int co2 = random.nextInt(co2Max - co2Min + 1) + co2Min;</span>
-<span class="nc" id="L173">			roomData.setCo2Level(co2);</span>
-<span class="nc" id="L174">			double temperature = tempMin + (tempMax - tempMin) * random.nextDouble();</span>
-<span class="nc" id="L175">			roomData.setTemperature(temperature);</span>
-<span class="nc" id="L176">			LocalDateTime currentTime = startTime.plusHours(hour);</span>
-<span class="nc" id="L177">			roomData.setDateTime(currentTime);</span>
-<span class="nc" id="L178">			RoomData save = roomDataRepo.save(roomData);</span>
-<span class="nc" id="L179">			roomDatas.add(save);</span>
+<span class="nc" id="L165">		Random random = new Random();</span>
+<span class="nc" id="L166">		int co2Min = 300;</span>
+<span class="nc" id="L167">		int co2Max = 1000;</span>
+<span class="nc" id="L168">		double tempMin = 10.0;</span>
+<span class="nc" id="L169">		double tempMax = 40.0;</span>
+<span class="nc" id="L170">		LocalDateTime startTime = LocalDateTime.now().minusHours(24);</span>
+<span class="nc bnc" id="L171" title="All 2 branches missed.">		for (int hour = 0; hour &lt; 24; hour++) {</span>
+<span class="nc" id="L172">			RoomData roomData = new RoomData();</span>
+<span class="nc" id="L173">			int numOfPeople = generateRandomValue(0, 10);</span>
+<span class="nc" id="L174">			roomData.setNumOfPeople(numOfPeople);</span>
+<span class="nc" id="L175">			roomData.setRoom(room);</span>
+<span class="nc" id="L176">			int co2 = random.nextInt(co2Max - co2Min + 1) + co2Min;</span>
+<span class="nc" id="L177">			roomData.setCo2Level(co2);</span>
+<span class="nc" id="L178">			double temperature = tempMin + (tempMax - tempMin) * random.nextDouble();</span>
+<span class="nc" id="L179">			roomData.setTemperature(temperature);</span>
+<span class="nc" id="L180">			LocalDateTime currentTime = startTime.plusHours(hour);</span>
+<span class="nc" id="L181">			roomData.setDateTime(currentTime);</span>
+<span class="nc" id="L182">			RoomData save = roomDataRepo.save(roomData);</span>
+<span class="nc" id="L183">			roomDatas.add(save);</span>
 		}
 
-<span class="nc" id="L182">		return room;</span>
+<span class="nc" id="L186">		return room;</span>
 	}
 
 	private int generateRandomValue(int min, int max) {
-<span class="nc" id="L186">		Random random = new Random();</span>
-<span class="nc" id="L187">		return random.nextInt(max - min + 1) + min;</span>
+<span class="nc" id="L190">		Random random = new Random();</span>
+<span class="nc" id="L191">		return random.nextInt(max - min + 1) + min;</span>
 	}
 
 	public ByteArrayInputStream  generateRoomReport() {
 		try {
-<span class="nc" id="L192">			List&lt;Room&gt; rooms = roomRepo.findAll();</span>
-<span class="nc" id="L193">			ByteArrayInputStream in = CSVUtil.roomsToCSV(rooms);</span>
-<span class="nc" id="L194">			return in;</span>
-<span class="nc" id="L195">		} catch (Exception e) {</span>
-<span class="nc" id="L196">			e.printStackTrace();</span>
-<span class="nc" id="L197">			throw new AppException(e.getMessage());</span>
+<span class="nc" id="L196">			List&lt;Room&gt; rooms = roomRepo.findAll();</span>
+<span class="nc" id="L197">			ByteArrayInputStream in = CSVUtil.roomsToCSV(rooms);</span>
+<span class="nc" id="L198">			return in;</span>
+<span class="nc" id="L199">		} catch (Exception e) {</span>
+<span class="nc" id="L200">			e.printStackTrace();</span>
+<span class="nc" id="L201">			throw new AppException(e.getMessage());</span>
 		}
 	}
 
 	public Room saveOrUpdateRoom(Room room) {
-<span class="nc" id="L202">		return room;</span>
+<span class="nc" id="L206">		return room;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

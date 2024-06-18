@@ -1,7 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 dt,com.example.DigitalTwin.service,DeviceService,2,154,1,11,0,33,1,11,0,6
 dt,com.example.DigitalTwin.service,RoomDataService,0,72,0,2,0,14,0,4,0,3
-dt,com.example.DigitalTwin.service,RoomService,372,26,14,0,84,5,20,2,13,2
+dt,com.example.DigitalTwin.service,RoomService,378,26,14,0,88,5,20,2,13,2
 dt,com.example.DigitalTwin.service,AutomationRuleService,28,3,0,0,6,1,4,1,4,1
 dt,com.example.DigitalTwin.controller,RoomDataController,32,7,2,0,7,2,3,2,2,2
 dt,com.example.DigitalTwin.controller,DeviceController,162,7,0,0,37,2,5,2,5,2
