@@ -4,17 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5cc6aac-7770-47b2-9305-2443ad20c4b0" name="Changes" comment="">
+    <list default="true" id="f5cc6aac-7770-47b2-9305-2443ad20c4b0" name="Changes" comment="update service mocking tests">
+      <change afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/controller/DeviceControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/controller/RoomControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/model/DeviceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/model/RoomDataTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/RoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/RoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/RoomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/service/DeviceServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/service/DeviceServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/service/RoomDataServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/service/RoomDataServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/service/RoomServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/service/RoomServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/DigitalTwin/service/RoomService.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/example/DigitalTwin/service/RoomService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/DigitalTwin/controller/RoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/example/DigitalTwin/controller/RoomController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.controller/DeviceController.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.controller/DeviceController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.controller/DeviceController.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.controller/DeviceController.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.controller/RoomController.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.controller/RoomController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.controller/RoomController.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.controller/RoomController.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.controller/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.controller/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.controller/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.dto/DeviceDto.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.dto/DeviceDto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.dto/DeviceDto.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.dto/DeviceDto.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.dto/RoomDto.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.dto/RoomDto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.dto/RoomDto.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.dto/RoomDto.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.dto/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.dto/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.dto/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.dto/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.exception/NotFoundException.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.exception/NotFoundException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.exception/NotFoundException.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.exception/NotFoundException.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.exception/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.exception/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.exception/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.exception/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/Device.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/Device.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/Device.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/Device.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/Room.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/Room.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/Room.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/Room.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/RoomData.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/RoomData.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/RoomData.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/RoomData.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.model/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.service/DeviceService.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.service/DeviceService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.service/DeviceService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.service/DeviceService.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.service/RoomService.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.service/RoomService.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.service/RoomService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.service/RoomService.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.service/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/site/jacoco/com.example.DigitalTwin.service/index.html" afterDir="false" />
@@ -31,6 +58,9 @@
       <change beforePath="$PROJECT_DIR$/demo/target/surefire-reports/com.example.DigitalTwin.service.DeviceServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/surefire-reports/com.example.DigitalTwin.service.DeviceServiceTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/target/surefire-reports/com.example.DigitalTwin.service.RoomDataServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/surefire-reports/com.example.DigitalTwin.service.RoomDataServiceTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/target/surefire-reports/com.example.DigitalTwin.service.RoomServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/surefire-reports/com.example.DigitalTwin.service.RoomServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/test-classes/com/example/DigitalTwin/service/DeviceServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/test-classes/com/example/DigitalTwin/service/DeviceServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/test-classes/com/example/DigitalTwin/service/RoomDataServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/test-classes/com/example/DigitalTwin/service/RoomDataServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/test-classes/com/example/DigitalTwin/service/RoomServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/test-classes/com/example/DigitalTwin/service/RoomServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +82,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -61,6 +92,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin\demo\src\test\java\com\example\DigitalTwin\model" />
+      <recent name="C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin\demo\src\test\java\com\example\DigitalTwin\controller" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="DtApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="demo" />
@@ -79,8 +116,16 @@
       <option name="presentableId" value="Default" />
       <updated>1718214501747</updated>
       <workItem from="1718214503760" duration="5783000" />
-      <workItem from="1718730037965" duration="5432000" />
+      <workItem from="1718730037965" duration="7399000" />
     </task>
+    <task id="LOCAL-00001" summary="update service mocking tests">
+      <created>1718737140632</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718737140632</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,5 +141,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update service mocking tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="update service mocking tests" />
   </component>
 </project>

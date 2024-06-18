@@ -1,4 +1,9 @@
+com\example\DigitalTwin\controller\RoomControllerTest.class
+com\example\DigitalTwin\model\DeviceTest.class
 com\example\DigitalTwin\service\DeviceServiceTest.class
 com\example\DigitalTwin\DtApplicationTests.class
-com\example\DigitalTwin\service\RoomServiceTest.class
 com\example\DigitalTwin\service\RoomDataServiceTest.class
+com\example\DigitalTwin\model\RoomTest.class
+com\example\DigitalTwin\model\RoomDataTest.class
+com\example\DigitalTwin\service\RoomServiceTest.class
+com\example\DigitalTwin\controller\DeviceControllerTest.class

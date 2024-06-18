@@ -209,3 +209,15 @@ r
 Bsrc/test/java/com/example/DigitalTwin/service/RoomServiceTest.java,b\2\b2aa9ea4d894f8038f42a6ede42fa8f62eafe37b
 m
 =src/test/java/com/example/DigitalTwin/DtApplicationTests.java,8\e\8e4d42821708e71ebef7c1fa22c854996e0a669b
+z
+Jsrc/test/java/com/example/DigitalTwin/controller/DeviceControllerTest.java,0\d\0dc388fec2d501d3d141d087a4c35ec42c6bafc0
+x
+Hsrc/test/java/com/example/DigitalTwin/controller/RoomControllerTest.java,6\d\6da2043ef40bba0c30877608aa6f328bd51bd87d
+|
+Lsrc/test/java/com/example/DigitalTwin/controller/RoomDataControllerTest.java,f\8\f8039e5d3dc502aac4ad8d817dfcdb27d7b30809
+k
+;src/test/java/com/example/DigitalTwin/model/DeviceTest.java,0\9\099266f0161cdacc97fefd9d8d9ea8739b4d7a8a
+m
+=src/test/java/com/example/DigitalTwin/model/RoomDataTest.java,2\e\2e36fa84c4dd85d5b65b87cfc0038ffdaa943755
+i
+9src/test/java/com/example/DigitalTwin/model/RoomTest.java,d\8\d8da5adac7a2c2007d1f82a0581f08f8aa9de91d
