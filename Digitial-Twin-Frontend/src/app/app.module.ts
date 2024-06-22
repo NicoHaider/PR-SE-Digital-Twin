@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { RoomItemComponent } from './room/room-item/room-item.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
@@ -32,6 +33,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([]),
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,

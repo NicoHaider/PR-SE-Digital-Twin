@@ -5,23 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cc6aac-7770-47b2-9305-2443ad20c4b0" name="Changes" comment="added few new mockito tests for jacoco cc">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/logs/appplication.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/utils/CreateLogDirectory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/DtApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/DtApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/AutomationRuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/AutomationRuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/RoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/RoomDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/RoomDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/model/AutomationRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/model/AutomationRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/repository/AutomationRuleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/repository/AutomationRuleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/AutomationRuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/AutomationRuleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/DeviceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/RoomDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/RoomDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/RoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/RoomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +33,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2hn0N6FdcKw0ikvsQC4GfRHPCdJ" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,27 +44,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "release-3",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "fe01ce2a7fbac8fafaed7c982a04e229",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;release-3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fe01ce2a7fbac8fafaed7c982a04e229&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin\demo\src\test\java\com\example\DigitalTwin\utils" />
@@ -187,6 +178,8 @@
       <updated>1718214501747</updated>
       <workItem from="1718214503760" duration="5783000" />
       <workItem from="1718730037965" duration="19006000" />
+      <workItem from="1719055995473" duration="122000" />
+      <workItem from="1719056195237" duration="872000" />
     </task>
     <task id="LOCAL-00001" summary="update service mocking tests">
       <created>1718737140632</created>
@@ -236,7 +229,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="update service mocking tests" />
-    <MESSAGE value="added model and controller mocking tests" />
+    <MESSAGE value="updated files for improved logging" />
     <MESSAGE value="added utils and exception mocking tests" />
     <MESSAGE value="added few new mockito tests for jacoco cc" />
     <option name="LAST_COMMIT_MESSAGE" value="added few new mockito tests for jacoco cc" />
