@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +60,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;fe01ce2a7fbac8fafaed7c982a04e229&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -179,7 +179,8 @@
       <workItem from="1718214503760" duration="5783000" />
       <workItem from="1718730037965" duration="19006000" />
       <workItem from="1719055995473" duration="122000" />
-      <workItem from="1719056195237" duration="872000" />
+      <workItem from="1719056195237" duration="1809000" />
+      <workItem from="1719062069483" duration="818000" />
     </task>
     <task id="LOCAL-00001" summary="update service mocking tests">
       <created>1718737140632</created>
@@ -249,5 +250,6 @@
     <SUITE FILE_PATH="coverage/PR_SE_Digital_Twin$RoomControllerTest.ic" NAME="RoomControllerTest Coverage Results" MODIFIED="1718747182418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.DigitalTwin.controller.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/PR_SE_Digital_Twin$DtApplication.ic" NAME="DtApplication Coverage Results" MODIFIED="1719062272242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
