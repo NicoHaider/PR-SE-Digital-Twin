@@ -15,9 +15,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.Optional;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 @Service
 public class DeviceService {
+    private static final Logger logger = LogManager.getLogger(String.valueOf(DeviceService.class));
 
     @Autowired
     RoomRepository roomRepo;
@@ -29,6 +32,7 @@ public class DeviceService {
     DeviceRepository deviceRepository;
 
     public DeviceDto createDevice(DeviceDto deviceDto) {
+        logger.info("Request to create device: " + deviceDto);
         Optional<Room> optionalRoom = roomRepo.findById(deviceDto.getRoomId());
         if(optionalRoom.isPresent()){
             Device device = new Device();
@@ -38,41 +42,55 @@ public class DeviceService {
             device.setDeviceType(deviceDto.getDeviceType());
             device.setTime(new Date());
 
-            return deviceRepository.save(device).getDto();
-        }else{
-            throw new EntityNotFoundException("Room Not present");
+            DeviceDto createdDevice = deviceRepository.save(device).getDto();
+            logger.info("Device created successfully: " + createdDevice);
+            return createdDevice;
+        } else {
+            logger.error("Room not found with id: "+deviceDto.getRoomId());
+            throw new EntityNotFoundException("Room not present");
         }
     }
 
     public DeviceDto updateDeviceStatus(Long deviceId) {
+        logger.info("Request to update status for device id: "+deviceId);
         Optional<Device> optionalDevice = deviceRepository.findById(deviceId);
         if(optionalDevice.isPresent()){
             Device device = optionalDevice.get();
 
             device.setStatus(!device.getStatus());
 
-            return deviceRepository.save(device).getDto();
-        }else{
-            throw new EntityNotFoundException("Device Not present");
+            DeviceDto updatedDevice = deviceRepository.save(device).getDto();
+            logger.info("Device status updated successfully: "+updatedDevice);
+            return updatedDevice;
+        } else {
+            logger.error("Device not found with id: "+deviceId);
+            throw new EntityNotFoundException("Device not present");
         }
     }
 
     public boolean deleteDevice(Long deviceId) {
+        logger.info("request to delete device with id: "+deviceId);
         Optional<Device> optionalDevice = deviceRepository.findById(deviceId);
         if(optionalDevice.isPresent()){
             deviceRepository.delete(optionalDevice.get());
+            logger.info("Device with id: "+deviceId+" deleted successfully.");
             return true;
-        }else{
-            throw new EntityNotFoundException("Device Not present");
+        } else {
+            logger.error("Device with id: "+deviceId+"not found.");
+            throw new EntityNotFoundException("Device not present");
         }
     }
 
     public DeviceDto getDevice(Long deviceId) {
+        logger.info("Request to get device with id: "+deviceId);
         Optional<Device> optionalDevice = deviceRepository.findById(deviceId);
         if(optionalDevice.isPresent()){
-            return optionalDevice.get().getDto();
-        }else{
-            throw new EntityNotFoundException("Device Not present");
+            DeviceDto deviceDto = optionalDevice.get().getDto();
+            logger.info("Device retrieved successfully: "+ deviceDto);
+            return deviceDto;
+        } else {
+            logger.error("Device not found with id: " + deviceId);
+            throw new EntityNotFoundException("Device not present");
         }
     }
 
@@ -91,19 +109,19 @@ public class DeviceService {
             throw new EntityNotFoundException("Room Not present");
         }*/ 
 
+        logger.info("Request to update device: " + deviceDto);
         Optional<Device> optionalDevice = deviceRepository.findById(deviceDto.getId());
         if(optionalDevice.isPresent()){
             Device device = optionalDevice.get();
 
             device.setName(deviceDto.getName());
             device.setDeviceType(deviceDto.getDeviceType());
-
-            return deviceRepository.save(device).getDto();
-        }else{
-            throw new EntityNotFoundException("Device Not present");
+            DeviceDto updatedDevice = deviceRepository.save(device).getDto();
+            logger.info("Device updated successfully: " + updatedDevice);
+            return updatedDevice;
+        } else {
+            logger.error("Device with id: "+deviceDto.getId() + " not found.");
+            throw new EntityNotFoundException("Device not present");
         }
-
-        
     }
-    
 }

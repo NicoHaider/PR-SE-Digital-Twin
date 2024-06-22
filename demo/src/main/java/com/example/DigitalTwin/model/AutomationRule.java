@@ -1,20 +1,23 @@
 package com.example.DigitalTwin.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
+@Getter
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class AutomationRule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String trigger;
     private String action;
-
     private String condition;
 
-    public AutomationRule(Long id, String trigger, String action, String condition) {
+    //wäre alles wegen lombok nicht notwendig
+    /*public AutomationRule(Long id, String trigger, String action, String condition) {
         this.id = id;
         this.trigger = trigger;
         this.action = action;
@@ -23,34 +26,18 @@ public class AutomationRule {
 
     public AutomationRule() {
 
-    }
-
-    public Long getId() {
-        return id;
-    }
+    }*/
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getTrigger() {
-        return trigger;
     }
 
     public void setTrigger(String trigger) {
         this.trigger = trigger;
     }
 
-    public String getAction() {
-        return action;
-    }
-
     public void setAction(String action) {
         this.action = action;
-    }
-
-    public String getCondition() {
-        return condition;
     }
 
     public void setCondition(String condition) {
