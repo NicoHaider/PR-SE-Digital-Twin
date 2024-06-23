@@ -1,4 +1,6 @@
 import { Device } from '../device/device.model';
+import { AutomationRule } from './automation-rule/automation-rule.model';
+
 
 export enum RoomType {
   LivingRoom = 'Living Room',
@@ -41,6 +43,8 @@ export class Room {
     this.deviceDtoList = devices;
     this.type = RoomType[type as keyof typeof RoomType];
   }
+
+
 
 }
 

@@ -5,10 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cc6aac-7770-47b2-9305-2443ad20c4b0" name="Changes" comment="added few new mockito tests for jacoco cc">
+      <change afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/add-automation-rule/add-automation-rule.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/add-automation-rule/add-automation-rule.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/add-automation-rule/add-automation-rule.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rule.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rule.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rule.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rule.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rules-overview/automation-rules-overview.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rules-overview/automation-rules-overview.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rules-overview/automation-rules-overview.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-details/room-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-details/room-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-details/room-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-details/room-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room.model.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +196,8 @@
       <workItem from="1719055995473" duration="122000" />
       <workItem from="1719056195237" duration="1809000" />
       <workItem from="1719062069483" duration="818000" />
+      <workItem from="1719069284139" duration="1933000" />
+      <workItem from="1719132223162" duration="5237000" />
     </task>
     <task id="LOCAL-00001" summary="update service mocking tests">
       <created>1718737140632</created>

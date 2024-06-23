@@ -1,0 +1,18 @@
+<div>
+  <h2>Add New Automation Rule</h2>
+  <form (ngSubmit)="saveRule()">
+    <div class="form-group">
+      <label for="trigger">Trigger:</label>
+      <input id="trigger" [(ngModel)]="newRule.trigger" name="trigger" required>
+    </div>
+    <div class="form-group">
+      <label for="action">Action:</label>
+      <input id="action" [(ngModel)]="newRule.action" name="action" required>
+    </div>
+    <div class="form-group">
+      <label for="condition">Condition:</label>
+      <input id="condition" [(ngModel)]="newRule.condition" name="condition" required>
+    </div>
+    <button class="save-button" type="submit">Save</button>
+  </form>
+</div>

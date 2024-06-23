@@ -18,6 +18,11 @@ import { UpdateRoomComponent } from './room/update-room/update-room.component';
 import { LinechartComponent } from './room/linechart/linechart.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
+import { AutomationRuleComponent } from './room/automation-rule/automation-rule.component';
+import { AutomationRuleService } from './room/automation-rule/automation-rule.service';
+import { AddAutomationRuleComponent } from './room/automation-rule/add-automation-rule/add-automation-rule.component';
+import { AutomationRulesOverviewComponent } from './room/automation-rule/automation-rules-overview/automation-rules-overview.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +35,9 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     AddDeviceComponent,
     UpdateRoomComponent,
     LinechartComponent,
+    AutomationRuleComponent,
+    AddAutomationRuleComponent,
+    AutomationRulesOverviewComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     HttpClientModule,
     NgApexchartsModule
   ],
-  providers: [RoomService, DeviceService],
+  providers: [RoomService, DeviceService, AutomationRuleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
