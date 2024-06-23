@@ -31,6 +31,7 @@ export class Room {
   deviceDtoList: Device[];
   type: RoomType;
   dateTime: Date = new Date();
+  rule: any;
 
   constructor(id: number, name: string, size: number, temperature: number, humidity: number, co2: number, people: number, devices: Device[], type: string) {
     this.id = id;

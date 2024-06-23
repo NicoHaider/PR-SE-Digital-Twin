@@ -6,7 +6,7 @@
   <div *ngFor="let room of rooms" class="room">
     <h3>{{ room.name }}</h3>
     <ul>
-      <li *ngFor="let rule of room.automationRules">
+      <li *ngFor="let rule of room.rule">
         Trigger: {{ rule.trigger }}, Action: {{ rule.action }}, Condition: {{ rule.condition }}
       </li>
     </ul>
