@@ -6,24 +6,24 @@ import { RoomDetailsComponent } from './room/room-details/room-details.component
 import { DeviceEditComponent } from './device/device-edit/device-edit.component';
 import { AddDeviceComponent } from './device/add-device/add-device.component';
 import { UpdateRoomComponent } from './room/update-room/update-room.component';
-import { AutomationRuleComponent } from './room/automation-rule/automation-rule.component';
-import { AddAutomationRuleComponent } from './room/automation-rule/add-automation-rule/add-automation-rule.component';
-import { AutomationRulesOverviewComponent } from './room/automation-rule/automation-rules-overview/automation-rules-overview.component';
-
+import {AutomationRulesComponent} from "./room/automation-rule/automation-rules.component";
+import {AddAutomationRuleComponent} from "./room/automation-rule/add-automation-rule/add-automation-rule.component";
+import {EditAutomationRuleComponent} from "./room/automation-rule/edit-automation-rule/edit-automation-rule.component";
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: RoomListComponent },
   { path: 'addRoom', component: RoomAddComponent },
-  { path: ':index', component: RoomDetailsComponent },
-  { path: ':index/edit', component: RoomAddComponent },
+  { path: 'rules/:id', component: AutomationRulesComponent },
+  { path: 'add-rule/:id', component: AddAutomationRuleComponent},
+  { path: 'update-rule/:roomId/:id', component: EditAutomationRuleComponent},
   { path: 'deviceEdit/:roomIndex/:index', component: DeviceEditComponent },
   { path: 'add-device/:id', component: AddDeviceComponent },
   { path: 'update-room/:id', component: UpdateRoomComponent },
-  { path: 'rules', component: AutomationRuleComponent },
-  { path: 'add-automation-rule', component: AddAutomationRuleComponent },
-  { path: 'automation-rules-overview', component: AutomationRulesOverviewComponent }
+  { path: ':index', component: RoomDetailsComponent },
+  { path: ':index/edit', component: RoomAddComponent },
+  { path: '**', redirectTo: '/home'},
 ];
 
 @NgModule({

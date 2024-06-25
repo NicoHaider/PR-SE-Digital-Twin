@@ -1,12 +1,12 @@
 package com.example.DigitalTwin.model;
 
+import com.example.DigitalTwin.dto.AutomationRuleDto;
 import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class AutomationRule {
     @Id
@@ -16,8 +16,11 @@ public class AutomationRule {
     private String action;
     private String condition;
 
-    //wäre alles wegen lombok nicht notwendig
-    /*public AutomationRule(Long id, String trigger, String action, String condition) {
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    private Room room;
+
+    public AutomationRule(Long id, String trigger, String action, String condition) {
         this.id = id;
         this.trigger = trigger;
         this.action = action;
@@ -26,7 +29,7 @@ public class AutomationRule {
 
     public AutomationRule() {
 
-    }*/
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -42,5 +45,16 @@ public class AutomationRule {
 
     public void setCondition(String condition) {
         this.condition = condition;
+    }
+
+    public AutomationRuleDto getDto() {
+        AutomationRuleDto dto = new AutomationRuleDto();
+
+        dto.setId(id);
+        dto.setTrigger(trigger);
+        dto.setAction(action);
+        dto.setCondition(condition);
+        dto.setRoomId(room.getId());
+        return dto;
     }
 }

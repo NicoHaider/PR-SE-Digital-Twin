@@ -9,10 +9,11 @@ public class AutomationRuleTest {
 
     private AutomationRule automationRule1;
     private AutomationRule automationRule2;
+    private Room room = new Room();
 
     @BeforeEach
     public void setUp() {
-        automationRule1 = new AutomationRule(1L, "trigger1", "action1", "condition1");
+        automationRule1 = new AutomationRule(1L, "trigger1", "action1", "condition1", room);
         automationRule2 = new AutomationRule();
         automationRule2.setId(2L);
         automationRule2.setTrigger("trigger2");
@@ -43,7 +44,7 @@ public class AutomationRuleTest {
 
     @Test
     public void testEqualsAndHashCode() {
-        AutomationRule anotherRule = new AutomationRule(1L, "trigger1", "action1", "condition1");
+        AutomationRule anotherRule = new AutomationRule(1L, "trigger1", "action1", "condition1", room);
         assertEquals(automationRule1, anotherRule);
         assertEquals(automationRule1.hashCode(), anotherRule.hashCode());
 

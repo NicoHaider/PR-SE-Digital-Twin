@@ -1,7 +1,9 @@
 package com.example.DigitalTwin.service;
 
+import com.example.DigitalTwin.dto.AutomationRuleDto;
 import com.example.DigitalTwin.exception.NotFoundException;
 import com.example.DigitalTwin.model.AutomationRule;
+import com.example.DigitalTwin.model.Room;
 import com.example.DigitalTwin.repository.AutomationRuleRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,6 +34,8 @@ public class AutomationRuleServiceTest {
 
     @BeforeEach
     public void setUp() {
+        Room room = new Room();
+        room.setId(1L);
         automationRule = new AutomationRule(1L, "trigger1", "action1", "condition1");
     }
 
@@ -39,7 +43,7 @@ public class AutomationRuleServiceTest {
     public void testSaveAutomationRule() {
         when(automationRuleRepository.save(any(AutomationRule.class))).thenReturn(automationRule);
 
-        AutomationRule savedRule = automationRuleService.saveAutomationRule(automationRule);
+        AutomationRuleDto savedRule = automationRuleService.saveAutomationRule(automationRule.getDto());
 
         assertNotNull(savedRule);
         assertEquals(1L, savedRule.getId());

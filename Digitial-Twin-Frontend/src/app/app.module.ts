@@ -17,11 +17,11 @@ import { AddDeviceComponent } from './device/add-device/add-device.component';
 import { UpdateRoomComponent } from './room/update-room/update-room.component';
 import { LinechartComponent } from './room/linechart/linechart.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
-
-import { AutomationRuleComponent } from './room/automation-rule/automation-rule.component';
-import { AutomationRuleService } from './room/automation-rule/automation-rule.service';
+import { AutomationRulesComponent } from './room/automation-rule/automation-rules.component';
+import { RuleItemComponent } from './room/automation-rule/rule-item/rule-item.component';
 import { AddAutomationRuleComponent } from './room/automation-rule/add-automation-rule/add-automation-rule.component';
-import { AutomationRulesOverviewComponent } from './room/automation-rule/automation-rules-overview/automation-rules-overview.component';
+import {AutomationRuleService} from "./room/automation-rule/automation-rules.service";
+import { EditAutomationRuleComponent } from './room/automation-rule/edit-automation-rule/edit-automation-rule.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +35,10 @@ import { AutomationRulesOverviewComponent } from './room/automation-rule/automat
     AddDeviceComponent,
     UpdateRoomComponent,
     LinechartComponent,
-    AutomationRuleComponent,
+    AutomationRulesComponent,
+    RuleItemComponent,
     AddAutomationRuleComponent,
-    AutomationRulesOverviewComponent
+    EditAutomationRuleComponent
   ],
   imports: [
     BrowserModule,

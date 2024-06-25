@@ -88,6 +88,6 @@ export class RoomDetailsComponent implements OnInit{
   }
 
   viewAutomationRules() {
-    this.router.navigate(['/automation-rules']);
+    this.router.navigateByUrl('/rules/'+ this.room.id);
   }
 }

@@ -1,6 +1,8 @@
 package com.example.DigitalTwin.controller;
 
+import com.example.DigitalTwin.dto.AutomationRuleDto;
 import com.example.DigitalTwin.model.AutomationRule;
+import com.example.DigitalTwin.model.Room;
 import com.example.DigitalTwin.service.AutomationRuleService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -43,8 +45,10 @@ public class AutomationRuleControllerTest {
 
     @BeforeEach
     public void setUp() {
-        automationRule1 = new AutomationRule(1L, "trigger1", "action1", "condition1");
-        automationRule2 = new AutomationRule(2L, "trigger2", "action2", "condition2");
+        Room room = new Room();
+        room.setId(1L);
+        automationRule1 = new AutomationRule(1L, "trigger1", "action1", "condition1", room);
+        automationRule2 = new AutomationRule(2L, "trigger2", "action2", "condition2", room);
     }
 
     @Test
@@ -68,8 +72,8 @@ public class AutomationRuleControllerTest {
 
     @Test
     public void testCreateAutomationRule() throws Exception {
-        when(automationRuleService.saveAutomationRule(ArgumentMatchers.any(AutomationRule.class)))
-                .thenReturn(automationRule1);
+        when(automationRuleService.saveAutomationRule(ArgumentMatchers.any(AutomationRuleDto.class)))
+                .thenReturn(automationRule1.getDto());
 
         mockMvc.perform(post("/api/rules")
                         .contentType(MediaType.APPLICATION_JSON)

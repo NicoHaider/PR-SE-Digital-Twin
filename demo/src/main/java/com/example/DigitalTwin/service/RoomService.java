@@ -37,6 +37,9 @@ public class RoomService {
 	@Autowired
 	DeviceRepository deviceRepository;
 
+	@Autowired
+	private AutomationRuleService automationRuleService;
+
 	@Transactional
 	public Room createRoom(RoomDto roomDetails) {
 		logger.info("Request to create room: " + roomDetails);
@@ -62,6 +65,7 @@ public class RoomService {
 				}
 				deviceRepository.saveAll(deviceList);
 			}
+			automationRuleService.createDefaultRules(room);
 
 
 			logger.info("Room created successfully: " + room);
