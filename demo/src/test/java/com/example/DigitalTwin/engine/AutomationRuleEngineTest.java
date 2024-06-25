@@ -76,7 +76,7 @@ public class AutomationRuleEngineTest {
         when(roomRepository.findAll()).thenReturn(Arrays.asList(room1, room2));
         when(automationRuleRepository.findAll()).thenReturn(Arrays.asList(rule1, rule2));
 
-        automationRuleEngine.checkRules();
+        automationRuleEngine.checkAndApplyRules();
 
         // Verify actions taken on room1
         assertEquals(0, room1.getWindows());
