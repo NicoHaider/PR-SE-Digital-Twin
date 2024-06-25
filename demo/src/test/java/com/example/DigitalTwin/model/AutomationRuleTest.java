@@ -55,7 +55,7 @@ public class AutomationRuleTest {
 
     @Test
     public void testToString() {
-        String expectedString = "AutomationRule(id=1, trigger=trigger1, action=action1, condition=condition1)";
+        String expectedString = "AutomationRule(id=1, trigger=trigger1, action=action1, condition=condition1, room="+room+")";
         assertEquals(expectedString, automationRule1.toString());
     }
 
