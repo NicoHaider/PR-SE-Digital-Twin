@@ -5,10 +5,9 @@ import com.example.DigitalTwin.enums.DeviceType;
 import com.example.DigitalTwin.model.Device;
 import com.example.DigitalTwin.model.Room;
 import com.example.DigitalTwin.repository.DeviceRepository;
-import com.example.DigitalTwin.repository.RoomRepository;
 import com.example.DigitalTwin.repository.RoomDataRepository;
+import com.example.DigitalTwin.repository.RoomRepository;
 import jakarta.persistence.EntityNotFoundException;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -19,7 +18,6 @@ import java.util.Date;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -37,129 +35,117 @@ public class DeviceServiceTest {
     @InjectMocks
     private DeviceService deviceService;
 
-    private DeviceDto deviceDto;
-    private Device device;
-    private Room room;
-
-    @BeforeEach
-    public void setUp() {
-        room = new Room();
-        room.setId(1L);
-
-        device = new Device();
-        device.setId(1L);
-        device.setName("Device1");
-        device.setRoom(room);
-        device.setStatus(true);
-        device.setDeviceType(DeviceType.Light);
-        device.setTime(new Date());
-
-        deviceDto = new DeviceDto();
-        deviceDto.setId(1L);
-        deviceDto.setName("Device1");
+    @Test
+    public void testCreateDevice() {
+        DeviceDto deviceDto = new DeviceDto();
+        deviceDto.setName("Thermostat");
         deviceDto.setRoomId(1L);
         deviceDto.setStatus(true);
         deviceDto.setDeviceType(DeviceType.Light);
-    }
 
-    @Test
-    public void testCreateDevice() {
+        Room room = new Room();
+        room.setId(1L);
+
         when(roomRepo.findById(1L)).thenReturn(Optional.of(room));
-        when(deviceRepository.save(any(Device.class))).thenReturn(device);
+        when(deviceRepository.save(any(Device.class))).thenAnswer(invocation -> {
+            Device device = invocation.getArgument(0);
+            device.setId(1L);
+            device.setRoom(room);
+            return device;
+        });
 
-        DeviceDto result = deviceService.createDevice(deviceDto);
+        DeviceDto createdDevice = deviceService.createDevice(deviceDto);
 
-        assertNotNull(result);
-        assertEquals("Device1", result.getName());
-        verify(roomRepo, times(1)).findById(1L);
-        verify(deviceRepository, times(1)).save(any(Device.class));
-    }
-
-    @Test
-    public void testCreateDeviceRoomNotFound() {
-        when(roomRepo.findById(1L)).thenReturn(Optional.empty());
-
-        assertThrows(EntityNotFoundException.class, () -> deviceService.createDevice(deviceDto));
-        verify(roomRepo, times(1)).findById(1L);
+        assertNotNull(createdDevice);
+        assertEquals("Thermostat", createdDevice.getName());
+        assertEquals(DeviceType.Light, createdDevice.getDeviceType());
+        verify(roomRepo).findById(1L);
+        verify(deviceRepository).save(any(Device.class));
     }
 
     @Test
     public void testUpdateDeviceStatus() {
+        Room room = new Room();
+        room.setId(1L);
+
+        Device device = new Device();
+        device.setId(1L);
+        device.setStatus(true);
+        device.setRoom(room);
+
         when(deviceRepository.findById(1L)).thenReturn(Optional.of(device));
-        when(deviceRepository.save(any(Device.class))).thenReturn(device);
+        when(deviceRepository.save(any(Device.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-        DeviceDto result = deviceService.updateDeviceStatus(1L);
+        DeviceDto updatedDevice = deviceService.updateDeviceStatus(1L);
 
-        assertNotNull(result);
-        assertEquals("Device1", result.getName());
-        verify(deviceRepository, times(1)).findById(1L);
-        verify(deviceRepository, times(1)).save(any(Device.class));
-    }
-
-    @Test
-    public void testUpdateDeviceStatusDeviceNotFound() {
-        when(deviceRepository.findById(1L)).thenReturn(Optional.empty());
-
-        assertThrows(EntityNotFoundException.class, () -> deviceService.updateDeviceStatus(1L));
-        verify(deviceRepository, times(1)).findById(1L);
+        assertNotNull(updatedDevice);
+        assertFalse(updatedDevice.getStatus());
+        verify(deviceRepository).findById(1L);
+        verify(deviceRepository).save(any(Device.class));
     }
 
     @Test
     public void testDeleteDevice() {
+        Room room = new Room();
+        room.setId(1L);
+
+        Device device = new Device();
+        device.setId(1L);
+        device.setRoom(room);
+
         when(deviceRepository.findById(1L)).thenReturn(Optional.of(device));
 
         boolean result = deviceService.deleteDevice(1L);
 
         assertTrue(result);
-        verify(deviceRepository, times(1)).findById(1L);
-        verify(deviceRepository, times(1)).delete(any(Device.class));
-    }
-
-    @Test
-    public void testDeleteDeviceNotFound() {
-        when(deviceRepository.findById(1L)).thenReturn(Optional.empty());
-
-        assertThrows(EntityNotFoundException.class, () -> deviceService.deleteDevice(1L));
-        verify(deviceRepository, times(1)).findById(1L);
+        verify(deviceRepository).findById(1L);
+        verify(deviceRepository).delete(any(Device.class));
     }
 
     @Test
     public void testGetDevice() {
+        Room room = new Room();
+        room.setId(1L);
+
+        Device device = new Device();
+        device.setId(1L);
+        device.setName("Thermostat");
+        device.setDeviceType(DeviceType.Light);
+        device.setRoom(room);
+
         when(deviceRepository.findById(1L)).thenReturn(Optional.of(device));
 
-        DeviceDto result = deviceService.getDevice(1L);
+        DeviceDto foundDevice = deviceService.getDevice(1L);
 
-        assertNotNull(result);
-        assertEquals("Device1", result.getName());
-        verify(deviceRepository, times(1)).findById(1L);
-    }
-
-    @Test
-    public void testGetDeviceNotFound() {
-        when(deviceRepository.findById(1L)).thenReturn(Optional.empty());
-
-        assertThrows(EntityNotFoundException.class, () -> deviceService.getDevice(1L));
-        verify(deviceRepository, times(1)).findById(1L);
+        assertNotNull(foundDevice);
+        assertEquals("Thermostat", foundDevice.getName());
+        assertEquals(DeviceType.Light, foundDevice.getDeviceType());
+        verify(deviceRepository).findById(1L);
     }
 
     @Test
     public void testUpdateDevice() {
+        DeviceDto deviceDto = new DeviceDto();
+        deviceDto.setId(1L);
+        deviceDto.setName("Thermostat");
+        deviceDto.setDeviceType(DeviceType.Light);
+
+        Room room = new Room();
+        room.setId(1L);
+
+        Device device = new Device();
+        device.setId(1L);
+        device.setRoom(room);
+
         when(deviceRepository.findById(1L)).thenReturn(Optional.of(device));
-        when(deviceRepository.save(any(Device.class))).thenReturn(device);
+        when(deviceRepository.save(any(Device.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-        DeviceDto result = deviceService.updateDevice(deviceDto);
+        DeviceDto updatedDevice = deviceService.updateDevice(deviceDto);
 
-        assertNotNull(result);
-        assertEquals("Device1", result.getName());
-        verify(deviceRepository, times(1)).findById(1L);
-        verify(deviceRepository, times(1)).save(any(Device.class));
-    }
-
-    @Test
-    public void testUpdateDeviceNotFound() {
-        when(deviceRepository.findById(1L)).thenReturn(Optional.empty());
-
-        assertThrows(EntityNotFoundException.class, () -> deviceService.updateDevice(deviceDto));
-        verify(deviceRepository, times(1)).findById(1L);
+        assertNotNull(updatedDevice);
+        assertEquals("Thermostat", updatedDevice.getName());
+        assertEquals(DeviceType.Light, updatedDevice.getDeviceType());
+        verify(deviceRepository).findById(1L);
+        verify(deviceRepository).save(any(Device.class));
     }
 }

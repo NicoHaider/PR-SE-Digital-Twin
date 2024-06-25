@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 import com.example.DigitalTwin.model.AutomationRule;
@@ -25,8 +25,9 @@ public class AutomationRuleController{
     } // getAllRules instead getAllAutomationRules
 
     @PostMapping
-    public AutomationRule createAutomationRule(@RequestBody AutomationRule automationRule) {
-        return automationRuleService.saveAutomationRule(automationRule);
+    public ResponseEntity<AutomationRule> createAutomationRule(@RequestBody AutomationRule automationRule) {
+        AutomationRule createdRule = automationRuleService.saveAutomationRule(automationRule);
+        return ResponseEntity.status(201).body(createdRule);
     }
 
     @DeleteMapping("/{id}")

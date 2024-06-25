@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import com.example.DigitalTwin.model.RoomData;
 import com.example.DigitalTwin.service.RoomDataService;
 import com.example.DigitalTwin.utils.ScheduledTasks;
-import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 
 @RestController
 @RequestMapping("roomData")
@@ -31,11 +31,18 @@ public class RoomDataController {
 
     @GetMapping("getBy/{id}")
     public RoomData getLastRoomDataByRoom(@PathVariable long id) {
-        List<RoomData> roomDataList = roomDataService.getRoomDataByRoom(id);
-        RoomData lastRoomData = null;
-        if (!roomDataList.isEmpty()) {
-            lastRoomData = roomDataList.get(roomDataList.size() - 1);
+        logger.info("Request to get last room data for room id: " +id);
+        try {
+            List<RoomData> roomDataList = roomDataService.getRoomDataByRoom(id);
+            RoomData lastRoomData = null;
+            if (!roomDataList.isEmpty()) {
+                lastRoomData = roomDataList.get(roomDataList.size() - 1);
+            }
+            logger.info("Last room data for room id " + id + ": " + lastRoomData);
+            return lastRoomData;
+        } catch (Exception e) {
+            logger.error("Error retrieving last room data for room id: "+id, e);
+            return null;
         }
-        return lastRoomData;
     }
 }

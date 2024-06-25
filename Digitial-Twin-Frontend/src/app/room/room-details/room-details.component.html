@@ -5,6 +5,7 @@
 <button class="button-delete" (click)="onDelete()"> Delete Room</button>
 <span>&nbsp;</span>
 <button class="button-add" (click)="onAddDevice()"> + Add Devices</button>
+<button class="button-edit" (click)="viewAutomationRules()">View Automation Rules</button>
 <br><br>
 <!-- <a>
     <h2>{{ room.name }}</h2>
@@ -18,9 +19,9 @@
     <p> Co2: {{ room.co2 }}</p>
 </a> -->
 <div class="room-item-container">
-  
-</div> 
-<main>      
+
+</div>
+<main>
     <app-room-item
     article class="room"
     [room]= room

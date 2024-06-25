@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Automation Rules Overview</h2>
+  <div class="buttons">
+    <button (click)="navigateToAddRule()" class="add-rule-button">Add New Rule</button>
+  </div>
+  <div *ngFor="let room of rooms" class="room">
+    <h3>{{ room.name }}</h3>
+    <ul>
+      <li *ngFor="let rule of room.rule">
+        Trigger: {{ rule.trigger }}, Action: {{ rule.action }}, Condition: {{ rule.condition }}
+      </li>
+    </ul>
+  </div>
+</div>
