@@ -4,37 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5cc6aac-7770-47b2-9305-2443ad20c4b0" name="Changes" comment="added few new mockito tests for jacoco cc">
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/dto/AutomationRuleDto.java" afterDir="false" />
+    <list default="true" id="f5cc6aac-7770-47b2-9305-2443ad20c4b0" name="Changes" comment="Update AutomationRuleTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/app.routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/add-automation-rule/add-automation-rule.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/add-automation-rule/add-automation-rule.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/add-automation-rule/add-automation-rule.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rule.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rule.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rule.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rule.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rules-overview/automation-rules-overview.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rules-overview/automation-rules-overview.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/automation-rule/automation-rules-overview/automation-rules-overview.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-details/room-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-details/room-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/logs/appplication.log" beforeDir="false" afterPath="$PROJECT_DIR$/demo/logs/application.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/AutomationRuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/AutomationRuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/dto/RoomDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/dto/RoomDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/engine/AutomationRuleEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/engine/AutomationRuleEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/model/AutomationRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/model/AutomationRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/model/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/AutomationRuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/AutomationRuleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/RoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/service/RoomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/utils/ScheduledTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/utils/ScheduledTasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/controller/AutomationRuleControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/controller/AutomationRuleControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/model/AutomationRuleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/model/AutomationRuleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/service/AutomationRuleServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/DigitalTwin/service/AutomationRuleServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/logs/appplication.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +184,7 @@
       <workItem from="1719062069483" duration="818000" />
       <workItem from="1719069284139" duration="1933000" />
       <workItem from="1719132223162" duration="5237000" />
-      <workItem from="1719330606931" duration="9100000" />
+      <workItem from="1719330606931" duration="11396000" />
     </task>
     <task id="LOCAL-00001" summary="update service mocking tests">
       <created>1718737140632</created>
@@ -242,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718754093910</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update AutomationRuleTest">
+      <option name="closed" value="true" />
+      <created>1719344463393</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719344463393</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +245,8 @@
     <MESSAGE value="updated files for improved logging" />
     <MESSAGE value="added utils and exception mocking tests" />
     <MESSAGE value="added few new mockito tests for jacoco cc" />
-    <option name="LAST_COMMIT_MESSAGE" value="added few new mockito tests for jacoco cc" />
+    <MESSAGE value="Update AutomationRuleTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update AutomationRuleTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
