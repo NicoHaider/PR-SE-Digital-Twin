@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'smart-home-app';
-  userName = 'Max';
+  userName = 'Home';
 }

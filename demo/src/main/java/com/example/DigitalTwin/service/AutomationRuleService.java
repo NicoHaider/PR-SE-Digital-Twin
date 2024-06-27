@@ -43,7 +43,7 @@ public class AutomationRuleService {
 
         AutomationRuleDto openWindowIfCo2high = new AutomationRuleDto();
         openWindowIfCo2high.setRoomId(room.getId());
-        openWindowIfCo2high.setCondition("co2_level > 500");
+        openWindowIfCo2high.setCondition("co2_level > 3000");
         openWindowIfCo2high.setAction("open_window");
         openWindowIfCo2high.setTrigger("co2_sensor");
         saveAutomationRule(openWindowIfCo2high);
