@@ -156,6 +156,14 @@ public class Room {
 		this.devices = devices;
 	}
 
+	public List<AutomationRule> getAutomationRules() {
+		return automationRules;
+	}
+
+	public void setAutomationRules(List<AutomationRule> automationRules) {
+		this.automationRules = automationRules;
+	}
+
 	// Added
 	public RoomDto getDto() {
 		RoomDto dto = new RoomDto();

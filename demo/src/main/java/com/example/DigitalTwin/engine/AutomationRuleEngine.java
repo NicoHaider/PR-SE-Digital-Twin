@@ -1,17 +1,23 @@
 package com.example.DigitalTwin.engine;
 
+import com.example.DigitalTwin.enums.DeviceType;
+import com.example.DigitalTwin.model.Device;
 import com.example.DigitalTwin.model.Room;
 import com.example.DigitalTwin.model.AutomationRule;
+import com.example.DigitalTwin.model.RoomData;
+import com.example.DigitalTwin.repository.DeviceRepository;
 import com.example.DigitalTwin.repository.RoomRepository;
 import com.example.DigitalTwin.repository.AutomationRuleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalTime;
 import java.util.List;
 
 @Component
+@Transactional
 public class AutomationRuleEngine {
     @Autowired
     private RoomRepository roomRepository;
@@ -19,11 +25,15 @@ public class AutomationRuleEngine {
     @Autowired
     private AutomationRuleRepository automationRuleRepository;
 
+    @Autowired
+    private DeviceRepository deviceRepository;
+
     public void checkAndApplyRules() {
         List<Room> rooms = roomRepository.findAll();
-        List<AutomationRule> automationRules = automationRuleRepository.findAll();
 
         for (Room room : rooms) {
+            List<AutomationRule> automationRules = automationRuleRepository.findAllByRoomId(room.getId());
+            List<RoomData> roomDataList = room.getRoomDataList();
             for (AutomationRule automationRule : automationRules) {
                 if (evaluateCondition(automationRule.getCondition(), room)) {
                     executeAction(automationRule.getAction(), room);
@@ -49,7 +59,7 @@ public class AutomationRuleEngine {
         switch (parameter) {
             case "temperature":
                 return evaluateNumericCondition(room.getTemperature(), operator, Double.parseDouble(value));
-            case "co2":
+            case "co2_level":
                 return evaluateNumericCondition(room.getCo2(), operator, Double.parseDouble(value));
             case "peopleCount":
                 return evaluateNumericCondition(room.getPeopleCount(), operator, Integer.parseInt(value));
@@ -86,35 +96,44 @@ public class AutomationRuleEngine {
     }
 
     private void executeAction(String action, Room room) {
+        List<Device> devices = deviceRepository.findAllByRoomId(room.getId());
         switch (action) {
             case "open_window":
-                room.setWindows(room.getWindows() + 1);
+                List<Device> windows_o = devices.stream().filter(d -> d.getDeviceType() == DeviceType.Window).toList();
+                windows_o.forEach(w -> w.setStatus(true));
                 break;
             case "close_window":
-                room.setWindows(Math.max(0, room.getWindows() - 1));
+                List<Device> windows_c = devices.stream().filter(d -> d.getDeviceType() == DeviceType.Window).toList();
+                windows_c.forEach(w -> w.setStatus(false));
                 break;
             case "turn_on_light":
-                room.setLights(room.getLights() + 1);
+                List<Device> lights_on = devices.stream().filter(d -> d.getDeviceType() == DeviceType.Light).toList();
+                lights_on.forEach(l -> l.setStatus(true));
                 break;
             case "turn_off_light":
-                room.setLights(Math.max(0, room.getLights() - 1));
+                List<Device> lights_off = devices.stream().filter(d -> d.getDeviceType() == DeviceType.Light).toList();
+                lights_off.forEach(l -> l.setStatus(false));
                 break;
             case "turn_on_fan":
-                room.setFans(room.getFans() + 1);
+                List<Device> fans_on = devices.stream().filter(d -> d.getDeviceType() == DeviceType.Fan).toList();
+                fans_on.forEach(f -> f.setStatus(true));
                 break;
             case "turn_off_fan":
-                room.setFans(Math.max(0, room.getFans() - 1));
+                List<Device> fans_off = devices.stream().filter(d -> d.getDeviceType() == DeviceType.Fan).toList();
+                fans_off.forEach(f -> f.setStatus(false));
                 break;
             case "lock_door":
-                room.setDoors(room.getDoors() + 1);
+                List<Device> doors_l = devices.stream().filter(d -> d.getDeviceType() == DeviceType.Door).toList();
+                doors_l.forEach(d -> d.setStatus(false));
                 break;
             case "unlock_door":
-                room.setDoors(Math.max(0, room.getDoors() - 1));
+                List<Device> doors_u = devices.stream().filter(d -> d.getDeviceType() == DeviceType.Door).toList();
+                doors_u.forEach(d -> d.setStatus(true));
                 break;
             default:
                 break;
         }
-        roomRepository.save(room);
+        deviceRepository.saveAll(devices);
     }
 
     private void closeAllWindows(Room room) {

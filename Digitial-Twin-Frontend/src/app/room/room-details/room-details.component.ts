@@ -38,6 +38,7 @@ export class RoomDetailsComponent implements OnInit{
       this.fetchData();
       setInterval(() => {
         this.fetchData();
+        this.updateDeviceList();
       }, 10000);
     }, error=>{
       console.log(error);
@@ -89,5 +90,13 @@ export class RoomDetailsComponent implements OnInit{
 
   viewAutomationRules() {
     this.router.navigateByUrl('/rules/'+ this.room.id);
+  }
+
+  private updateDeviceList() {
+    this.roomService.getRoomById(this.index).subscribe(res => {
+      this.room = res;
+    }, error=>{
+      console.log(error);
+    });
   }
 }
