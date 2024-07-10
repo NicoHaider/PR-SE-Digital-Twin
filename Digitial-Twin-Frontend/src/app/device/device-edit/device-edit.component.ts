@@ -47,7 +47,7 @@ export class DeviceEditComponent implements OnInit{
   onSubmit() {
     const data = this.deviceForm.value;
     data.roomId = this.roomIndex;
-    console.log("data", data);
+    data.id = this.deviceId;
     this.deviceService.updateDevice(data).subscribe(res=>{
       this.router.navigate(['/', this.roomIndex]);
     }, error=>{

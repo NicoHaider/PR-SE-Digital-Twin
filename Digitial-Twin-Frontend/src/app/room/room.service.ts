@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class RoomService {
   roomsChanged = new Subject<Room[]>();
-  editModeChange = new Subject<Boolean>();
   basePath = "http://localhost:8080/";
 
   constructor(private http: HttpClient) { }
@@ -35,10 +34,6 @@ export class RoomService {
     return this.http.delete(this.basePath + `room/${id}`, {responseType: 'text'});
   }
 
-  editModeChanged(editMode: boolean){
-    this.editModeChange.next(editMode);
-  }
-
   getRoomStructure(){
     return this.http.get(this.basePath + "room/report", { responseType: 'blob' });
   }
@@ -48,12 +43,10 @@ export class RoomService {
   }
 
   fetchAllDataFromBackend(room : Room): Observable<any>{
-    console.log("fetching data from backend");
     return this.http.get(this.basePath + `roomData/getAllBy/${room.id}`);
   }
 
   fetchAllDeviceDataFromBackend(room : Room): Observable<any>{
-    console.log("fetching device data from backend");
     return this.http.get(this.basePath + `roomData/getAllBy/${room.id}`);
   }
 

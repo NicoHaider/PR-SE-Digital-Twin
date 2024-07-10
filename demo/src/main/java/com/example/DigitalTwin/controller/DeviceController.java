@@ -77,7 +77,6 @@ public class DeviceController {
 
     @PostMapping("/update")
     public ResponseEntity<?> updateDevice(@Valid @RequestBody DeviceDto deviceDto) {
-        System.out.println("in create device controller ");
         logger.info("Entering updateDevice method");
         try{
             return ResponseEntity.status(HttpStatus.CREATED).body(deviceService.updateDevice(deviceDto));

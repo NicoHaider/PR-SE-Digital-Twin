@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5cc6aac-7770-47b2-9305-2443ad20c4b0" name="Changes" comment="" />
+    <list default="true" id="f5cc6aac-7770-47b2-9305-2443ad20c4b0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/device/device-edit/device-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/device/device-edit/device-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/device/device-item/device-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/device/device-item/device-item.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/device/device.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/device/device.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/linechart/linechart.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/linechart/linechart.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-details/room-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-details/room-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-list/room-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-list/room-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/DeviceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/DigitalTwin/controller/DeviceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/example/DigitalTwin/controller/DeviceController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,9 +26,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2hn0N6FdcKw0ikvsQC4GfRHPCdJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,7 +45,9 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "C:\\Users\\valeg\\OneDrive\\Desktop\\2024SS\\PR-SE-Digital-Twin\\Digitial-Twin-Frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -49,6 +61,7 @@
       <updated>1718214501747</updated>
       <workItem from="1718214503760" duration="5148000" />
       <workItem from="1720593133199" duration="263000" />
+      <workItem from="1720617692771" duration="106000" />
     </task>
     <servers />
   </component>

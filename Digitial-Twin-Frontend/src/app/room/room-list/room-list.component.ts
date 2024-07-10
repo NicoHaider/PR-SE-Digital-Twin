@@ -31,7 +31,6 @@ export class RoomListComponent implements OnInit{
   fetchData() {
       this.rooms.forEach(room => {
         this.roomService.fetchDataFromBackend(room).subscribe((data: RoomData) => {
-          console.log(data);
             room.co2 = data.co2Level;
             room.temperature = data.temperature;
             room.people = data.numOfPeople;

@@ -242,7 +242,6 @@ export class LinechartComponent implements OnInit{
   fetchData() {
     this.roomService.fetchAllDataFromBackend(this.room).subscribe((data: RoomData[]) => {
       this.roomData = data;
-      console.log(this.roomData);
       this.initCharts();
       }, error=>{
         console.log("error in fetch all ", error)
@@ -254,7 +253,6 @@ export class LinechartComponent implements OnInit{
 fetchextraData() {
   this.roomService.fetchAllDataFromBackend(this.room).subscribe((data: RoomData[]) => {
     this.roomData = data;
-    console.log(this.roomData);
     this.updateSeries();
     }, error=>{
       console.log("error in fetch all ", error)

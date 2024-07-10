@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Device, DeviceImagePath, DeviceType } from './device.model';
-import { RoomService } from '../room/room.service';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Observable} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -9,12 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class DeviceService {
 
   basePath = "http://localhost:8080/device";
-
   
-  editModeChange = new BehaviorSubject<boolean>(false);
-  
-  constructor(private roomService : RoomService,
-    private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   createEmptyDevice(): Device {
     return new Device(0, 0, '', '', false);
@@ -37,20 +32,7 @@ export class DeviceService {
   }
 
   updateDevice(device: any): Observable<any>{
-    return this.http.post(this.basePath + "/update", device );
-  }
-
-  getDevices(index: number) : Device[] {
-    // return this.roomService.getRoom(index).devices;
-    return [];
-  }
-
-  getEditMode(): boolean {
-    return this.editModeChange.getValue();
-  }
-
-  editModeChanged(editMode: boolean){
-    this.editModeChange.next(editMode);
+    return this.http.post(this.basePath + "/update", device);
   }
 
   getDeviceImagePath(deviceType: DeviceType): string {

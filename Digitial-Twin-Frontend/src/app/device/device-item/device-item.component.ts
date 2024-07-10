@@ -31,7 +31,6 @@ export class DeviceItemComponent {
   }
 
   onEdit() {
-    this.deviceService.editModeChanged(true);
     this.router.navigate(['/deviceEdit/'+ this.roomId + '/' + this.device.id]);
   }
 
