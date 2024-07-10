@@ -7,7 +7,7 @@ Step 1 (optional) - Install Java JDK 11 or Higher :
 
 
 Step 2 (optional) - Install Maven: 
-  Go the the Maven Download Page (https://maven.apache.org/download.cgi). DOwnload the ZIP file and extract it (the location does not matter in this case). Follow the instruction on the   
+  Go the the Maven Download Page (https://maven.apache.org/download.cgi). Download the ZIP file and extract it (the location does not matter in this case). Follow the instruction on the   
   website on how to add the "bin" directory of Maven to your system's PATH environment variable. You can verify your installation by opening your terminal and putting in this ("mvn -version") command. 
 
 
