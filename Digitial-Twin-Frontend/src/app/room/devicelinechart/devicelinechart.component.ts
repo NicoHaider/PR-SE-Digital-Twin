@@ -14,6 +14,7 @@ import {
 import { Room } from '../room.model';
 import { RoomData } from '../roomData.model';
 import { RoomService } from '../room.service';
+import { DeviceStatusData } from '@app/device/device-status-data';
 
 export type ChartOptions = {
     series: ApexAxisChartSeries;
@@ -33,31 +34,48 @@ export type ChartOptions = {
   };
   
   @Component({
-    selector: 'app-linechart',
+    selector: 'devicelinechart',
     templateUrl: './devicelinechart.component.html',
     styleUrl: './devicelinechart.component.css'
   })
 export class DevicelinechartComponent implements OnInit{ 
 @ViewChild("chart") chart: ChartComponent;
 public chartOptions: Partial<ChartOptions>;
+@Input() roomId: number;
+room: Room;
+deviceStatusData: DeviceStatusData[];
 
-constructor() {
+constructor(private roomService: RoomService) {
+   
+}
+
+ngOnInit(): void {
+    this.roomService.getRoomById(this.roomId).subscribe((room: Room) => {
+      this.room = room;
+      this.fetchData();     
+    });
+  }
+
+public initCharts(): void {
   this.chartOptions = {
     series: [
-      {
-        name: "Session Duration",
-        data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10]
-      },
-      {
-        name: "Page Views",
-        data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 32, 35]
-      },
-      {
-        name: "Total Visits",
-        data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 45, 47]
-      }
-    ],
-    chart: {
+        {
+            name: "Opend Windows",
+            data: this.generateGraphData("windows_on")
+        },
+        {
+            name: "Turned On Lights",
+            data: this.generateGraphData("lights_on")
+        },
+        {
+            name: "Opend Doors",
+            data: this.generateGraphData("doors_on")
+        },
+        {
+            name: "Turned On Fans",
+            data: this.generateGraphData("fans_on")         }
+            ],
+      chart: {
       height: 350,
       type: "line"
     },
@@ -66,15 +84,14 @@ constructor() {
     },
     stroke: {
       width: 5,
-      curve: "straight",
-      dashArray: [0, 8, 5]
+      curve: "stepline"
     },
     title: {
-      text: "Page Statistics",
+      text: "Devicelinechart",
       align: "left"
     },
     legend: {
-      tooltipHoverFormatter: function(val, opts) {
+      tooltipHoverFormatter: function( val, opts) {
         return (
           val +
           " - <strong>" +
@@ -93,27 +110,15 @@ constructor() {
       labels: {
         trim: false
       },
-      categories: [
-        "01 Jan",
-        "02 Jan",
-        "03 Jan",
-        "04 Jan",
-        "05 Jan",
-        "06 Jan",
-        "07 Jan",
-        "08 Jan",
-        "09 Jan",
-        "10 Jan",
-        "11 Jan",
-        "12 Jan"
-      ]
+      type: "datetime"
+   
     },
     tooltip: {
       y: [
         {
           title: {
             formatter: function(val) {
-              return val + " (mins)";
+              return val ;
             }
           }
         },
@@ -138,7 +143,31 @@ constructor() {
     }
   };
 }
-      ngOnInit(): void {
-          throw new Error('Method not implemented.');
-      }
+
+ generateGraphData(property): any[] {
+    let i = 0;
+    let series = [];
+    let count = this. deviceStatusData.length;
+    while (i < count) {
+      var x = this.deviceStatusData[i].dateTime;
+      var y = this.deviceStatusData[i][property];
+      series.push([x, y]);
+      i++;
+    }
+    return series;
+  }
+
+fetchData() {
+    this.roomService.fetchAllDeviceDataFromBackend(this.room).subscribe((data: DeviceStatusData[]) => {
+      this.deviceStatusData = data;
+      console.log("device data", this.deviceStatusData);
+      this.initCharts();
+      }, error=>{
+        console.log("error in fetch all ", error)
+      }); 
+  }
+
 }
+
+
+

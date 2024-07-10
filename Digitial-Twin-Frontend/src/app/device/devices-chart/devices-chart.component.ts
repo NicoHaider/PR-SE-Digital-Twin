@@ -26,7 +26,7 @@ export class DevicesChartComponent implements OnInit{
   }
 
   fetchData() {
-  this.roomService.fetchAllDeviceDataFromBackend(this.roomId).subscribe((data: DeviceStatusData[]) => {
+  this.roomService.fetchAllDeviceDataFromBackend(this.room).subscribe((data: DeviceStatusData[]) => {
     this.deviceStatusData = data;
     this.createChart();
     }, error=>{

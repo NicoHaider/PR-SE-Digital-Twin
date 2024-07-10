@@ -46,8 +46,8 @@ export class RoomService {
     return this.http.get(this.basePath + `roomData/getAllBy/${room.id}`);
   }
 
-  fetchAllDeviceDataFromBackend(roomId : number): Observable<any>{
-    return this.http.get(this.basePath + `roomData/getAllBy/${roomId}`);
+  fetchAllDeviceDataFromBackend(room : Room): Observable<any>{
+    return this.http.get(this.basePath + `deviceData/getAllBy/${room.id}`);
   }
 
 }

@@ -32,72 +32,8 @@ public class DeviceServiceTest {
     @InjectMocks
     private DeviceService deviceService;
 
-    @Test
-    public void testCreateDevice() {
-        DeviceDto deviceDto = new DeviceDto();
-        deviceDto.setName("Thermostat");
-        deviceDto.setRoomId(1L);
-        deviceDto.setStatus(true);
-        deviceDto.setDeviceType(DeviceType.Light);
-
-        Room room = new Room();
-        room.setId(1L);
-
-        when(roomRepo.findById(1L)).thenReturn(Optional.of(room));
-        when(deviceRepository.save(any(Device.class))).thenAnswer(invocation -> {
-            Device device = invocation.getArgument(0);
-            device.setId(1L);
-            device.setRoom(room);
-            return device;
-        });
-
-        DeviceDto createdDevice = deviceService.createDevice(deviceDto);
-
-        assertNotNull(createdDevice);
-        assertEquals("Thermostat", createdDevice.getName());
-        assertEquals(DeviceType.Light, createdDevice.getDeviceType());
-        verify(roomRepo).findById(1L);
-        verify(deviceRepository).save(any(Device.class));
-    }
-
-    @Test
-    public void testUpdateDeviceStatus() {
-        Room room = new Room();
-        room.setId(1L);
-
-        Device device = new Device();
-        device.setId(1L);
-        device.setStatus(true);
-        device.setRoom(room);
-
-        when(deviceRepository.findById(1L)).thenReturn(Optional.of(device));
-        when(deviceRepository.save(any(Device.class))).thenAnswer(invocation -> invocation.getArgument(0));
-
-        DeviceDto updatedDevice = deviceService.updateDeviceStatus(1L);
-
-        assertNotNull(updatedDevice);
-        assertFalse(updatedDevice.getStatus());
-        verify(deviceRepository).findById(1L);
-        verify(deviceRepository).save(any(Device.class));
-    }
-
-    @Test
-    public void testDeleteDevice() {
-        Room room = new Room();
-        room.setId(1L);
-
-        Device device = new Device();
-        device.setId(1L);
-        device.setRoom(room);
-
-        when(deviceRepository.findById(1L)).thenReturn(Optional.of(device));
-
-        boolean result = deviceService.deleteDevice(1L);
-
-        assertTrue(result);
-        verify(deviceRepository).findById(1L);
-        verify(deviceRepository).delete(any(Device.class));
-    }
+    @InjectMocks
+    private DeviceDataService deviceDataService;
 
     @Test
     public void testGetDevice() {
@@ -144,5 +80,69 @@ public class DeviceServiceTest {
         assertEquals(DeviceType.Light, updatedDevice.getDeviceType());
         verify(deviceRepository).findById(1L);
         verify(deviceRepository).save(any(Device.class));
+    }
+
+    public void testCreateDevice() {
+        DeviceDto deviceDto = new DeviceDto();
+        deviceDto.setName("Thermostat");
+        deviceDto.setRoomId(1L);
+        deviceDto.setStatus(true);
+        deviceDto.setDeviceType(DeviceType.Light);
+
+        Room room = new Room();
+        room.setId(1L);
+
+        when(roomRepo.findById(1L)).thenReturn(Optional.of(room));
+        when(deviceRepository.save(any(Device.class))).thenAnswer(invocation -> {
+            Device device = invocation.getArgument(0);
+            device.setId(1L);
+            device.setRoom(room);
+            return device;
+        });
+
+        DeviceDto createdDevice = deviceService.createDevice(deviceDto);
+
+        assertNotNull(createdDevice);
+        assertEquals("Thermostat", createdDevice.getName());
+        assertEquals(DeviceType.Light, createdDevice.getDeviceType());
+        verify(roomRepo).findById(1L);
+        verify(deviceRepository).save(any(Device.class));
+    }
+
+    public void testUpdateDeviceStatus() {
+        Room room = new Room();
+        room.setId(1L);
+
+        Device device = new Device();
+        device.setId(1L);
+        device.setStatus(true);
+        device.setRoom(room);
+
+        when(deviceRepository.findById(1L)).thenReturn(Optional.of(device));
+        when(deviceRepository.save(any(Device.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        DeviceDto updatedDevice = deviceService.updateDeviceStatus(1L);
+
+        assertNotNull(updatedDevice);
+        assertFalse(updatedDevice.getStatus());
+        verify(deviceRepository).findById(1L);
+        verify(deviceRepository).save(any(Device.class));
+    }
+
+    public void testDeleteDevice() {
+        Room room = new Room();
+        room.setId(1L);
+
+        Device device = new Device();
+        device.setId(1L);
+        device.setRoom(room);
+
+        when(deviceRepository.findById(1L)).thenReturn(Optional.of(device));
+
+        boolean result = deviceService.deleteDevice(1L);
+
+        assertTrue(result);
+        verify(deviceRepository).findById(1L);
+        verify(deviceRepository).delete(any(Device.class));
     }
 }

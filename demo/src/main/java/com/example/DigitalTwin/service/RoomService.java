@@ -87,15 +87,12 @@ public class RoomService {
 
 					deviceList.add(device);
 				}
-				List<Device> savedDevices = deviceRepository.saveAll(deviceList);
+				deviceRepository.saveAll(deviceList);
 				room.setWindows(numWindows);
 				room.setDoors(numDoors);
 				room.setLights(numLights);
 				room.setFans(numFans);
-					
-				if(!savedDevices.isEmpty()){
-					deviceDataService.addDeviceData(room);
-				}
+				
 			automationRuleService.createDefaultRules(room);
 			}
 			logger.info("Room created successfully: " + room);

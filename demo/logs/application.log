@@ -1,0 +1,32 @@
+2024-Juli-10 20:41:52 [main] INFO  c.e.D.s.DeviceService                              - Request to update device: com.example.DigitalTwin.dto.DeviceDto@3c87fdf2
+2024-Juli-10 20:41:52 [main] INFO  c.e.D.s.DeviceService                              - Device updated successfully: com.example.DigitalTwin.dto.DeviceDto@2abe9173
+2024-Juli-10 20:41:52 [main] INFO  c.e.D.s.DeviceService                              - request to delete device with id: 1
+2024-Juli-10 20:41:52 [main] INFO  c.e.D.s.DeviceService                              - Device with id: 1 deleted successfully.
+2024-Juli-10 20:41:52 [main] INFO  c.e.D.s.DeviceService                              - Request to update status for device id: 1
+2024-Juli-10 20:41:52 [main] INFO  c.e.D.s.DeviceService                              - Device status updated successfully: com.example.DigitalTwin.dto.DeviceDto@7ee8130e
+2024-Juli-10 20:41:52 [main] INFO  c.e.D.s.DeviceService                              - Request to get device with id: 1
+2024-Juli-10 20:41:52 [main] INFO  c.e.D.s.DeviceService                              - Device retrieved successfully: com.example.DigitalTwin.dto.DeviceDto@7c601d50
+2024-Juli-10 20:41:52 [main] INFO  c.e.D.s.DeviceService                              - Request to create device: com.example.DigitalTwin.dto.DeviceDto@7c2dfa2
+2024-Juli-10 20:41:52 [main] INFO  c.e.D.s.DeviceService                              - Device created successfully: com.example.DigitalTwin.dto.DeviceDto@661d88a
+2024-Juli-10 20:43:49 [main] INFO  c.e.D.s.DeviceService                              - Request to update device: com.example.DigitalTwin.dto.DeviceDto@26bbe604
+2024-Juli-10 20:43:49 [main] INFO  c.e.D.s.DeviceService                              - Device updated successfully: com.example.DigitalTwin.dto.DeviceDto@235d29d6
+2024-Juli-10 20:43:49 [main] INFO  c.e.D.s.DeviceService                              - request to delete device with id: 1
+2024-Juli-10 20:43:49 [main] INFO  c.e.D.s.DeviceService                              - Device with id: 1 deleted successfully.
+2024-Juli-10 20:43:49 [main] INFO  c.e.D.s.DeviceService                              - Request to update status for device id: 1
+2024-Juli-10 20:43:49 [main] INFO  c.e.D.s.DeviceService                              - Device status updated successfully: com.example.DigitalTwin.dto.DeviceDto@6296474f
+2024-Juli-10 20:43:49 [main] INFO  c.e.D.s.DeviceService                              - Request to get device with id: 1
+2024-Juli-10 20:43:49 [main] INFO  c.e.D.s.DeviceService                              - Device retrieved successfully: com.example.DigitalTwin.dto.DeviceDto@79b2852b
+2024-Juli-10 20:43:49 [main] INFO  c.e.D.s.DeviceService                              - Request to create device: com.example.DigitalTwin.dto.DeviceDto@59ce792e
+2024-Juli-10 20:43:49 [main] INFO  c.e.D.s.DeviceService                              - Device created successfully: com.example.DigitalTwin.dto.DeviceDto@4860827a
+2024-Juli-10 20:45:53 [main] INFO  c.e.D.s.DeviceService                              - Request to create device: com.example.DigitalTwin.dto.DeviceDto@529c2a9a
+2024-Juli-10 20:45:53 [main] INFO  c.e.D.s.DeviceService                              - Device created successfully: com.example.DigitalTwin.dto.DeviceDto@6ab4a5b
+2024-Juli-10 20:46:16 [main] INFO  c.e.D.s.DeviceService                              - Request to create device: com.example.DigitalTwin.dto.DeviceDto@cda6019
+2024-Juli-10 20:46:16 [main] INFO  c.e.D.s.DeviceService                              - Device created successfully: com.example.DigitalTwin.dto.DeviceDto@44065156
+2024-Juli-10 20:48:58 [main] INFO  c.e.D.s.DeviceService                              - Request to update device: com.example.DigitalTwin.dto.DeviceDto@4f5b08d
+2024-Juli-10 20:48:58 [main] INFO  c.e.D.s.DeviceService                              - Device updated successfully: com.example.DigitalTwin.dto.DeviceDto@a96d56c
+2024-Juli-10 20:48:58 [main] INFO  c.e.D.s.DeviceService                              - Request to get device with id: 1
+2024-Juli-10 20:48:58 [main] INFO  c.e.D.s.DeviceService                              - Device retrieved successfully: com.example.DigitalTwin.dto.DeviceDto@1df1ced0
+2024-Juli-10 20:49:32 [main] INFO  c.e.D.s.DeviceService                              - Request to update device: com.example.DigitalTwin.dto.DeviceDto@4f5b08d
+2024-Juli-10 20:49:32 [main] INFO  c.e.D.s.DeviceService                              - Device updated successfully: com.example.DigitalTwin.dto.DeviceDto@a96d56c
+2024-Juli-10 20:49:32 [main] INFO  c.e.D.s.DeviceService                              - Request to get device with id: 1
+2024-Juli-10 20:49:32 [main] INFO  c.e.D.s.DeviceService                              - Device retrieved successfully: com.example.DigitalTwin.dto.DeviceDto@1df1ced0
