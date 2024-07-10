@@ -3,7 +3,7 @@ export class RoomData {
     temperature: number;
     numOfPeople: number;
     dateTime: Date;
-  type: any;
-  property: any;
+    type: any;
+    property: any;
   }
   
