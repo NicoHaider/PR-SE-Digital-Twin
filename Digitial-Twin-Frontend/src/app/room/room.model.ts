@@ -1,7 +1,7 @@
 import { Device } from '../device/device.model';
 
 export enum RoomType {
-  LivingRoom = 'Living Room',
+  Livingroom = 'Livingroom',
   Bedroom = 'Bedroom',
   Gaming = 'Gaming',
   Bathroom = 'Bathroom',
@@ -10,7 +10,7 @@ export enum RoomType {
 }
 
 export const RoomTypeImagePath = {
-  [RoomType.LivingRoom]: '../../assets/images/livingroom.png',
+  [RoomType.Livingroom]: '../../assets/images/livingroom.png',
   [RoomType.Bedroom]: '../../assets/images/bedroom.png',
   [RoomType.Gaming]: '../../assets/images/gameroom.png',
   [RoomType.Bathroom]: '../../assets/images/bath.png',

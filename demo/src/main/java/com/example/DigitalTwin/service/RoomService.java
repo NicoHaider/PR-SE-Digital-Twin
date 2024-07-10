@@ -8,6 +8,7 @@ import com.example.DigitalTwin.exception.NotFoundException;
 import com.example.DigitalTwin.model.Device;
 import com.example.DigitalTwin.model.Room;
 import com.example.DigitalTwin.model.RoomData;
+import com.example.DigitalTwin.repository.DeviceDataRepository;
 import com.example.DigitalTwin.repository.DeviceRepository;
 import com.example.DigitalTwin.repository.RoomDataRepository;
 import com.example.DigitalTwin.repository.RoomRepository;
@@ -34,6 +35,12 @@ public class RoomService {
 
 	@Autowired
 	DeviceRepository deviceRepository;
+
+	@Autowired
+	RoomDataRepository roomDataRepository;
+
+	@Autowired
+	DeviceDataRepository deviceDataRepository;
 
 	@Autowired
 	DeviceDataService deviceDataService;
@@ -111,22 +118,6 @@ public class RoomService {
 			if (roomDetails.getSize() >= 0) {
 				room.setSize(roomDetails.getSize());
 			}
-
-//			if (roomDetails.getDoors() >= 0) {
-//				room.setDoors(roomDetails.getDoors());
-//			}
-
-//			if (roomDetails.getWindows() >= 0) {
-//				room.setWindows(roomDetails.getWindows());
-//			}
-//
-//			if (roomDetails.getLights() >= 0) {
-//				room.setLights(roomDetails.getLights());
-//			}
-
-//			if (roomDetails.getFans() >= 0) {
-//				room.setFans(roomDetails.getFans());
-//			}
 			return roomRepo.save(room);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -138,7 +129,9 @@ public class RoomService {
 	public String deleteRoom(Long id) {
 		try {
 			Room room = roomRepo.findById(id).orElseThrow(() -> new NotFoundException("Room id not found"));
+			deviceDataRepository.deleteByRoomId(id);
 			deviceRepository.deleteAllByRoomId(id);
+			roomDataRepository.deleteByRoomId(id);
 			roomRepo.delete(room);
 			return "Room deleted successfully";
 		} catch (Exception e) {

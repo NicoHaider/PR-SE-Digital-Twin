@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RoomAddComponent } from './room/room-add&Edit/room-add.component';
+import { RoomAddComponent } from './room/room-add/room-add.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
 import { RoomDetailsComponent } from './room/room-details/room-details.component';
 import { DeviceEditComponent } from './device/device-edit/device-edit.component';

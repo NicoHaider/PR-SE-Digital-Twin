@@ -7,4 +7,6 @@ import com.example.DigitalTwin.model.DeviceData;
 public interface DeviceDataRepository extends JpaRepository<DeviceData, Long> {
 
     List<DeviceData> findByRoomId(Long roomId);
+    
+    void deleteByRoomId(Long roomId);
 }

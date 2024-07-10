@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { RoomItemComponent } from './room/room-item/room-item.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
 import { RoomService } from './room/room.service';
-import { RoomAddComponent } from './room/room-add&Edit/room-add.component';
+import { RoomAddComponent } from './room/room-add/room-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routing.module';
 import { RoomDetailsComponent } from './room/room-details/room-details.component';
