@@ -6,20 +6,10 @@
 <span>&nbsp;</span>
 <button class="button-add" (click)="onAddDevice()"> + Add Devices</button>
 <button class="button-edit" (click)="viewAutomationRules()">View Automation Rules</button>
-<br><br>
-<!-- <a>
-    <h2>{{ room.name }}</h2>
-    <br>
-    <img
-      [src] = "getRoomImagePath(room.type)"
-      alt="{{ room.name }}"
-      class="room-icon">
-    <br><br>
-    <p>{{ room.temperature }} °C</p>
-    <p> Co2: {{ room.co2 }}</p>
-</a> -->
+<span>&nbsp;</span>
+<button class="button-edit" (click)="viewDevicesChart()">View Devices Line Chart</button>
+<span>&nbsp;</span>
 <div class="room-item-container">
-
 </div>
 <main>
     <app-room-item
