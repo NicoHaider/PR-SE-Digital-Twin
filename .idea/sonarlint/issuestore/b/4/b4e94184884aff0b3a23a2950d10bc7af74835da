@@ -1,0 +1,5 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ê‰¨Â8ðôŸè‚2J$8a63bffd-e8c1-4042-b7c4-03fb1120812b
+ˆ	java:S107%"AConstructor has 9 parameters, which is greater than 7 authorized.(Ñï’¼ûÿÿÿÿ8šõŸè‚2J$9f54152a-1c78-428f-9be1-bd85c9398333
+¾
+java:S6204£"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(—ÿ´•8´õŸè‚2J$55872cd0-5ef5-4381-9120-1bf83b6237e8

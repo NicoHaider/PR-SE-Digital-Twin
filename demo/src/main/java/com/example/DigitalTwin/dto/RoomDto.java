@@ -1,8 +1,11 @@
 package com.example.DigitalTwin.dto;
 
+import com.example.DigitalTwin.model.AutomationRule;
+import com.example.DigitalTwin.model.Device;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 
 import java.util.List;
 
@@ -20,6 +23,7 @@ public class RoomDto {
 	private Long id;
 
 	private List<DeviceDto> deviceDtoList;
+	private List<AutomationRuleDto> automationRuleDtoList;
 
 //    @NotNull(message = "Windows count is required")
 //    @PositiveOrZero(message = "Windows must be positive or zero")
@@ -92,5 +96,13 @@ public class RoomDto {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public List<AutomationRuleDto> getAutomationRuleDtoList() {
+		return this.automationRuleDtoList;
+	}
+
+	public void setAutomationRuleDtoList(List<AutomationRuleDto> automationRuleDtoList) {
+		this.automationRuleDtoList = automationRuleDtoList;
 	}
 }

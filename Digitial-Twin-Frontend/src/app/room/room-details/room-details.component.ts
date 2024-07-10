@@ -17,9 +17,9 @@ export class RoomDetailsComponent implements OnInit{
   constructor(private roomService: RoomService, private deviceService: DeviceService, private route: ActivatedRoute, private router: Router) {
   }
 
-  
+
   ngOnInit(): void {
-    
+
     this.route.paramMap.subscribe(params => {
       this.index = +params.get('index');
     });
@@ -72,9 +72,7 @@ export class RoomDetailsComponent implements OnInit{
     this.router.navigateByUrl('/add-device/'+ this.room.id);
   }
 
-  
-  
-
-
-
+  viewAutomationRules() {
+    this.router.navigateByUrl('/rules/'+ this.room.id);
+  }
 }

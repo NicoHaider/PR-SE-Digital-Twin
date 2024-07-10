@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { RoomItemComponent } from './room/room-item/room-item.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
@@ -16,6 +17,11 @@ import { AddDeviceComponent } from './device/add-device/add-device.component';
 import { UpdateRoomComponent } from './room/update-room/update-room.component';
 import { LinechartComponent } from './room/linechart/linechart.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { AutomationRulesComponent } from './room/automation-rule/automation-rules.component';
+import { RuleItemComponent } from './room/automation-rule/rule-item/rule-item.component';
+import { AddAutomationRuleComponent } from './room/automation-rule/add-automation-rule/add-automation-rule.component';
+import {AutomationRuleService} from "./room/automation-rule/automation-rules.service";
+import { EditAutomationRuleComponent } from './room/automation-rule/edit-automation-rule/edit-automation-rule.component';
 
 @NgModule({
   declarations: [
@@ -29,16 +35,21 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     AddDeviceComponent,
     UpdateRoomComponent,
     LinechartComponent,
+    AutomationRulesComponent,
+    RuleItemComponent,
+    AddAutomationRuleComponent,
+    EditAutomationRuleComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([]),
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     NgApexchartsModule
   ],
-  providers: [RoomService, DeviceService],
+  providers: [RoomService, DeviceService, AutomationRuleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

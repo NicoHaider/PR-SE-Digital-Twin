@@ -19,18 +19,11 @@ public class AutomationRuleEngine {
     @Autowired
     private AutomationRuleRepository automationRuleRepository;
 
-    @Scheduled(fixedRate = 5000)
-    public void checkRules() {
+    public void checkAndApplyRules() {
         List<Room> rooms = roomRepository.findAll();
         List<AutomationRule> automationRules = automationRuleRepository.findAll();
 
-        //feste Regeln, wird alle 5 sek geprüft und durchgeführt
         for (Room room : rooms) {
-            if (room.getPeopleCount() == 0) {
-                closeAllWindows(room);
-                turnOffAllLights(room);
-            }
-
             for (AutomationRule automationRule : automationRules) {
                 if (evaluateCondition(automationRule.getCondition(), room)) {
                     executeAction(automationRule.getAction(), room);

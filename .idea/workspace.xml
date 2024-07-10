@@ -4,53 +4,171 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5cc6aac-7770-47b2-9305-2443ad20c4b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/device/device-edit/device-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/device/device-edit/device-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/device/device-item/device-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/device/device-item/device-item.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/device/device.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/device/device.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/linechart/linechart.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/linechart/linechart.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-details/room-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-details/room-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-list/room-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room-list/room-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Digitial-Twin-Frontend/src/app/room/room.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/controller/DeviceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/DigitalTwin/controller/DeviceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/example/DigitalTwin/controller/DeviceController.class" afterDir="false" />
+    <list default="true" id="f5cc6aac-7770-47b2-9305-2443ad20c4b0" name="Changes" comment="Update AutomationRuleTest">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/logs/appplication.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
+  &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2hn0N6FdcKw0ikvsQC4GfRHPCdJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/valeg/OneDrive/Desktop/2024SS/PR-SE-Digital-Twin",
+    "git-widget-placeholder": "release-3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "C:\\Users\\valeg\\OneDrive\\Desktop\\2024SS\\PR-SE-Digital-Twin\\Digitial-Twin-Frontend\\node_modules\\typescript\\lib",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "fe01ce2a7fbac8fafaed7c982a04e229",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin\demo\src\test\java\com\example\DigitalTwin\utils" />
+      <recent name="C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin\demo\src\test\java\com\example\DigitalTwin\controller" />
+      <recent name="C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin\demo\src\test\java\com\example\DigitalTwin\exception" />
+      <recent name="C:\Users\Stefan Zugzwang\Documents\GitHub\PR-SE-Digital-Twin\demo\src\test\java\com\example\DigitalTwin\model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.DtApplication">
+    <configuration name="CSVUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.DigitalTwin.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.DigitalTwin.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.example.DigitalTwin.utils.CSVUtilTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoomDataControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.DigitalTwin.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.DigitalTwin.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.DigitalTwin.controller.RoomDataControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoomDataControllerTest.testGetLastRoomDataByRoom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.DigitalTwin.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.DigitalTwin.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.DigitalTwin.controller.RoomDataControllerTest" />
+      <option name="METHOD_NAME" value="testGetLastRoomDataByRoom" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoomDataControllerTest.testGetRoomDataByRoom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.DigitalTwin.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.DigitalTwin.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.DigitalTwin.controller.RoomDataControllerTest" />
+      <option name="METHOD_NAME" value="testGetRoomDataByRoom" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.DigitalTwin.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.DigitalTwin.model" />
+      <option name="MAIN_CLASS_NAME" value="com.example.DigitalTwin.model.RoomTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DtApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.DigitalTwin.DtApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CSVUtilTest" />
+        <item itemvalue="JUnit.RoomTest" />
+        <item itemvalue="JUnit.RoomDataControllerTest.testGetLastRoomDataByRoom" />
+        <item itemvalue="JUnit.RoomDataControllerTest.testGetRoomDataByRoom" />
+        <item itemvalue="JUnit.RoomDataControllerTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,13 +177,92 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718214501747</updated>
-      <workItem from="1718214503760" duration="5148000" />
-      <workItem from="1720593133199" duration="263000" />
-      <workItem from="1720617692771" duration="106000" />
+      <workItem from="1718214503760" duration="5783000" />
+      <workItem from="1718730037965" duration="19006000" />
+      <workItem from="1719055995473" duration="122000" />
+      <workItem from="1719056195237" duration="1809000" />
+      <workItem from="1719062069483" duration="818000" />
+      <workItem from="1719069284139" duration="1933000" />
+      <workItem from="1719132223162" duration="5237000" />
+      <workItem from="1719330606931" duration="11396000" />
     </task>
+    <task id="LOCAL-00001" summary="update service mocking tests">
+      <created>1718737140632</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718737140632</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added model and controller mocking tests">
+      <created>1718738897207</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718738897207</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added utils and exception mocking tests">
+      <created>1718739806675</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718739806675</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added few new mockito tests for jacoco cc">
+      <created>1718754093910</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718754093910</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update AutomationRuleTest">
+      <option name="closed" value="true" />
+      <created>1719344463393</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719344463393</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="update service mocking tests" />
+    <MESSAGE value="updated files for improved logging" />
+    <MESSAGE value="added utils and exception mocking tests" />
+    <MESSAGE value="added few new mockito tests for jacoco cc" />
+    <MESSAGE value="Update AutomationRuleTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update AutomationRuleTest" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/DigitalTwin/utils/CreateLogDirectory.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PR_SE_Digital_Twin$RoomControllerTest.ic" NAME="RoomControllerTest Coverage Results" MODIFIED="1718747182418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.DigitalTwin.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PR_SE_Digital_Twin$DtApplication.ic" NAME="DtApplication Coverage Results" MODIFIED="1719062272242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
