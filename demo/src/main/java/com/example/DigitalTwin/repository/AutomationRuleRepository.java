@@ -6,4 +6,6 @@ import java.util.Optional;
 
 public interface AutomationRuleRepository extends  JpaRepository<AutomationRule, Long> {
     Optional<AutomationRule> findByid(Long id);
+    
+    void deleteByRoomId(Long roomId);
 }

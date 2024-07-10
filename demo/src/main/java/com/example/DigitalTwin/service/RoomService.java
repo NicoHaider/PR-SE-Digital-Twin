@@ -8,6 +8,7 @@ import com.example.DigitalTwin.exception.NotFoundException;
 import com.example.DigitalTwin.model.Device;
 import com.example.DigitalTwin.model.Room;
 import com.example.DigitalTwin.model.RoomData;
+import com.example.DigitalTwin.repository.AutomationRuleRepository;
 import com.example.DigitalTwin.repository.DeviceDataRepository;
 import com.example.DigitalTwin.repository.DeviceRepository;
 import com.example.DigitalTwin.repository.RoomDataRepository;
@@ -50,6 +51,9 @@ public class RoomService {
 
 	@Autowired
 	private AutomationRuleService automationRuleService;
+
+	@Autowired
+	private AutomationRuleRepository automationRuleRepository;
 
 	@Transactional
 	public Room createRoom(RoomDto roomDetails) {
@@ -146,6 +150,7 @@ public class RoomService {
 		logger.info("Request to delete room with id: " + id);
 		try {
 			Room room = roomRepo.findById(id).orElseThrow(() -> new NotFoundException("Room id not found"));
+			automationRuleRepository.deleteByRoomId(id);
 			deviceDataRepository.deleteByRoomId(id);
 			deviceRepository.deleteAllByRoomId(id);
 			roomDataRepository.deleteByRoomId(id);
