@@ -5,7 +5,6 @@ import com.example.DigitalTwin.model.AutomationRule;
 import com.example.DigitalTwin.repository.RoomRepository;
 import com.example.DigitalTwin.repository.AutomationRuleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalTime;

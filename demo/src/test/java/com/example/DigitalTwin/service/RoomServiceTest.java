@@ -1,32 +1,7 @@
 package com.example.DigitalTwin.service;
 
-import com.example.DigitalTwin.dto.DeviceDto;
-import com.example.DigitalTwin.dto.RoomDto;
-import com.example.DigitalTwin.enums.DeviceType;
-import com.example.DigitalTwin.exception.AppException;
-import com.example.DigitalTwin.exception.NotFoundException;
-import com.example.DigitalTwin.model.Device;
-import com.example.DigitalTwin.model.Room;
-import com.example.DigitalTwin.model.RoomData;
-import com.example.DigitalTwin.repository.DeviceRepository;
-import com.example.DigitalTwin.repository.RoomDataRepository;
-import com.example.DigitalTwin.repository.RoomRepository;
-import jakarta.persistence.EntityNotFoundException;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class RoomServiceTest {

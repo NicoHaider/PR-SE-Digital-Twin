@@ -10,29 +10,18 @@ import org.springframework.web.bind.annotation.*;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import java.util.List;
-import java.util.Optional;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
-
-import com.example.DigitalTwin.dto.DeviceDto;
-import com.example.DigitalTwin.model.Device;
-import com.example.DigitalTwin.service.RoomService;
 import com.example.DigitalTwin.model.AutomationRule;
 import com.example.DigitalTwin.service.AutomationRuleService;
 import com.example.DigitalTwin.dto.AutomationRuleDto;
 
-import com.example.DigitalTwin.repository.AutomationRuleRepository;
 
 @RestController
 @RequestMapping("/api/rules")
 public class AutomationRuleController{
     @Autowired
     private AutomationRuleService automationRuleService;
-    @Autowired
-    private RoomService roomService;
-    @Autowired
-    private AutomationRuleRepository automationRuleRepository;
 
     private static final Logger logger = LogManager.getLogger(DeviceController.class);
 

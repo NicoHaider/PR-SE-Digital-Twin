@@ -46,6 +46,7 @@ public class DeviceService {
 
             DeviceDto createdDevice = deviceRepository.save(device).getDto();
             logger.info("Device created successfully: " + createdDevice);
+            deviceDataService.addDeviceData(room);
             return createdDevice;
         } else {
             logger.error("Room not found with id: "+deviceDto.getRoomId());
@@ -63,6 +64,7 @@ public class DeviceService {
 
             DeviceDto updatedDevice = deviceRepository.save(device).getDto();
             logger.info("Device status updated successfully: "+updatedDevice);
+            deviceDataService.addDeviceData(device.getRoom());
             return updatedDevice;
         } else {
             logger.error("Device not found with id: "+deviceId);
@@ -74,8 +76,10 @@ public class DeviceService {
         logger.info("request to delete device with id: "+deviceId);
         Optional<Device> optionalDevice = deviceRepository.findById(deviceId);
         if(optionalDevice.isPresent()){
-            deviceRepository.delete(optionalDevice.get());
+            Device device = optionalDevice.get();
+            deviceRepository.delete(device);
             logger.info("Device with id: "+deviceId+" deleted successfully.");
+            deviceDataService.addDeviceData(device.getRoom());
             return true;
         } else {
             logger.error("Device with id: "+deviceId+"not found.");

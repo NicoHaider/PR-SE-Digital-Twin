@@ -1,25 +1,7 @@
 package com.example.DigitalTwin.engine;
 
-import com.example.DigitalTwin.model.AutomationRule;
-import com.example.DigitalTwin.model.Room;
-import com.example.DigitalTwin.repository.AutomationRuleRepository;
-import com.example.DigitalTwin.repository.RoomRepository;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.time.LocalTime;
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class AutomationRuleEngineTest {

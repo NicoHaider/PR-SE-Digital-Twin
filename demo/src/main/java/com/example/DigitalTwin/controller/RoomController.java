@@ -36,11 +36,6 @@ public class RoomController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdRoom);
     }
 
-    //	@PutMapping("/{roomId}")
-//	public ResponseEntity<Room> updateRoom(@PathVariable("roomId") Long id,@Valid @RequestBody RoomDto roomDetails) {
-//		Room updatedRoom = roomService.updateRoom(id, roomDetails);
-//		return ResponseEntity.ok(updatedRoom);
-//	}
     @PutMapping
     public ResponseEntity<?> updateRoom(@Valid @RequestBody RoomDto roomDto) {
         logger.info("Received request to update room: " + roomDto);
@@ -57,12 +52,6 @@ public class RoomController {
         }
 
     }
-
-//	@PutMapping
-//	public ResponseEntity<Room> updateRoom(@Valid @RequestBody RoomDto roomDetails) {
-//		Room createdRoom = roomService.createRoom(roomDetails);
-//		return ResponseEntity.status(HttpStatus.CREATED).body(createdRoom);
-//	}
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteRoom(@PathVariable("id") Long id) {

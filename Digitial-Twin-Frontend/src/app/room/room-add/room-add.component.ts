@@ -10,6 +10,7 @@ import { RoomService } from '../room.service';
 })
 export class RoomAddComponent implements OnInit{
   index: number;
+  editMode = false;
   roomForm: FormGroup;
 
   constructor(private route: ActivatedRoute,private roomService: RoomService,private router: Router) {   
@@ -19,6 +20,7 @@ export class RoomAddComponent implements OnInit{
     this.route.params.subscribe(
         (params: Params) => {
           this.index = +params['index'];
+          this.editMode = params['index'] != null;
           this.initForm();
         }
     );
@@ -46,7 +48,6 @@ export class RoomAddComponent implements OnInit{
   
       (<FormArray>this.roomForm.get('deviceDtoList')).push(deviceFormGroup);
     }
-
   onSubmit() {
     this.roomService.addRoom(this.roomForm.value).subscribe(res=>{
       this.router.navigate(['/home']).then(() => {
