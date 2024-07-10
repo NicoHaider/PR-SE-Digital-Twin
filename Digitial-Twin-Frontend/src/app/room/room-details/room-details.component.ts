@@ -75,4 +75,8 @@ export class RoomDetailsComponent implements OnInit{
   viewAutomationRules() {
     this.router.navigateByUrl('/rules/'+ this.room.id);
   }
+
+  viewDevicesChart() {
+    this.router.navigateByUrl('/devicesChart/'+ this.room.id);
+  }
 }

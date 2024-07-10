@@ -15,6 +15,15 @@
   float: left;
 }
 
+.button-back:hover {
+  background :#d19272;
+} 
+
+.button-add:hover{
+  background :#73ac88;
+} 
+
+
 main {
   display: flex;
   flex-wrap: wrap;

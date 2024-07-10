@@ -1,0 +1,34 @@
+.button-add, .button-back, .button-edit,.button-delete{
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button-add{
+    float: right;
+  }
+  
+  .button-back{
+    float: left;
+  }
+  
+  .button-back:hover {
+    background :#d19272;
+  } 
+  
+  .button-add:hover{
+    background :#73ac88;
+  } 
+  
+  
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+  }
+  

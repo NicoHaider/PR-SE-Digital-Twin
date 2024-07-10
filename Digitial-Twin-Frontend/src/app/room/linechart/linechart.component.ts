@@ -245,18 +245,17 @@ export class LinechartComponent implements OnInit{
       this.initCharts();
       }, error=>{
         console.log("error in fetch all ", error)
-        });
-      
-    }
-
-
-fetchextraData() {
-  this.roomService.fetchAllDataFromBackend(this.room).subscribe((data: RoomData[]) => {
-    this.roomData = data;
-    this.updateSeries();
-    }, error=>{
-      console.log("error in fetch all ", error)
-      });
-    
+      }); 
   }
+
+
+  fetchextraData() {
+    this.roomService.fetchAllDataFromBackend(this.room).subscribe((data: RoomData[]) => {
+      this.roomData = data;
+      this.updateSeries();
+      }, error=>{
+        console.log("error in fetch all ", error)
+      });
+  }
+  
 }

@@ -9,6 +9,7 @@ import { UpdateRoomComponent } from './room/update-room/update-room.component';
 import {AutomationRulesComponent} from "./room/automation-rule/automation-rules.component";
 import {AddAutomationRuleComponent} from "./room/automation-rule/add-automation-rule/add-automation-rule.component";
 import {EditAutomationRuleComponent} from "./room/automation-rule/edit-automation-rule/edit-automation-rule.component";
+import { DevicesChartComponent } from './device/devices-chart/devices-chart.component';
 
 
 const appRoutes: Routes = [
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'update-room/:id', component: UpdateRoomComponent },
   { path: ':index', component: RoomDetailsComponent },
   { path: ':index/edit', component: RoomAddComponent },
+  { path: 'devicesChart/:roomId', component: DevicesChartComponent},
   { path: '**', redirectTo: '/home'},
 ];
 

@@ -22,6 +22,7 @@ import { RuleItemComponent } from './room/automation-rule/rule-item/rule-item.co
 import { AddAutomationRuleComponent } from './room/automation-rule/add-automation-rule/add-automation-rule.component';
 import {AutomationRuleService} from "./room/automation-rule/automation-rules.service";
 import { EditAutomationRuleComponent } from './room/automation-rule/edit-automation-rule/edit-automation-rule.component';
+import { DevicesChartComponent } from './device/devices-chart/devices-chart.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { EditAutomationRuleComponent } from './room/automation-rule/edit-automat
     AutomationRulesComponent,
     RuleItemComponent,
     AddAutomationRuleComponent,
-    EditAutomationRuleComponent
+    EditAutomationRuleComponent,
+    DevicesChartComponent
   ],
   imports: [
     BrowserModule,
