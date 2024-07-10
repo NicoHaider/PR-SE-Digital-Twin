@@ -2,13 +2,11 @@ package com.example.DigitalTwin.service;
 
 
 import com.example.DigitalTwin.dto.DeviceDto;
-import com.example.DigitalTwin.dto.RoomDto;
 import com.example.DigitalTwin.model.Device;
 import com.example.DigitalTwin.model.Room;
 import com.example.DigitalTwin.repository.DeviceRepository;
 import com.example.DigitalTwin.repository.RoomDataRepository;
 import com.example.DigitalTwin.repository.RoomRepository;
-import io.swagger.v3.oas.annotations.servers.Server;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,17 +26,25 @@ public class DeviceService {
     @Autowired
     DeviceRepository deviceRepository;
 
+    @Autowired
+	DeviceDataService deviceDataService;
+
     public DeviceDto createDevice(DeviceDto deviceDto) {
         Optional<Room> optionalRoom = roomRepo.findById(deviceDto.getRoomId());
         if(optionalRoom.isPresent()){
+            Room room = optionalRoom.get();
             Device device = new Device();
             device.setName(deviceDto.getName());
-            device.setRoom(optionalRoom.get());
+            device.setRoom(room);
             device.setStatus(deviceDto.getStatus());
             device.setDeviceType(deviceDto.getDeviceType());
             device.setTime(new Date());
 
-            return deviceRepository.save(device).getDto();
+            DeviceDto savedDeviceDto =  deviceRepository.save(device).getDto();
+
+            deviceDataService.addDeviceData(room);
+
+            return savedDeviceDto;
         }else{
             throw new EntityNotFoundException("Room Not present");
         }
@@ -51,7 +57,11 @@ public class DeviceService {
 
             device.setStatus(!device.getStatus());
 
-            return deviceRepository.save(device).getDto();
+            DeviceDto deviceDto = deviceRepository.save(device).getDto();
+
+            deviceDataService.addDeviceData(device.getRoom());
+
+            return deviceDto;
         }else{
             throw new EntityNotFoundException("Device Not present");
         }
@@ -60,7 +70,10 @@ public class DeviceService {
     public boolean deleteDevice(Long deviceId) {
         Optional<Device> optionalDevice = deviceRepository.findById(deviceId);
         if(optionalDevice.isPresent()){
-            deviceRepository.delete(optionalDevice.get());
+            Device device = optionalDevice.get();
+            deviceRepository.delete(device);
+
+            deviceDataService.addDeviceData(device.getRoom());
             return true;
         }else{
             throw new EntityNotFoundException("Device Not present");

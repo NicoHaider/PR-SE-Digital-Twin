@@ -2,7 +2,6 @@ package com.example.DigitalTwin.controller;
 
 import java.util.List;
 
-import com.example.DigitalTwin.dto.DeviceDto;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;

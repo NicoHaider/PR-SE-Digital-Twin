@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.DigitalTwin.model.RoomData;
 import com.example.DigitalTwin.service.RoomDataService;
-import com.example.DigitalTwin.utils.ScheduledTasks;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

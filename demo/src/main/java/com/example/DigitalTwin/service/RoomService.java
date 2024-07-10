@@ -1,8 +1,8 @@
 package com.example.DigitalTwin.service;
 
 import com.example.DigitalTwin.dto.DeviceDto;
-import com.example.DigitalTwin.dto.DoorDto;
 import com.example.DigitalTwin.dto.RoomDto;
+import com.example.DigitalTwin.enums.DeviceType;
 import com.example.DigitalTwin.exception.AppException;
 import com.example.DigitalTwin.exception.NotFoundException;
 import com.example.DigitalTwin.model.Device;
@@ -13,6 +13,7 @@ import com.example.DigitalTwin.repository.RoomDataRepository;
 import com.example.DigitalTwin.repository.RoomRepository;
 import com.example.DigitalTwin.utils.CSVUtil;
 import jakarta.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,6 +35,9 @@ public class RoomService {
 	@Autowired
 	DeviceRepository deviceRepository;
 
+	@Autowired
+	DeviceDataService deviceDataService;
+
 	@Transactional
 	public Room createRoom(RoomDto roomDetails) {
 		try {
@@ -46,20 +50,35 @@ public class RoomService {
 			List<DeviceDto> deviceDtoList = roomDetails.getDeviceDtoList();
 			if (!deviceDtoList.isEmpty()) {
 				List<Device> deviceList = new ArrayList<>();
+				int numWindows = 0;
+				int numDoors = 0;
+				int numLights = 0;
+				int numFans = 0;
 				for (DeviceDto deviceDto : deviceDtoList) {
 					Device device = new Device();
 					device.setName(deviceDto.getName());
 					device.setRoom(room);
 					device.setStatus(deviceDto.getStatus());
-					device.setDeviceType(deviceDto.getDeviceType());
+					DeviceType type = deviceDto.getDeviceType();
+					if (type.equals(DeviceType.Window)) {numWindows++;
+					} else if (type.equals(DeviceType.Door)) {numDoors++;
+					} else if (type.equals(DeviceType.Light)) {numLights++;
+					} else if (type.equals(DeviceType.Fan)) {numFans++;}
+					device.setDeviceType(type);
 					device.setTime(new Date());
 
 					deviceList.add(device);
 				}
-				deviceRepository.saveAll(deviceList);
+				List<Device> savedDevices = deviceRepository.saveAll(deviceList);
+				room.setWindows(numWindows);
+				room.setDoors(numDoors);
+				room.setLights(numLights);
+				room.setFans(numFans);
+					
+				if(!savedDevices.isEmpty()){
+					deviceDataService.addDeviceData(room);
+				}
 			}
-
-
 			return room;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -201,4 +220,5 @@ public class RoomService {
 	public Room saveOrUpdateRoom(Room room) {
 		return room;
 	}
+
 }

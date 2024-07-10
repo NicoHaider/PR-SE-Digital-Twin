@@ -52,5 +52,9 @@ export class RoomService {
     return this.http.get(this.basePath + `roomData/getAllBy/${room.id}`);
   }
 
+  fetchAllDeviceDataFromBackend(room : Room): Observable<any>{
+    console.log("fetching device data from backend");
+    return this.http.get(this.basePath + `roomData/getAllBy/${room.id}`);
+  }
 
 }

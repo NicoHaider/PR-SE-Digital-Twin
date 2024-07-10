@@ -6,8 +6,6 @@ import com.example.DigitalTwin.model.AutomationRule;
 import com.example.DigitalTwin.repository.AutomationRuleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import jakarta.persistence.EntityNotFoundException;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
