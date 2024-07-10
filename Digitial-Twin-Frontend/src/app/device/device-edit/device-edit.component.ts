@@ -30,14 +30,14 @@ export class DeviceEditComponent implements OnInit{
   private initForm() {
     this.deviceForm = new FormGroup({
       'name': new FormControl(null, Validators.required),
-      'type': new FormControl(null, Validators.required)
+      'deviceType': new FormControl(null, Validators.required)
     });
 
     //get data of the device (prepopulate the form)
     this.deviceService.getDeviceWithId(this.deviceId).subscribe(res=>{
       this.deviceForm.patchValue({
         name: res.name,
-        type: res.deviceType
+        deviceType: res.deviceType
       });
     }, error=>{
       console.log("error getting device with id " + this.deviceId, error)

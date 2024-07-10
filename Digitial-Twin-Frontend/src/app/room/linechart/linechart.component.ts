@@ -129,6 +129,7 @@ export class LinechartComponent implements OnInit{
           text: "People Chart",
           align: "left",
           offsetX: 31,
+
           style: {
             fontSize: "12px",
             fontWeight: "bold",
