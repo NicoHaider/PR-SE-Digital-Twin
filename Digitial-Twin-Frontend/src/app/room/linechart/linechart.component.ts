@@ -116,7 +116,7 @@ export class LinechartComponent implements OnInit{
         id: "fb",
         group: "social",
         type: "line",
-        height: 160
+        height: 250
       },
       colors: ["#008FFB"],
       yaxis: {
@@ -150,7 +150,7 @@ export class LinechartComponent implements OnInit{
         id: "tw",
         group: "social",
         type: "line",
-        height: 160
+        height: 250
       },
       colors: ["#546E7A"],
       yaxis: {
@@ -182,7 +182,7 @@ export class LinechartComponent implements OnInit{
         id: "yt",
         group: "social",
         type: "area",
-        height: 160
+        height: 250
       },
       colors: ["#00E396"],
       yaxis: {
