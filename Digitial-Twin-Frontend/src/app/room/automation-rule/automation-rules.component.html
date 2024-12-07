@@ -1,0 +1,23 @@
+<button class="button-back" (click)="onBack()"> <- Back </button>
+<button class="button-add" (click)="onAdd()"> + Add Automation Rule</button>
+<br><br>
+<h2>Automation Rules for {{room.name}}</h2>
+<!--
+<ul>
+  <li *ngFor="let rule of automationRules">
+    {{ rule.trigger }} - {{ rule.action }} - {{ rule.condition }}
+    <button (click)="deleteAutomationRule(rule.id)">Delete</button>
+  </li>
+</ul>
+-->
+<!--all rooms with the corresponding action rules-->
+<main>
+  <app-rule-item
+    article class="rule"
+    *ngFor="let rule of room.automationRuleDtoList; let i = index"
+    [automationRule]="rule"
+    [index]="i"
+    [roomId]="room.id"
+  >
+  </app-rule-item>
+</main>

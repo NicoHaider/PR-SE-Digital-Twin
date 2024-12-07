@@ -2,10 +2,7 @@ package com.example.DigitalTwin.controller;
 
 
 import com.example.DigitalTwin.dto.DeviceDto;
-import com.example.DigitalTwin.dto.RoomDto;
-import com.example.DigitalTwin.model.Room;
 import com.example.DigitalTwin.service.DeviceService;
-import com.example.DigitalTwin.service.RoomService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +26,6 @@ public class DeviceController {
     @PostMapping
     public ResponseEntity<?> createDevice(@Valid @RequestBody DeviceDto deviceDto) {
         logger.info("Entering createDevice method");
-        System.out.println("in create device controller ");
         try{
             logger.info("Creating device: {}", deviceDto);
             return ResponseEntity.status(HttpStatus.CREATED).body(deviceService.createDevice(deviceDto));
@@ -81,7 +77,6 @@ public class DeviceController {
 
     @PostMapping("/update")
     public ResponseEntity<?> updateDevice(@Valid @RequestBody DeviceDto deviceDto) {
-        System.out.println("in create device controller ");
         logger.info("Entering updateDevice method");
         try{
             return ResponseEntity.status(HttpStatus.CREATED).body(deviceService.updateDevice(deviceDto));

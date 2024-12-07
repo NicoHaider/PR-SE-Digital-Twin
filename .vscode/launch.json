@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "DtApplication",
+            "request": "launch",
+            "mainClass": "com.example.DigitalTwin.DtApplication",
+            "projectName": "demo"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Chrome mit \"localhost\" starten",

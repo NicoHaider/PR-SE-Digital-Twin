@@ -1,0 +1,57 @@
+
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="ruleForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="action">Action: </label>
+            <select class="form-control" formControlName="action">
+              <option value="open_window">Open Window</option>
+              <option value="close_window">Close Window</option>
+              <option value="turn_on_light">Turn on Light</option>
+              <option value="turn_off_light">Turn off Light</option>
+              <option value="turn_on_fan">Turn on Fan</option>
+              <option value="turn_off_fan">Turn off Fan</option>
+              <option value="lock_door">Lock Door</option>
+              <option value="unlock_door">Unlock Door</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="form-group">
+          <label for="condition">Condition: </label>
+          <input
+            type="text"
+            id="condition"
+            formControlName="condition"
+            class="form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="trigger">Trigger : </label>
+            <input
+              type="text"
+              id="trigger"
+              formControlName="trigger"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit"class="save-button" [disabled]="!ruleForm.valid">
+            Save
+          </button>
+          <span>&nbsp;</span>
+          <button type="button" class="cancel-button" (click)="onCancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+
+n
+java:S11928"SDefine a constant instead of duplicating this literal "Device Not present" 4 times.(Ò›ƒ¢øÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ôûªç
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ
+V	java:S125P"<This block of commented-out lines of code should be removed.(Ž¦½ÿÿÿÿÿ
+V
+java:S1128"@Remove this unused import 'com.example.DigitalTwin.dto.RoomDto'.(ºäúÁ
+_
+java:S1128"IRemove this unused import 'io.swagger.v3.oas.annotations.servers.Server'.(ìÙ„Ÿ

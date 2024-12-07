@@ -1,0 +1,28 @@
+
+p
+java:S1192%"UDefine a constant instead of duplicating this literal "Entity not found: {}" 5 times.(´ê‚Óùÿÿÿÿ
+l
+java:S1192("VDefine a constant instead of duplicating this literal "An error occurred: {}" 3 times.(ˆäŠ·
+l
+java:S1192)"VDefine a constant instead of duplicating this literal "Something Went Wrong." 3 times.(¸Ş¥¦
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÚÂëü
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+A
+java:S1452"&Remove usage of generic wildcard type.(ƒˆ Úúÿÿÿÿ
+@	java:S106 "+Replace this use of System.out by a logger.(µª¸í
+A
+java:S1452/"&Remove usage of generic wildcard type.(²½´„øÿÿÿÿ
+<
+java:S1452="&Remove usage of generic wildcard type.(¸·ÀŠ
+<
+java:S1452H"&Remove usage of generic wildcard type.(¯‹øÇ
+<
+java:S1452S"&Remove usage of generic wildcard type.(€»Íå
+@	java:S106T"+Replace this use of System.out by a logger.(µª¸í
+V
+java:S1128"@Remove this unused import 'com.example.DigitalTwin.dto.RoomDto'.(ºäúÁ
+U
+java:S1128"?Remove this unused import 'com.example.DigitalTwin.model.Room'.(œÀøğ
+^
+java:S1128"HRemove this unused import 'com.example.DigitalTwin.service.RoomService'.(ŠÓÒÖ

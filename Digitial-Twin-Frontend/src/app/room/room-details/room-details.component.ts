@@ -13,26 +13,16 @@ import { RoomData } from '../roomData.model';
 export class RoomDetailsComponent implements OnInit{
   room: Room;
   index: number;
-  editMode : boolean = false;
 
   constructor(private roomService: RoomService, private deviceService: DeviceService, private route: ActivatedRoute, private router: Router) {
-    // this.roomService.fetchDataFromBackend(this.room.id);
-    // setInterval(() => {
-    //   this.roomService.fetchDataFromBackend(this.room.id);
-    // }, 2000);
   }
 
-  
+
   ngOnInit(): void {
-    
+
     this.route.paramMap.subscribe(params => {
       this.index = +params.get('index');
     });
-    this.roomService.editModeChange.subscribe(
-       (editMode: boolean) => {
-      this.editMode = editMode;
-    });
-    // this.room = this.roomService.getRoom(this.index);
     this.roomService.getRoomById(this.index).subscribe(res=>{
       this.room = res;
       this.fetchData();
@@ -46,7 +36,6 @@ export class RoomDetailsComponent implements OnInit{
 
   fetchData() {
       this.roomService.fetchDataFromBackend(this.room).subscribe((data: RoomData) => {
-        console.log(data);
           this.room.co2 = data.co2Level;
           this.room.temperature = data.temperature;
           this.room.people = data.numOfPeople;
@@ -80,16 +69,14 @@ export class RoomDetailsComponent implements OnInit{
   }
 
   onAddDevice() {
-    this.deviceService.editModeChanged(false);
-    this.roomService.editModeChange.next(true);
-    // const nextIndex = this.room.devices.length;
-   // this.router.navigate(['/deviceEdit/'+ this.index + '/' + nextIndex]);
     this.router.navigateByUrl('/add-device/'+ this.room.id);
   }
 
-  
-  
+  viewAutomationRules() {
+    this.router.navigateByUrl('/rules/'+ this.room.id);
+  }
 
-
-
+  viewDevicesChart() {
+    this.router.navigateByUrl('/devicesChart/'+ this.room.id);
+  }
 }

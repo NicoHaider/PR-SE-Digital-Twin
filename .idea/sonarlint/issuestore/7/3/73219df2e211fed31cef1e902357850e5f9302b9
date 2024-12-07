@@ -1,0 +1,10 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÚÂëüJ$d8061838-b349-4f14-b958-22e0f2ec2efe
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8ñ¯ñã‚2J$c65d2b19-e7b0-4f5c-be18-7e2c63d4bd84
+n
+java:S1452*"&Remove usage of generic wildcard type.(¬²Â’øÿÿÿÿ8ÿ¯ñã‚2J$cf9852c2-2ccf-4410-aeb1-fa966ed42773
+~	java:S125%"<This block of commented-out lines of code should be removed.(—¦ôò8°ñã‚2J$d03ff691-8764-42aa-a5d0-2b7dfe78ffbd
+ƒ	java:S1256"<This block of commented-out lines of code should be removed.(á©ÀÓùÿÿÿÿ8‰°ñã‚2J$7daf6570-0ba5-46a5-889d-06921d83fce2
+~
+java:S1128"BRemove this unused import 'com.example.DigitalTwin.dto.DeviceDto'.(öèÃžJ$faad0d94-d673-4cf7-9fa3-87c2cc9ed474
