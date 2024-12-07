@@ -1,9 +1,6 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
-import { ActivatedRoute, Router, Params } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { Device, DeviceType } from '../../device/device.model';
-import { Room } from '../room.model';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { ActivatedRoute, Router} from '@angular/router';
 import { RoomService } from '../room.service';
 
 @Component({
@@ -11,13 +8,10 @@ import { RoomService } from '../room.service';
   templateUrl: './update-room.component.html',
   styleUrl: './update-room.component.css'
 })
-export class UpdateRoomComponent {
-index: number;
-  editMode = false;
+export class UpdateRoomComponent implements OnInit{
+  index: number;
   roomForm: FormGroup;
-  private roomBefore: Room;
-  subscription: Subscription;
-   roomId = this.route.snapshot.params['id'];
+  roomId = this.route.snapshot.params['id'];
 
 
   constructor(private route: ActivatedRoute,private roomService: RoomService,private router: Router) {  
@@ -43,11 +37,9 @@ index: number;
   }
 
   onSubmit() {
-    // const newRoom = this.convertFormToRoom(this.roomForm.value);
     console.log(this.roomForm.value);
     console.log(this.roomForm.valid);
     if (this.roomForm.valid) {
-      // this.roomService.updateRoom(this.index, newRoom);
       const data = this.roomForm.value;
       data.id = this.roomId;
       this.roomService.updateRoom(data).subscribe(res=>{
@@ -55,19 +47,11 @@ index: number;
       }, error=>{
         console.log("error", error)
       });
-       
-      
     }
-    this.onCancel();
   }
   
   onCancel() {
-    this.router.navigate(['../'], {relativeTo: this.route});
-  }
-
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.router.navigateByUrl(`/${this.roomId}`);
   }
 
 }

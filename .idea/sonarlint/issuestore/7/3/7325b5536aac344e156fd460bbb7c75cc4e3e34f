@@ -1,0 +1,9 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(§Åòµøÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(„Ã­Šþÿÿÿÿ
+Q	java:S1252"<This block of commented-out lines of code should be removed.(¤™®å
+Q	java:S125:"<This block of commented-out lines of code should be removed.(À„·š
+W
+java:S1128"ARemove this unused import 'com.example.DigitalTwin.model.Device'.(ü©Ž¾
+e
+java:S1128"JRemove this unused import 'jakarta.validation.constraints.PositiveOrZero'.(¦Å‘ÿÿÿÿÿ

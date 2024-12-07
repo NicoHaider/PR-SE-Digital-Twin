@@ -116,7 +116,7 @@ export class LinechartComponent implements OnInit{
         id: "fb",
         group: "social",
         type: "line",
-        height: 160
+        height: 250
       },
       colors: ["#008FFB"],
       yaxis: {
@@ -129,6 +129,7 @@ export class LinechartComponent implements OnInit{
           text: "People Chart",
           align: "left",
           offsetX: 31,
+
           style: {
             fontSize: "12px",
             fontWeight: "bold",
@@ -150,7 +151,7 @@ export class LinechartComponent implements OnInit{
         id: "tw",
         group: "social",
         type: "line",
-        height: 160
+        height: 250
       },
       colors: ["#546E7A"],
       yaxis: {
@@ -182,7 +183,7 @@ export class LinechartComponent implements OnInit{
         id: "yt",
         group: "social",
         type: "area",
-        height: 160
+        height: 250
       },
       colors: ["#00E396"],
       yaxis: {
@@ -242,23 +243,20 @@ export class LinechartComponent implements OnInit{
   fetchData() {
     this.roomService.fetchAllDataFromBackend(this.room).subscribe((data: RoomData[]) => {
       this.roomData = data;
-      console.log(this.roomData);
       this.initCharts();
       }, error=>{
         console.log("error in fetch all ", error)
-        });
-      
-    }
-
-
-fetchextraData() {
-  this.roomService.fetchAllDataFromBackend(this.room).subscribe((data: RoomData[]) => {
-    this.roomData = data;
-    console.log(this.roomData);
-    this.updateSeries();
-    }, error=>{
-      console.log("error in fetch all ", error)
-      });
-    
+      }); 
   }
+
+
+  fetchextraData() {
+    this.roomService.fetchAllDataFromBackend(this.room).subscribe((data: RoomData[]) => {
+      this.roomData = data;
+      this.updateSeries();
+      }, error=>{
+        console.log("error in fetch all ", error)
+      });
+  }
+  
 }

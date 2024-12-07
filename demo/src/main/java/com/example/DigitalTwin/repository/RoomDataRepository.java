@@ -9,4 +9,6 @@ import java.util.List;
 public interface RoomDataRepository extends JpaRepository<RoomData, Long> {
 
     List<RoomData> findByRoomId(Long roomId);
+    
+    void deleteByRoomId(Long roomId);
 }

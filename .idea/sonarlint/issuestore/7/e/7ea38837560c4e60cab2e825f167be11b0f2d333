@@ -1,0 +1,25 @@
+
+
+java:S1192V"RDefine a constant instead of duplicating this literal "Room id not found" 3 times.(ç±ŠJ$f6b1fcd6-c5cb-4ce0-a9c4-f6bb17136cb0
+
+java:S1488Å"ZImmediately return this expression instead of assigning it to the temporary variable "in".(£ü Ş8ñŞÈã‚2J$700eb65a-2b14-4a63-b468-304de793884c
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÔûªçJ$7a15a5f9-43af-459a-9ed9-d2eebe614e3d
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$0b3fa432-81d4-4033-972a-c1540491c976
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$49e4dd05-d6ce-4eba-b967-ef9d8f7d68c8
+~
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞJ$b9bed889-9a7a-4112-beda-0e99766a136a
+w	java:S125`"<This block of commented-out lines of code should be removed.(±Ïù J$04917e34-a2c7-4a0c-a2fa-34f4b39fcc5e
+|	java:S125d"<This block of commented-out lines of code should be removed.(£“ïÛıÿÿÿÿJ$75b7118d-f726-44ea-a537-ee0ecee6c573
+|	java:S125l"<This block of commented-out lines of code should be removed.(º«ŞàÿÿÿÿÿJ$c49be17d-b739-44e6-8342-a30f4929a454
+Ã
+java:S6204Š"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(€Íøûÿÿÿÿ8‚âÈã‚2J$f91dbe6a-e3b7-4469-9bff-dcac8a29474b
+Ã
+java:S6204˜"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(’ÁšÁøÿÿÿÿ8ŠâÈã‚2J$8f26ccd3-7843-447a-ad10-35ef45382a06
+a
+java:S2119¥"Save and re-use this "Random".(¼İÅf8œâÈã‚2J$50bf324c-e3ee-459a-834b-38fddf3f77aa
+a
+java:S2119¾"Save and re-use this "Random".(¼İÅf8ªâÈã‚2J$b38a36dc-fb38-4a41-ae90-2876ec409703
+
+java:S1128"@Remove this unused import 'com.example.DigitalTwin.dto.DoorDto'.(›£ÓØøÿÿÿÿJ$3d4eeaf1-ea4a-489c-8a0b-3d19e8c98027

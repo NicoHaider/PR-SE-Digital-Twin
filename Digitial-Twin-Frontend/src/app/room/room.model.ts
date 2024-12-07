@@ -1,7 +1,9 @@
 import { Device } from '../device/device.model';
+import {AutomationRule} from "./automation-rule/automation-rules.model";
+
 
 export enum RoomType {
-  LivingRoom = 'Living Room',
+  Livingroom = 'Livingroom',
   Bedroom = 'Bedroom',
   Gaming = 'Gaming',
   Bathroom = 'Bathroom',
@@ -10,7 +12,7 @@ export enum RoomType {
 }
 
 export const RoomTypeImagePath = {
-  [RoomType.LivingRoom]: '../../assets/images/livingroom.png',
+  [RoomType.Livingroom]: '../../assets/images/livingroom.png',
   [RoomType.Bedroom]: '../../assets/images/bedroom.png',
   [RoomType.Gaming]: '../../assets/images/gameroom.png',
   [RoomType.Bathroom]: '../../assets/images/bath.png',
@@ -29,8 +31,9 @@ export class Room {
   deviceDtoList: Device[];
   type: RoomType;
   dateTime: Date = new Date();
+  automationRuleDtoList: AutomationRule[];
 
-  constructor(id: number, name: string, size: number, temperature: number, humidity: number, co2: number, people: number, devices: Device[], type: string) {
+  constructor(id: number, name: string, size: number, temperature: number, humidity: number, co2: number, people: number, devices: Device[], type: string, automationRuleDtoList: AutomationRule[]) {
     this.id = id;
     this.name = name;
     this.size = size;
@@ -40,7 +43,10 @@ export class Room {
     this.people = people;
     this.deviceDtoList = devices;
     this.type = RoomType[type as keyof typeof RoomType];
+    this.automationRuleDtoList = automationRuleDtoList;
   }
+
+
 
 }
 

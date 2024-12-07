@@ -58,8 +58,16 @@ main {
     float: center; 
 }
 
-.button-add:hover, .button-back:hover, .button-edit:hover {
+.button-back:hover {
+    background :#d19272;
+  } 
+
+.button-edit:hover {
     background :#608fd5;
+} 
+
+.button-add:hover{
+    background :#73ac88;
 } 
 
 .button-delete:hover{

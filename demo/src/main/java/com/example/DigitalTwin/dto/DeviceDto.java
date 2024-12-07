@@ -1,8 +1,6 @@
 package com.example.DigitalTwin.dto;
 
 import com.example.DigitalTwin.enums.DeviceType;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 
 import java.util.Date;
 
